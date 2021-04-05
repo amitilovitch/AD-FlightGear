@@ -83,6 +83,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="MapVector.cs" />
     <Compile Include="MainFG.cs" />
     <Compile Include="DataFeature.cs" />
     <Compile Include="MainWindow.xaml.cs">

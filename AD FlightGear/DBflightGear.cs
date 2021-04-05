@@ -24,7 +24,7 @@ namespace AD_FlightGear
             get; set;
         }
         public List<string> _ListFeature = new List<string>();
-        public Dictionary<string, List<float>> DictFeature = new Dictionary<string, List<float>>();
+        public Dictionary<string, MapVector> _DictMapVector = new Dictionary<string, MapVector>();
 
 
         public void createListLines()
@@ -36,6 +36,7 @@ namespace AD_FlightGear
             XmlDocument reader = new XmlDocument();
             reader.Load(_PathXml);
             XmlNodeList NodeList = reader.GetElementsByTagName("node");
+            XmlNodeList NameList = reader.GetElementsByTagName("name");
 
             int size = NodeList.Count;
 
@@ -45,28 +46,33 @@ namespace AD_FlightGear
                 if (NodeList[i].InnerText.Equals(_ListFeature[0]) && (i > 0))
                 {
                     _ListFeature.RemoveAt(_ListFeature.Count - 1);
+                    //_ListMapVector.Remove();
                     break;
                 }
-
+                MapVector mapVector = new MapVector(NameList[i].InnerText);
+                _DictMapVector.Add(NodeList[i].InnerText, mapVector);
             }
         }
+        public void createVectors()
+        {
 
-        public void createDictFeature()
+            int row = _ListLine.Length;
+            for (int i = 0; i < row; i++)
+            {
+                string[] words = _ListLine[i].Split(',');
+                int col = words.Length;
+
+                for (int j = 0; j < col; j++)
+                {
+                    _DictMapVector[_ListFeature[j]]._vectorFloat.Add(float.Parse(words[j]));
+                }
+            }
+        }
+        public void InitializeDB()
         {
             createListLines();
             createListDataFeature();
-            int col = _ListFeature.Count;
-            int rows = _ListLine.Length;
-
-            for (int i = 0; i < col; i++)
-            {
-                DictFeature.Add(_ListFeature[i], new List<float>());
-                string[] tokens = _ListLine[i].Split(',');
-                for (int j = 0; j < rows; j++)
-                {
-                    DictFeature[_ListFeature[i]].Add(float.Parse(tokens[i]));
-                }
-            }
+            createVectors();
         }
     }
 }

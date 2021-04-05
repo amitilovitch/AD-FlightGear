@@ -15,7 +15,7 @@ namespace AD_FlightGear
             string pathXml = @"playback_small.xml";
             modelFG._PathCsv = pathCsv;
             modelFG._PathXml = pathXml;
-            modelFG.createDictFeature();
+            modelFG.InitializeDB();
         }
     }
 }
