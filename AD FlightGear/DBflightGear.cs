@@ -20,14 +20,8 @@ namespace AD_FlightGear
         private string[] _listLine;
         public string[] _ListLine
         {
-            get
-            {
-                return _listLine;
-            }
-            set
-            {
-                _listLine = value;
-            }
+            get { return _listLine;}
+            set {_listLine = value;}
         }
 
         private string _pathCsv;
@@ -39,14 +33,8 @@ namespace AD_FlightGear
         private string _pathXml;
         public string _PathXml
         {
-            get
-            {
-                return _pathXml;
-            }
-            set
-            {
-                _pathXml = value;
-            }
+            get { return _pathXml;}
+            set {_pathXml = value;}
         }
         public List<string> _ListFeature = new List<string>();
         public Dictionary<string, MapVector> _DictMapVector = new Dictionary<string, MapVector>();
@@ -56,6 +44,11 @@ namespace AD_FlightGear
         {
             _ListLine = File.ReadAllLines(_PathCsv);
             length = _listLine.Length;
+
+            for (int i = 0; i < length; i++)
+            {
+                _ListLine[i] = _ListLine[i] + "\n";
+            }
         }
         public void createListDataFeature()
         {

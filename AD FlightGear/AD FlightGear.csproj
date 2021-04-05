@@ -83,6 +83,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Range.cs" />
     <Compile Include="TimeLine.cs" />
     <Compile Include="MapVector.cs" />
     <Compile Include="ModelFG.cs" />

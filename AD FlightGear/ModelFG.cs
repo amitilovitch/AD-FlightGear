@@ -9,12 +9,7 @@ namespace AD_FlightGear
 {
     class ModelFG
     {
-        private int length;
-        public int Length
-        {
-            get { return length;}
-            set { length = value;}
-        }
+
         private bool stop;
         public bool Stop
         {
@@ -43,12 +38,12 @@ namespace AD_FlightGear
         private float sleepMS;
         public float SleepMS
         {
-            get { return sleepMS; }
+            get { return 1000/speedHZ; }
             set { sleepMS = value; }
         }
 
 
-        public void start()
+        public void start(int length)
         {
             new Thread(delegate ()
             {
@@ -57,7 +52,7 @@ namespace AD_FlightGear
                     if (!pause)
                     {
                         time++;
-                        Thread.Sleep((int)Math.Ceiling(sleepMS));
+                        Thread.Sleep((int)Math.Ceiling(SleepMS));
                     } else if (time >= length)
                     {
                         break;
@@ -79,12 +74,11 @@ namespace AD_FlightGear
             dBflight._PathXml = pathXml;
             dBflight.InitializeDB();
             model.speedHZ = 10;
-            model.length = dBflight.Length;
 
 
 
 
-            model.start();
+            model.start(dBflight.Length);
         }
     }
 }
