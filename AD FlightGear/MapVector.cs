@@ -8,11 +8,27 @@ namespace AD_FlightGear
 {
     class MapVector
     {
+        private string _feature;
 
-        string _feature
+        public string _Feature
+        {
+            get
+            {
+                return _feature;
+            }
+            set
+            {
+                _feature = value;
+            }
+        }
+        public void set_feature(string feature)
+        {
+            _feature = feature;
+        }
+/*        string _feature
         {
             get; set;
-        }
+        }*/
         public List<float> _vectorFloat
         {
             get; set;

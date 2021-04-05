@@ -52,7 +52,7 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>AD_FlightGear.MainFG</StartupObject>
+    <StartupObject>AD_FlightGear.ModelFG</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -83,8 +83,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TimeLine.cs" />
     <Compile Include="MapVector.cs" />
-    <Compile Include="MainFG.cs" />
+    <Compile Include="ModelFG.cs" />
     <Compile Include="DataFeature.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

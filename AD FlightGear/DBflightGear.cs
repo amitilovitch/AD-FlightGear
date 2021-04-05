@@ -11,17 +11,42 @@ namespace AD_FlightGear
 {
     class DBflightGear
     {
+        private int length;
+        public int Length
+        {
+            get { return length; }
+            set { length = value; }
+        }
+        private string[] _listLine;
         public string[] _ListLine
         {
-            get; set;
+            get
+            {
+                return _listLine;
+            }
+            set
+            {
+                _listLine = value;
+            }
         }
+
+        private string _pathCsv;
         public string _PathCsv
         {
-            get; set;
+            get {return _pathCsv;}
+            set {_pathCsv = value;}
         }
+        private string _pathXml;
         public string _PathXml
         {
-            get; set;
+            get
+            {
+                return _pathXml;
+            }
+            set
+            {
+                _pathXml = value;
+            }
         }
         public List<string> _ListFeature = new List<string>();
         public Dictionary<string, MapVector> _DictMapVector = new Dictionary<string, MapVector>();
@@ -30,6 +55,7 @@ namespace AD_FlightGear
         public void createListLines()
         {
             _ListLine = File.ReadAllLines(_PathCsv);
+            length = _listLine.Length;
         }
         public void createListDataFeature()
         {
