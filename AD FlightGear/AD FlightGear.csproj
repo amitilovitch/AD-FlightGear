@@ -52,7 +52,7 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>AD_FlightGear.ModelFG</StartupObject>
+    <StartupObject>AD_FlightGear.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

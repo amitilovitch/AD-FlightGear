@@ -23,8 +23,8 @@ namespace AD_FlightGear
         public MainWindow()
         {
             InitializeComponent();
-            //ModelFG modelFG = new ModelFG();
-           // modelFG.Initialize();
+            ModelFG modelFG = new ModelFG();
+            modelFG.Initialize();
         }
 
         private void FlightData_Loaded(object sender, RoutedEventArgs e)

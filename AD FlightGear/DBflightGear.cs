@@ -41,14 +41,12 @@ namespace AD_FlightGear
         {
             get { return _listFeature; }
         }
-        //public List<string> _ListFeature = new List<string>();
-        //public Dictionary<string, MapVector> _DictMapVector = new Dictionary<string, MapVector>();
+
         private List<MapVector> mapDb;
         public List<MapVector> MapDb
         {
             get { return mapDb; }
         }
-        //public List<MapVector> mapDb = new List<MapVector>();
         public DBflightGear()
         {
             _listFeature = new List<string>();
@@ -100,7 +98,6 @@ namespace AD_FlightGear
                 for (int j = 0; j < col; j++)
                 {
                     mapDb[j]._vectorFloat.Add(float.Parse(words[j]));
-                    //_DictMapVector[_ListFeature[j]]._vectorFloat.Add(float.Parse(words[j]));
                 }
             }
         }

@@ -86,28 +86,19 @@ namespace AD_FlightGear
         }
 
 
-        public static void Main()
+        public void Initialize()
         {
-            ModelFG model = new ModelFG();
-            //dBflight = new DBflightGear();
-            //DBflightGear dBflight = new DBflightGear();
             string pathCsv = @"C:\Users\azran\source\repos\AD FlightGear\AD FlightGear\reg_flight.csv";
             string pathXml =  @"playback_small.xml";
-            model.dBflight._PathCsv = pathCsv;
-            model.dBflight._PathXml = pathXml;
-            model.dBflight.InitializeDB();
-
-
-/*            dBflight._PathCsv = pathCsv;
+            dBflight._PathCsv = pathCsv;
             dBflight._PathXml = pathXml;
-            dBflight.InitializeDB();*/
-            //float f = dBflight.mapDb[14]._vectorFloat[0];
-            //string s = dBflight.mapDb[14]._Name;
+            dBflight.InitializeDB();
 
-            model.speedHZ = 10;
-            model.start(model.dBflight.Length);
+            float f = dBflight.MapDb[14]._vectorFloat[0];
+            string s = dBflight.MapDb[14]._Name;
 
-            //model.start(dBflight.Length);
+
+            start(dBflight.Length);
         }
     }
 }
