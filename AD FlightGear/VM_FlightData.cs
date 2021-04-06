@@ -8,7 +8,7 @@ using System.ComponentModel;
 namespace AD_FlightGear
 {
 
-    class VM_FlightData : INotifyPropertyChanged
+    public class VM_FlightData : INotifyPropertyChanged
     {
 
         private ModelFG _model;
@@ -22,14 +22,17 @@ namespace AD_FlightGear
                 };
         }
 
-        public double VM_Time
+        public string VM_Hdg
         {
-            get { return _model.Time; }
+            get { return _model.Hdg; }
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void NotifyPropertyChanged(string propName)
         {
-
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
         }
     }
 }

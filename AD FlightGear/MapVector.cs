@@ -8,35 +8,42 @@ namespace AD_FlightGear
 {
     public class MapVector
     {
-        private string _name;
-        public string _Name
+        private string name;
+        public string Name
         {
-            get { return _name;}
-            set {_name = value;}
+            get { return name;}
+            set {name = value;}
         }
-        private string _type;
+        private string type;
         public string Type
         {
-            get { return _type; }
-            set { _type = value; }
+            get { return type; }
+            set { type = value; }
         }
-        private string _node;
+        private string node;
         public string Node
         {
-            get { return _node; }
-            set { _node = value; }
+            get { return node; }
+            set { node = value; }
+        }
+        public int index;
+        public int Index
+        {
+            get { return index; }
+            set { index = value; }
         }
 
         public List<float> _vectorFloat
         {
             get; set;
         }
-        public MapVector(string nameFeature, string type, string node)
+        public MapVector(string nameFeature, string type, string node, int i)
         {
-            _name = nameFeature;
-            _type = type;
-            _node = node;
+            Name = nameFeature;
+            Type = type;
+            Node = node;
             _vectorFloat = new List<float>();
+            Index = i;
         }
     }
 }

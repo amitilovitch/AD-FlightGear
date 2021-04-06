@@ -38,7 +38,7 @@
                             <ColumnDefinition Width="75"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="HDG" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"  />
-                        <Label x:Name="HDG_val"  Content="271.2" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" />
+                        <Label x:Name="HDG_val"  Content="{Binding VM_Hdg}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" />
                         <TextBlock Text="deg" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" />
 
                         <TextBlock Text="Alt" Grid.Row="1" Grid.Column="0" />

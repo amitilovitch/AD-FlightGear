@@ -36,6 +36,34 @@ namespace AD_FlightGear
             get { return _pathXml;}
             set {_pathXml = value;}
         }
+
+        private int hdgIndex;
+        public int HdgIndex { get; set; }
+
+        private int altIndex;
+        public int AltIndex { get; set; }
+
+        private int speedIndex;
+        public int SpeedIndex { get; set; }
+
+        private int pitchIndex;
+        public int PitchIndex { get; set; }
+
+        private int rollIndex;
+        public int RollIndex { get; set; }
+
+        private int yawIndex;
+        public int YawIndex { get; set; }
+
+        private int throttle0Index;
+        public int Throttle0Index { get; set; }
+
+        private int throttle1Index;
+        public int Throttle1Index { get; set; }
+
+        private int rudderIndex;
+        public int RudderIndex { get; set; }
+
         private List<string> _listFeature;
         public List<string> ListString
         {
@@ -83,7 +111,7 @@ namespace AD_FlightGear
                 }
                 mapDb.Add(new MapVector(NameList[i].InnerText,
                     TypeList[i].InnerText,
-                    NodeList[i].InnerText));
+                    NodeList[i].InnerText, i));
             }
         }
         public void createVectors()
@@ -102,12 +130,55 @@ namespace AD_FlightGear
             }
         }
 
+        public void findIndexFeatures()
+        {
+
+            for (int i = 0; i < _listFeature.Count; i++ )
+            {
+                string s = mapDb[i].Node;
+                switch (s)
+                {
+                    case "/instrumentation/heading-indicator/indicated-heading-deg":
+                        HdgIndex = i;
+                        break;
+                    case "/instrumentation/altimeter/indicated-altitude-ft":
+                        AltIndex = i;
+                        break;
+                    case "/instrumentation/gps/indicated-vertical-speed":
+                        SpeedIndex = i;
+                        break;
+                    case "/orientation/pitch-deg":
+                        PitchIndex = i;
+                        break;
+                    case "/orientation/roll-deg":
+                        RollIndex = i;
+                        break;
+                    case "/orientation/side-slip-deg":
+                        YawIndex = i;
+                        break;
+                    case "rudder":
+                        RudderIndex = i;
+                        break;
+                    case "/controls/engines/engine[1]/throttle":
+                        Throttle1Index = i;
+                        break;
+                    case "/controls/engines/engine[0]/throttle":
+                        Throttle0Index = i;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        } 
+
 
         public void InitializeDB()
         {
             createListLines();
             createListDataFeature();
             createVectors();
+            findIndexFeatures();
         }
     }
 }

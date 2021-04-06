@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Controls:FlightData Margin="522,0,0,371"/>
+        <Controls:FlightData x:Name="FlightData" Margin="522,0,0,346"/>
     </Grid>
 </Window>
