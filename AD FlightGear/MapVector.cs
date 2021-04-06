@@ -6,50 +6,37 @@ using System.Threading.Tasks;
 
 namespace AD_FlightGear
 {
-    class MapVector
+    public class MapVector
     {
-        private string _feature;
+        private string _name;
+        public string _Name
+        {
+            get { return _name;}
+            set {_name = value;}
+        }
+        private string _type;
+        public string Type
+        {
+            get { return _type; }
+            set { _type = value; }
+        }
+        private string _node;
+        public string Node
+        {
+            get { return _node; }
+            set { _node = value; }
+        }
 
-        public string _Feature
-        {
-            get
-            {
-                return _feature;
-            }
-            set
-            {
-                _feature = value;
-            }
-        }
-        public void set_feature(string feature)
-        {
-            _feature = feature;
-        }
-/*        string _feature
-        {
-            get; set;
-        }*/
         public List<float> _vectorFloat
         {
             get; set;
         }
-        public MapVector(string nameFeature)
+        public MapVector(string nameFeature, string type, string node)
         {
-
-            _feature = nameFeature;
+            _name = nameFeature;
+            _type = type;
+            _node = node;
             _vectorFloat = new List<float>();
-
-            /* int size = _ListLine.Length;
-             for (int i = 0; i < size; i++)
-             {
-                 //string ds = _ListLine[i];
-                 _vectorFloat = new List<float>();
-                 string[] words = _ListLine[i].Split(',');
-                 for (int j = 0; j < words.Length; j++)
-                 {
-                     _vectorFloat.Add(float.Parse(words[j]));
-                 }
-             }*/
         }
     }
 }

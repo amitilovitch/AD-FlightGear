@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace AD_FlightGear
 {
-    class DBflightGear
+    public class DBflightGear
     {
         private int length;
         public int Length
@@ -36,9 +36,24 @@ namespace AD_FlightGear
             get { return _pathXml;}
             set {_pathXml = value;}
         }
-        public List<string> _ListFeature = new List<string>();
-        public Dictionary<string, MapVector> _DictMapVector = new Dictionary<string, MapVector>();
-
+        private List<string> _listFeature;
+        public List<string> ListString
+        {
+            get { return _listFeature; }
+        }
+        //public List<string> _ListFeature = new List<string>();
+        //public Dictionary<string, MapVector> _DictMapVector = new Dictionary<string, MapVector>();
+        private List<MapVector> mapDb;
+        public List<MapVector> MapDb
+        {
+            get { return mapDb; }
+        }
+        //public List<MapVector> mapDb = new List<MapVector>();
+        public DBflightGear()
+        {
+            _listFeature = new List<string>();
+             mapDb = new List<MapVector>();
+        }
 
         public void createListLines()
         {
@@ -56,20 +71,21 @@ namespace AD_FlightGear
             reader.Load(_PathXml);
             XmlNodeList NodeList = reader.GetElementsByTagName("node");
             XmlNodeList NameList = reader.GetElementsByTagName("name");
+            XmlNodeList TypeList = reader.GetElementsByTagName("type");
 
             int size = NodeList.Count;
 
             for (int i = 0; i < size; i ++)
             {
-                _ListFeature.Add(NodeList[i].InnerText);
-                if (NodeList[i].InnerText.Equals(_ListFeature[0]) && (i > 0))
+                _listFeature.Add(NodeList[i].InnerText);
+                if (NodeList[i].InnerText.Equals(_listFeature[0]) && (i > 0))
                 {
-                    _ListFeature.RemoveAt(_ListFeature.Count - 1);
-                    //_ListMapVector.Remove();
+                    _listFeature.RemoveAt(_listFeature.Count - 1);
                     break;
                 }
-                MapVector mapVector = new MapVector(NameList[i].InnerText);
-                _DictMapVector.Add(NodeList[i].InnerText, mapVector);
+                mapDb.Add(new MapVector(NameList[i].InnerText,
+                    TypeList[i].InnerText,
+                    NodeList[i].InnerText));
             }
         }
         public void createVectors()
@@ -83,10 +99,13 @@ namespace AD_FlightGear
 
                 for (int j = 0; j < col; j++)
                 {
-                    _DictMapVector[_ListFeature[j]]._vectorFloat.Add(float.Parse(words[j]));
+                    mapDb[j]._vectorFloat.Add(float.Parse(words[j]));
+                    //_DictMapVector[_ListFeature[j]]._vectorFloat.Add(float.Parse(words[j]));
                 }
             }
         }
+
+
         public void InitializeDB()
         {
             createListLines();

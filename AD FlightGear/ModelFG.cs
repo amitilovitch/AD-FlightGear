@@ -4,11 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.ComponentModel;
+
 
 namespace AD_FlightGear
 {
-    class ModelFG
+     class ModelFG : INotifyPropertyChanged
     {
+        //INotifyPropertyChanged implementation
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void notifyPropertyChanged(string propName)
+        {
+            if (propName != null)
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
+            }
+        }
+
 
         private bool stop;
         public bool Stop
@@ -22,7 +34,6 @@ namespace AD_FlightGear
             get { return pause; }
             set { pause = value; }
         }
-
         private double time;
         public double Time
         {
@@ -42,6 +53,17 @@ namespace AD_FlightGear
             set { sleepMS = value; }
         }
 
+        private DBflightGear dBflight;
+        public DBflightGear DBflight
+        {
+            get { return dBflight; }
+            set { dBflight = value; }
+        }
+        public ModelFG()
+        {
+            dBflight = new DBflightGear();
+        }
+
 
         public void start(int length)
         {
@@ -52,7 +74,7 @@ namespace AD_FlightGear
                     if (!pause)
                     {
                         time++;
-                        Thread.Sleep((int)Math.Ceiling(SleepMS));
+                        Thread.Sleep((int)Math.Ceiling(sleepMS));
                     } else if (time >= length)
                     {
                         break;
@@ -67,18 +89,25 @@ namespace AD_FlightGear
         public static void Main()
         {
             ModelFG model = new ModelFG();
-            DBflightGear dBflight = new DBflightGear();
+            //dBflight = new DBflightGear();
+            //DBflightGear dBflight = new DBflightGear();
             string pathCsv = @"C:\Users\azran\source\repos\AD FlightGear\AD FlightGear\reg_flight.csv";
             string pathXml =  @"playback_small.xml";
-            dBflight._PathCsv = pathCsv;
+            model.dBflight._PathCsv = pathCsv;
+            model.dBflight._PathXml = pathXml;
+            model.dBflight.InitializeDB();
+
+
+/*            dBflight._PathCsv = pathCsv;
             dBflight._PathXml = pathXml;
-            dBflight.InitializeDB();
+            dBflight.InitializeDB();*/
+            //float f = dBflight.mapDb[14]._vectorFloat[0];
+            //string s = dBflight.mapDb[14]._Name;
+
             model.speedHZ = 10;
+            model.start(model.dBflight.Length);
 
-
-
-
-            model.start(dBflight.Length);
+            //model.start(dBflight.Length);
         }
     }
 }

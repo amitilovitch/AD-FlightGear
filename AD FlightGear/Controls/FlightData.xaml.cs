@@ -13,23 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AD_FlightGear
+namespace AD_FlightGear.Controls
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FlightData.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FlightData : UserControl
     {
-        public MainWindow()
+        public FlightData()
         {
             InitializeComponent();
-            //ModelFG modelFG = new ModelFG();
-           // modelFG.Initialize();
-        }
-
-        private void FlightData_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
