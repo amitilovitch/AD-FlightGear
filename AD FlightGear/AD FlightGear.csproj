@@ -89,6 +89,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClockVM.cs" />
+    <Compile Include="Controls\Clock.xaml.cs">
+      <DependentUpon>Clock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\dataGraph.xaml.cs" />
     <Compile Include="Controls\FlightData.xaml.cs">
       <DependentUpon>FlightData.xaml</DependentUpon>
@@ -99,18 +103,34 @@
     <Compile Include="Controls\OpenFilesV.xaml.cs">
       <DependentUpon>OpenFilesV.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\playStopButtons.xaml.cs">
+      <DependentUpon>playStopButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\speed.xaml.cs">
+      <DependentUpon>speed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\speedVM.cs" />
     <Compile Include="Controls\stick.xaml.cs">
       <DependentUpon>stick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\timeSlider.xaml.cs">
+      <DependentUpon>timeSlider.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\twoSliders.xaml.cs">
       <DependentUpon>twoSliders.xaml</DependentUpon>
     </Compile>
     <Compile Include="graphs_vm.cs" />
     <Compile Include="joystickVM.cs" />
+    <Compile Include="playStopButtonsVM.cs" />
+    <Compile Include="timeSliderViewModel.cs" />
     <Compile Include="twoSlidersVM.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="VM_FlightData.cs" />
     <Compile Include="VM_OpenFiles.cs" />
+    <Page Include="Controls\Clock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\dataGraph.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -127,7 +147,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\playStopButtons.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\speed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\stick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\timeSlider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -192,6 +224,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="playback_small.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-
 namespace AD_FlightGear
 {
     public class joystickVM : ViewModel

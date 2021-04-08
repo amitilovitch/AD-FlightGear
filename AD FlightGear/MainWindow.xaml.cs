@@ -34,8 +34,20 @@ namespace AD_FlightGear
             twoSlidersVM vm_twoSliders = new twoSlidersVM(modelFG);
             this.sliders2.setVM(vm_twoSliders);
 
-            joystickVM vm_Joystick = new joystickVM(modelFG);
-            this.joystick.setVM(vm_Joystick);
+            speedVM vm_speed = new speedVM(modelFG);
+            this.speed.setVM(vm_speed);
+
+            joystickVM vm_joystick = new joystickVM(modelFG);
+            this.joystick.setVM(vm_joystick);
+
+            timeSliderViewModel vm_timeSlider = new timeSliderViewModel(modelFG);
+            this.timeSliders.setVM(vm_timeSlider);
+
+            playStopButtonsVM vm_buttons = new playStopButtonsVM(modelFG);
+            this.playStopButtons.setVM(vm_buttons);
+
+            ClockVM vm_clock = new ClockVM(modelFG);
+            this.clock.setVM(vm_clock);
 
             graphs_vm graphs = new graphs_vm(modelFG);
             dataGraphV.set_graphs_VM(graphs);

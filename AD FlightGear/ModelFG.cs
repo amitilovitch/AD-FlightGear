@@ -416,9 +416,9 @@ namespace AD_FlightGear
             dBflight._PathXml = @"playback_small.xml";
             dBflight.InitializeDB();
             initGraphs();
+            this.defaultClock();
 
-
-            start(dBflight.Length);
+            //start(dBflight.Length); 
         }
         public List<float> ListTime()
         {

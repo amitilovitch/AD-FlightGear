@@ -23,7 +23,6 @@ namespace AD_FlightGear.Controls
         public joystick()
         {
             InitializeComponent();
-            //this.stick.Canvas
         }
         private joystickVM vm;
         public joystickVM VM
