@@ -8,5 +8,10 @@
         Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Controls:FlightData x:Name="FlightData" Margin="522,0,0,346"/>
+        <Controls:OpenFilesV x:Name="OpenFilesV" Margin="0,390,514,110"/>
+        <Controls:dataGraph  x:Name="dataGraphV"/>
+        <DockPanel x:Name="ohad" Width="150" Height="150"/>
+        <Label x:Name="dd" Width="100" Height="200" Margin="0,0,100,110"/>
+
     </Grid>
 </Window>

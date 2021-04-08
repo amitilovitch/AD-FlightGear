@@ -64,6 +64,12 @@ namespace AD_FlightGear
         private int rudderIndex;
         public int RudderIndex { get; set; }
 
+        private int alieronIndex;
+        public int AlieronIndex { get; set; }
+
+        private int elevatorIndex;
+        public int ElevatorIndex { get; set; }
+
         private List<string> _listFeature;
         public List<string> ListString
         {
@@ -144,7 +150,7 @@ namespace AD_FlightGear
                     case "/instrumentation/altimeter/indicated-altitude-ft":
                         AltIndex = i;
                         break;
-                    case "/instrumentation/gps/indicated-vertical-speed":
+                    case "/instrumentation/airspeed-indicator/indicated-speed-kt":
                         SpeedIndex = i;
                         break;
                     case "/orientation/pitch-deg":
@@ -164,6 +170,12 @@ namespace AD_FlightGear
                         break;
                     case "/controls/engines/engine[0]/throttle":
                         Throttle0Index = i;
+                        break;
+                    case "/controls/flight/aileron[0]":
+                        AlieronIndex = i;
+                        break;
+                    case "/controls/flight/elevator":
+                        ElevatorIndex = i;
                         break;
                     default:
                         break;

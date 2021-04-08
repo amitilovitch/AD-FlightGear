@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace AD_FlightGear
 {
@@ -20,18 +21,29 @@ namespace AD_FlightGear
     /// </summary>
     public partial class MainWindow : Window
     {
+        dynamic c;
+
         public MainWindow()
         {
             InitializeComponent();
             ModelFG modelFG = new ModelFG();
-            modelFG.Initialize();
+            //modelFG.Initialize();
             VM_FlightData vM_FlightData = new VM_FlightData(modelFG);
             FlightData.setVm_flightData(vM_FlightData);
-        }
+            graphs_vm graphs = new graphs_vm(modelFG);
+            dataGraphV.set_graphs_VM(graphs);
+            dataGraphV.addButtons();
+            VM_OpenFiles vM_OpenFiles = new VM_OpenFiles(modelFG);
+            OpenFilesV.setVM_OpenFiles(vM_OpenFiles);
+/*            Assembly dll = Assembly.LoadFile(@"C:\Users\azran\source\repos\dllAnomally\dllAnomally\bin\Debug\dllAnomally.dll");
+            Type[] type = dll.GetExportedTypes();
+            c = Activator.CreateInstance(type[0]);
+            ohad.Children.Add(c);*/
+        } 
 
         private void FlightData_Loaded(object sender, RoutedEventArgs e)
         {
-
+            
         }
     }
 }

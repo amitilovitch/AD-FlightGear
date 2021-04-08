@@ -21,7 +21,6 @@ namespace AD_FlightGear.Controls
     public partial class FlightData : UserControl
     {
         private VM_FlightData vM_FlightData;
-        //public VM_FlightData VM_flightData {get; set;}
         public void setVm_flightData(VM_FlightData vM_Flight)
         {
             this.vM_FlightData = vM_Flight;

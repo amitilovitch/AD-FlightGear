@@ -5,14 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
+
 namespace AD_FlightGear
 {
-
-    public class VM_FlightData : INotifyPropertyChanged
+    public class VM_OpenFiles : INotifyPropertyChanged
     {
-
         private ModelFG model;
-        public VM_FlightData(ModelFG modelFG)
+
+        public ModelFG Model { get; set; }
+        public VM_OpenFiles(ModelFG modelFG)
         {
             model = modelFG;
             model.PropertyChanged +=
@@ -22,31 +23,8 @@ namespace AD_FlightGear
                 };
         }
 
-        public string VM_Hdg
-        {
-            get { return model.Hdg; }
-        }
-        public string VM_Speed
-        {
-            get { return model.Speed; }
-        }
-        public string VM_Alt
-        {
-            get { return model.Alt; }
-        }
-        public string VM_Pitch
-        {
-            get { return model.Pitch; }
-        }
-        public string VM_Roll
-        {
-            get { return model.Roll; }
-        }
-        public string VM_Yaw
-        {
-            get { return model.Yaw; }
-        }
         public event PropertyChangedEventHandler PropertyChanged;
+
         public void NotifyPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
@@ -54,5 +32,18 @@ namespace AD_FlightGear
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
         }
+
+        public string VM_PathCsv
+        {
+            get { return model.PathCsv; }
+            set { model.PathCsv = value; }
+        }
+
+        public string VM_PathDll
+        {
+            get { return model.PathDll; }
+            set { model.PathDll = value; }
+        }
+        public void initDB() { model.Initialize(); }
     }
 }

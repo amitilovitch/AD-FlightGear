@@ -26,12 +26,15 @@ namespace AD_FlightGear
             get { return node; }
             set { node = value; }
         }
-        public int index;
+        private int index;
         public int Index
         {
             get { return index; }
             set { index = value; }
         }
+
+        private int corrIndex;
+        public int CorrIndex { get; set; }
 
         public List<float> _vectorFloat
         {
