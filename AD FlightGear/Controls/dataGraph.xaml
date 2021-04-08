@@ -19,10 +19,10 @@
             <RowDefinition Height="67*"/>
             <RowDefinition Height="64*"/>
         </Grid.RowDefinitions>
-
+<!--
         <oxy:Plot x:Name="graph_upLeft" Title="{Binding VM_Time}" Margin="177,10,456,53" RenderTransformOrigin="0.759,0.177">
             <oxy:LineSeries DataContext="{Binding M_Points}"/>
-        </oxy:Plot>
+        </oxy:Plot> -->
 
 
         <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,618,0" SelectionChanged="data_list_SelectionChanged">
