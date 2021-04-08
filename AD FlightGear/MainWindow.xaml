@@ -11,7 +11,15 @@
         <Controls:OpenFilesV x:Name="OpenFilesV" Margin="0,390,514,110"/>
         <Controls:dataGraph  x:Name="dataGraphV"/>
         <DockPanel x:Name="ohad" Width="150" Height="150"/>
-        <Label x:Name="dd" Width="100" Height="200" Margin="0,0,100,110"/>
+        <Label x:Name="dd" Width="100" Height="200" Margin="367,72,326.333,298.667"/>  <!--!!!!!!!-->
+
+        <Controls:twoSliders x:Name="sliders2" Margin="477,210,41.333,135.667"/>
+        <Controls:speed x:Name="speed" Margin="342,273,344,173"/>
+        <Controls:joystick x:Name="joystick" Margin="549,230,89.333,135.667"/>
+        <Controls:playStopButtons x:Name="playStopButtons" Margin="137,324,540.333,210.667"/>
+        <Controls:timeSlider x:Name="timeSliders" Margin="0,440,0.333,-94.333"/>
+        <Controls:Clock x:Name="clock" Margin="0,129,593.333,198.667"/>
+
 
     </Grid>
 </Window>

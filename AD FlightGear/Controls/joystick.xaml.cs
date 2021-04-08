@@ -16,28 +16,28 @@ using System.Windows.Shapes;
 namespace AD_FlightGear.Controls
 {
     /// <summary>
-    /// Interaction logic for twoSliders.xaml
+    /// Interaction logic for joystick.xaml
     /// </summary>
-    public partial class twoSliders : UserControl
+    public partial class joystick : UserControl
     {
-        public twoSliders()
+        public joystick()
         {
             InitializeComponent();
-
         }
-
-        private twoSlidersVM vm;
-        public twoSlidersVM VM
+        private joystickVM vm;
+        public joystickVM VM
         {
             get { return vm; }
             set { this.vm = value; }
         }
+        private void centerKnob_Completed(object sender, EventArgs e)
+        {
 
-        public void setVM(twoSlidersVM newvm) /// לבדוק אם הוא יכול גם ללכת לסטר של התכונה
+        }
+        public void setVM(joystickVM newvm) /// לבדוק אם הוא יכול גם ללכת לסטר של התכונה
         {
             this.vm = newvm;
             DataContext = vm;
         }
-
     }
 }

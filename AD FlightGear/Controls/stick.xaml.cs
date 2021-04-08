@@ -16,28 +16,13 @@ using System.Windows.Shapes;
 namespace AD_FlightGear.Controls
 {
     /// <summary>
-    /// Interaction logic for twoSliders.xaml
+    /// Interaction logic for stick.xaml
     /// </summary>
-    public partial class twoSliders : UserControl
+    public partial class stick : UserControl
     {
-        public twoSliders()
+        public stick()
         {
             InitializeComponent();
-
         }
-
-        private twoSlidersVM vm;
-        public twoSlidersVM VM
-        {
-            get { return vm; }
-            set { this.vm = value; }
-        }
-
-        public void setVM(twoSlidersVM newvm) /// לבדוק אם הוא יכול גם ללכת לסטר של התכונה
-        {
-            this.vm = newvm;
-            DataContext = vm;
-        }
-
     }
 }

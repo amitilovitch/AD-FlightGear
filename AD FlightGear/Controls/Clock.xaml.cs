@@ -12,30 +12,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.ComponentModel;
 
 namespace AD_FlightGear.Controls
 {
     /// <summary>
-    /// Interaction logic for twoSliders.xaml
+    /// Interaction logic for Clock.xaml
     /// </summary>
-    public partial class twoSliders : UserControl
+    public partial class Clock : UserControl
     {
-        public twoSliders()
+        ClockVM vm;
+
+        public Clock()
         {
             InitializeComponent();
 
         }
 
-        private twoSlidersVM vm;
-        public twoSlidersVM VM
+        public void setVM(ClockVM vm)
         {
-            get { return vm; }
-            set { this.vm = value; }
-        }
-
-        public void setVM(twoSlidersVM newvm) /// לבדוק אם הוא יכול גם ללכת לסטר של התכונה
-        {
-            this.vm = newvm;
+            this.vm = vm;
             DataContext = vm;
         }
 

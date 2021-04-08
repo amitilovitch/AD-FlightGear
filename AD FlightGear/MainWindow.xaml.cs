@@ -30,6 +30,25 @@ namespace AD_FlightGear
             //modelFG.Initialize();
             VM_FlightData vM_FlightData = new VM_FlightData(modelFG);
             FlightData.setVm_flightData(vM_FlightData);
+
+            twoSlidersVM vm_twoSliders = new twoSlidersVM(modelFG);
+            this.sliders2.setVM(vm_twoSliders);
+
+            speedVM vm_speed = new speedVM(modelFG);
+            this.speed.setVM(vm_speed);
+
+            joystickVM vm_joystick = new joystickVM(modelFG);
+            this.joystick.setVM(vm_joystick);
+
+            timeSliderViewModel vm_timeSlider = new timeSliderViewModel(modelFG);
+            this.timeSliders.setVM(vm_timeSlider);
+
+            playStopButtonsVM vm_buttons = new playStopButtonsVM(modelFG);
+            this.playStopButtons.setVM(vm_buttons);
+
+            ClockVM vm_clock = new ClockVM(modelFG);
+            this.clock.setVM(vm_clock);
+
             graphs_vm graphs = new graphs_vm(modelFG);
             dataGraphV.set_graphs_VM(graphs);
             dataGraphV.addButtons();
@@ -44,6 +63,11 @@ namespace AD_FlightGear
         private void FlightData_Loaded(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void joystick_Loaded(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
