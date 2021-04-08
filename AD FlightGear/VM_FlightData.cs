@@ -12,8 +12,6 @@ namespace AD_FlightGear
     {
 
         private ModelFG model;
-        private ModelFG model2;
-
         public VM_FlightData(ModelFG modelFG)
         {
             model = modelFG;

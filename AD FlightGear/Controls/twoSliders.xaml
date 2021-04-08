@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="AD_FlightGear.Controls.twoSliders"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AD_FlightGear.Controls"
+             mc:Ignorable="d" 
+mc:Ignorable="d" Width="275" Height="225">
+    <Grid Margin="10" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="221*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Slider x:Name ="throttleSlider"  HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="158" Width="20" Orientation="Vertical" Maximum="1" Minimum="0" IsEnabled="False" Value="{Binding VM_Throttle0}">
+            <Slider.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF161616"/>
+                </RadialGradientBrush>
+            </Slider.Background>
+        </Slider>
+        <Slider x:Name ="rudderSlider"  HorizontalAlignment="Left" Margin="39,176,0,0" VerticalAlignment="Top" Height="20" Width="195" Orientation="Horizontal" IsEnabled="False" Grid.Row="0" Maximum="1" Minimum="-1" Value="{Binding VM_Rudder}" RenderTransformOrigin="0.405,1.675">
+            <Slider.Background>
+                <RadialGradientBrush>
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FF343434"/>
+                </RadialGradientBrush>
+            </Slider.Background>
+        </Slider>
+        <Label Content="0" HorizontalAlignment="Left" Margin="0,154,0,0" VerticalAlignment="Top" Width="36" FontSize="8"/>
+        <Label Content="1" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="36" FontSize="8"/>
+        <Label Content="-1" HorizontalAlignment="Left" Margin="34,191,0,-7" VerticalAlignment="Top" Width="36" FontSize="8"/>
+        <Label Content="1" HorizontalAlignment="Left" Margin="223,191,0,-7" VerticalAlignment="Top" Width="22" FontSize="8" Grid.ColumnSpan="2"/>
+
+    </Grid>
+</UserControl>
