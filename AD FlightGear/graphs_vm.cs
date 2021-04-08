@@ -9,7 +9,7 @@ using System.ComponentModel;
 namespace AD_FlightGear
 {
     using System.Collections.Generic;
-
+    
     using OxyPlot;
     public class graphs_vm : INotifyPropertyChanged 
     {

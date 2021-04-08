@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Windows;
 
 
+
 namespace AD_FlightGear
 {
     using OxyPlot;
@@ -34,7 +35,6 @@ namespace AD_FlightGear
             dBflight = new DBflightGear();
             GraphChoose = new List<DataPoint>();
             GraphCorr = new List<DataPoint>();
-            GraphPearson = new List<DataPoint>();
         }
         private string pathCsv;
         public string PathCsv
@@ -201,8 +201,8 @@ namespace AD_FlightGear
             {
                 chooseIndex = value;
                 notifyPropertyChanged("ChooseIndex");
-                //calcCorrIndex(ListCurrentTime, DBflight.MapDb[ChooseIndex]._vectorFloat, Time);
-
+                GraphChooseIn = PointList(ListTime(), dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
+                GraphCorrIn = PointList(ListTime(), dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.Length);
             }
         }
 
@@ -212,10 +212,33 @@ namespace AD_FlightGear
             get { return graphChoose; }
             set
             {
+                //graphChoose = value;
                 graphChoose = value;
-                notifyPropertyChanged("Stop");
+                notifyPropertyChanged("GraphChoose");
             }
         }
+
+        private List<DataPoint> graphChooseIn;
+        public List<DataPoint> GraphChooseIn
+        {
+            get { return graphChooseIn; }
+            set
+            {
+                graphChooseIn = value;
+                notifyPropertyChanged("GraphChooseIn");
+            }
+        }
+        private List<DataPoint> graphCorrIn;
+        public List<DataPoint> GraphCorrIn
+        {
+            get { return graphCorrIn; }
+            set
+            {
+                graphCorrIn = value;
+                notifyPropertyChanged("GraphCorrIn");
+            }
+        }
+
 
         private List<DataPoint> graphCorr;
         public List<DataPoint> GraphCorr
@@ -227,19 +250,6 @@ namespace AD_FlightGear
                 notifyPropertyChanged("GraphCorr");
             }
         }
-
-        private List<DataPoint> graphPearson;
-        public List<DataPoint> GraphPearson
-        {
-            get { return graphPearson; }
-            set
-            {
-                graphChoose = value;
-                notifyPropertyChanged("GraphPearson");
-            }
-        }
-
-
 
         private bool stop;
         public bool Stop
@@ -341,7 +351,8 @@ namespace AD_FlightGear
 
 
                 //to graph 
-
+                GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
+                GraphChoose = GraphChooseIn.GetRange(0, Convert.ToInt32(time));
             }
         }
         public void start(int length)
@@ -387,27 +398,25 @@ namespace AD_FlightGear
 
             start(dBflight.Length);
         }
-
-        private List<float> listCurrentTime;
-        public List<float> ListCurrentTime
+        public List<float> ListTime()
         {
-            get
-            {
-                for (int i = 0; i < time; i++)
+            List<float> listTime = new List<float>();
+                for (int i = 0; i < dBflight.Length; i++)
                 {
-                    listCurrentTime.Add((float)i);
+                    listTime.Add((float)i);
                 }
-                return listCurrentTime;
-            }
+            return listTime;
         }
 
-        public void CreateListPoint(List<Point> points , List<float> x, List<float> y, int size)
-        {
 
+        public List<DataPoint> PointList(List<float> x, List<float> y, int size)
+        {
+            List<DataPoint> points = new List<DataPoint>();
             for (int i = 0; i < size; i++)
             {
                 DataPoint p = new DataPoint(x[i], y[i]);
             }
+            return points;
         }
     }
 }
