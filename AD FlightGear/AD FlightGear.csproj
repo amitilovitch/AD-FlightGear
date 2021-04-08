@@ -96,7 +96,11 @@
     <Compile Include="Controls\OpenFilesV.xaml.cs">
       <DependentUpon>OpenFilesV.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\twoSliders.xaml.cs">
+      <DependentUpon>twoSliders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="graphs_vm.cs" />
+    <Compile Include="twoSlidersVM.cs" />
     <Compile Include="VM_FlightData.cs" />
     <Compile Include="VM_OpenFiles.cs" />
     <Page Include="Controls\dataGraph.xaml">
@@ -108,6 +112,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\OpenFilesV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\twoSliders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -7,7 +7,7 @@ using System.ComponentModel;
 
 namespace AD_FlightGear
 {
-
+    // change
     public class VM_FlightData : INotifyPropertyChanged
     {
 
