@@ -145,6 +145,18 @@ namespace AD_FlightGear
                 notifyPropertyChanged("Yaw");
             }
         }
+
+        private string correlation;
+        public string Correlation
+        {
+            get { return correlation; }
+            set
+            {
+                correlation = value;
+                notifyPropertyChanged("Correlation");
+            }
+        }
+
         private double throttle0;
         public double Throttle0
         {
@@ -448,6 +460,7 @@ namespace AD_FlightGear
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
                 GraphChoose = GraphChooseIn.GetRange(0, Convert.ToInt32(time));
+                Correlation = dBflight.MapDb[chooseIndex]._vectorFloat[time].ToString("0.0");
             }
         }
         public void start(int length)
