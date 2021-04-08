@@ -58,7 +58,16 @@ namespace AD_FlightGear
                 return modelFG.Time;
             }
         }
-        
+
+        public string VM_PathDll
+        {
+            get
+            {
+
+                return modelFG.PathDll;
+            }
+        }
+
         public DBflightGear VM_dBflight
         {
             get

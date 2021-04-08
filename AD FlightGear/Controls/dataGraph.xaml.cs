@@ -46,16 +46,25 @@ namespace AD_FlightGear.Controls
             InitializeComponent();
             buttons = new List<Button>();
         }
-        /*
-         * public void initializeDll
-         * {
-         *      try{
-         *      Assembly dll = Assembly.LoadFile(PathDll);
+        
+/*          public void initializeDll()
+         {
+              try{
+              Assembly dll = Assembly.LoadFile(PathDll);
                 Type[] type = dll.GetExportedTypes();
-                c = Activator.CreateInstance(type[0]);
+
+                foreach(Type t in type)
+                {
+                    if (t.Name == "Graph_I")
+                    {
+                        c = Activator.CreateInstance(t);
+                    }
+                }
                 DLLgraph.Children.Add(c.create());
-         *        }
-         * }
+            }
+            catch { "error dll"; }*/
+         // }
+/*
          * 
          * public void updateChoose()
          * {
@@ -63,14 +72,14 @@ namespace AD_FlightGear.Controls
          * 
          * }
 
-         * public void updatedLine(long time)
+         * public void updateTime(double time)
          * {
          * 
          *    // update all the graphs
          *    c.updateTime(Time);
          * }
          */
-        public void addButtons()
+public void addButtons()
         {
             length = graphs_VM.VM_dBflight.MapDb.Count;
             for (int i = 0; i < graphs_VM.VM_dBflight.MapDb.Count; i++)
