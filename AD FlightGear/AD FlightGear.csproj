@@ -93,14 +93,22 @@
     <Compile Include="Controls\FlightData.xaml.cs">
       <DependentUpon>FlightData.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\joystick.xaml.cs">
+      <DependentUpon>joystick.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\OpenFilesV.xaml.cs">
       <DependentUpon>OpenFilesV.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\stick.xaml.cs">
+      <DependentUpon>stick.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\twoSliders.xaml.cs">
       <DependentUpon>twoSliders.xaml</DependentUpon>
     </Compile>
     <Compile Include="graphs_vm.cs" />
+    <Compile Include="joystickVM.cs" />
     <Compile Include="twoSlidersVM.cs" />
+    <Compile Include="ViewModel.cs" />
     <Compile Include="VM_FlightData.cs" />
     <Compile Include="VM_OpenFiles.cs" />
     <Page Include="Controls\dataGraph.xaml">
@@ -111,7 +119,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Controls\joystick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Controls\OpenFilesV.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\stick.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,6 +190,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="playback_small.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
