@@ -100,7 +100,7 @@ namespace AD_FlightGear
         public void createListDataFeature()
         {
             XmlDocument reader = new XmlDocument();
-            reader.Load(@"C:\Users\97255\source\repos\flight gear\playback_small.xml");
+            reader.Load(@"playback_small.xml");
             XmlNodeList NodeList = reader.GetElementsByTagName("node");
             XmlNodeList NameList = reader.GetElementsByTagName("name");
             XmlNodeList TypeList = reader.GetElementsByTagName("type");

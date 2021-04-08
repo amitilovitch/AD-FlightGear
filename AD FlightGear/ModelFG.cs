@@ -32,13 +32,24 @@ namespace AD_FlightGear
             get { return dBflight; }
             set { dBflight = value; }
         }
+
+        private DBflightGear dBflightReg;
+
+        public DBflightGear DBflightReg
+        {
+            get { return dBflightReg; }
+            set { dBflightReg = value; }
+        }
         public ModelFG()
         {
             dBflight = new DBflightGear();
+            dBflightReg = new DBflightGear();
             GraphChoose = new List<DataPoint>();
             GraphCorr = new List<DataPoint>();
             GraphChooseIn = new List<DataPoint>();
             GraphCorrIn = new List<DataPoint>();
+            pointsRun = new List<DataPoint>();
+            pointsReg = new List<DataPoint>();
         }
         private string pathCsv;
         public string PathCsv
@@ -48,6 +59,17 @@ namespace AD_FlightGear
             {
                 pathCsv = value;
                 notifyPropertyChanged("PathCsv");
+            }
+        }
+
+        private string pathCsvReg;
+        public string PathCsvReg
+        {
+            get { return pathCsvReg; }
+            set
+            {
+                pathCsvReg = value;
+                notifyPropertyChanged("PathCsvReg");
             }
         }
 
@@ -200,7 +222,7 @@ namespace AD_FlightGear
             }
         }
 
-        private double stickX;
+/*        private double stickX;
         public double StickX
         {
             get { return stickX; }
@@ -220,7 +242,7 @@ namespace AD_FlightGear
                 this.stickY = value;
                 notifyPropertyChanged("stickY");
             }
-        }
+        }*/
 
         private string timePassed;
         public string TimePassed
@@ -248,11 +270,12 @@ namespace AD_FlightGear
             get { return chooseIndex; }
             set
             {
-
                 chooseIndex = value;
                 notifyPropertyChanged("ChooseIndex");
                 GraphCorrIn = PointList(ListTime(), dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
                 GraphChooseIn = PointList(ListTime(), dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.Length);
+                pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[dBflightReg.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflightReg.Length);
+                pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
             }
         }
 
@@ -262,7 +285,6 @@ namespace AD_FlightGear
             get { return graphChoose; }
             set
             {
-                //graphChoose = value;
                 graphChoose = value;
                 notifyPropertyChanged("GraphChoose");
             }
@@ -288,6 +310,28 @@ namespace AD_FlightGear
                 notifyPropertyChanged("GraphCorrIn");
             }
         }
+
+        private List<DataPoint> pointsReg;
+        public List<DataPoint> PointsReg
+        {
+            get { return pointsReg; }
+            set
+            {
+                pointsReg = value;
+                notifyPropertyChanged("PointsChooseReg");
+            }
+        }
+        private List<DataPoint> pointsRun;
+        public List<DataPoint> PointsRun
+        {
+            get { return pointsRun; }
+            set
+            {
+                graphCorrIn = value;
+                notifyPropertyChanged("PointsRun");
+            }
+        }
+
 
 
         private List<DataPoint> graphCorr;
@@ -431,18 +475,7 @@ namespace AD_FlightGear
         }
 
 
-        public void Initialize()
-        {
-            //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
-            speedHZ = 1;
-            dBflight._PathCsv = pathCsv;
-            dBflight._PathXml = @"playback_small.xml";
-            dBflight.InitializeDB();
-            initGraphs();
-            this.defaultClock();
 
-            //start(dBflight.Length); 
-        }
         public List<float> ListTime()
         {
             List<float> listTime = new List<float>();
@@ -469,7 +502,22 @@ namespace AD_FlightGear
             GraphCorrIn = PointList(ListTime(), dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
             GraphChooseIn = PointList(ListTime(), dBflight.MapDb[ChooseIndex]._vectorFloat, dBflight.Length);
         }
+        public void InitializeDbReg()
+        {
+            //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
+            dBflightReg._PathCsv = pathCsvReg;
+            dBflightReg.InitializeDB();
+        }
 
+        public void InitializeDbRun()
+        {
+            //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
+            speedHZ = 1;
+            dBflight._PathCsv = pathCsv;
+            dBflight._PathXml = @"playback_small.xml";
+            dBflight.InitializeDB();
+            initGraphs();
+            this.defaultClock();
+        }
     }
-
 }

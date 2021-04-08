@@ -6,21 +6,13 @@
              xmlns:local="clr-namespace:AD_FlightGear.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="75" d:DesignWidth="300">
-    <Grid>
+    <Grid Margin="0,0,10,0">
         <Image HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="140" Margin="0,53,0,0"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="0,47,0,0" VerticalAlignment="Top" Width="150" RenderTransformOrigin="0.5,0.5" Height="28">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-0.529"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
-        <TextBlock HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" Text="Open csv" VerticalAlignment="Top" Width="72"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="82,10,0,0" VerticalAlignment="Top" Width="58" Click="Button_csv"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top" Width="20" Click="Button_csv"/>
         <TextBlock HorizontalAlignment="Left" Margin="144,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438"><Run Text="Open dll"/></TextBlock>
-        <Button Content="..." HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Width="58" Click="Button_dll"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="206,10,0,0" VerticalAlignment="Top" Width="20" Click="Button_dll"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="88,45,0,0" VerticalAlignment="Top" Width="20" Click="openCsvRun"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,47,0,-4" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78"/>
     </Grid>
 </UserControl>

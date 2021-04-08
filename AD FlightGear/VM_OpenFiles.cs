@@ -39,11 +39,18 @@ namespace AD_FlightGear
             set { model.PathCsv = value; }
         }
 
+        public string VM_PathCsvReg
+        {
+            get { return model.PathCsvReg; }
+            set { model.PathCsvReg = value; }
+        }
+
         public string VM_PathDll
         {
             get { return model.PathDll; }
             set { model.PathDll = value; }
         }
-        public void initDB() { model.Initialize(); }
+        public void initDBreg() { model.InitializeDbReg(); }
+        public void initDBrun() { model.InitializeDbRun(); }
     }
 }

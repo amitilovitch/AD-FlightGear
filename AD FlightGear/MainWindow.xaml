@@ -19,7 +19,7 @@
         <Controls:playStopButtons x:Name="playStopButtons" Margin="137,324,540.333,210.667"/>
         <Controls:timeSlider x:Name="timeSliders" Margin="0,440,0.333,-94.333"/>
         <Controls:Clock x:Name="clock" Margin="0,129,593.333,198.667"/>
-
+        
 
     </Grid>
 </Window>

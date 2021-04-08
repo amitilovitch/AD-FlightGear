@@ -36,7 +36,7 @@ namespace AD_FlightGear.Controls
         }
 
 
-        private void Button_csv(object sender, RoutedEventArgs e)
+        private void Button_csv_reg(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             openFileDialog.Multiselect = false;
@@ -46,7 +46,7 @@ namespace AD_FlightGear.Controls
             {
                 vM_OpenFiles.VM_PathCsv = openFileDialog.FileNames[0];
             }
-            vM_OpenFiles.initDB();
+            vM_OpenFiles.initDBreg();
         }
 
         private void Button_dll(object sender, RoutedEventArgs e)
@@ -59,6 +59,19 @@ namespace AD_FlightGear.Controls
             {
                 vM_OpenFiles.VM_PathDll = openFileDialog.FileNames[0];
             }
+        }
+
+        private void openCsvRun(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Multiselect = false;
+            openFileDialog.Filter = "csv files (*.csv)|*.csv|All files (*.*)|*.*";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (openFileDialog.ShowDialog() == true)
+            {
+                vM_OpenFiles.VM_PathCsvReg = openFileDialog.FileNames[0];
+            }
+            vM_OpenFiles.initDBrun();
         }
     }
 }
