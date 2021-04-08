@@ -6,14 +6,15 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows;
+using OxyPlot;
 
 
 
 namespace AD_FlightGear
 {
-    using OxyPlot;
     public class ModelFG : INotifyPropertyChanged
     {
+
         //INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
         public void notifyPropertyChanged(string propName)
@@ -62,7 +63,8 @@ namespace AD_FlightGear
         public string Hdg
         {
             get { return hdg; }
-            set {
+            set
+            {
                 hdg = value;
                 notifyPropertyChanged("Hdg");
             }
@@ -173,6 +175,28 @@ namespace AD_FlightGear
             }
         }
 
+        private double stickX;
+        public double StickX
+        {
+            get { return stickX; }
+            set
+            {
+                this.stickX = value;
+                notifyPropertyChanged("StickX");
+            }
+        }
+
+        private double stickY;
+        public double StickY
+        {
+            get { return stickY; }
+            set
+            {
+                this.stickY = value;
+                notifyPropertyChanged("stickY");
+            }
+        }
+
         private string timePassed;
         public string TimePassed
         {
@@ -255,7 +279,7 @@ namespace AD_FlightGear
         public bool Stop
         {
             get { return stop; }
-            set 
+            set
             {
                 stop = value;
                 notifyPropertyChanged("Stop");
@@ -266,7 +290,7 @@ namespace AD_FlightGear
         {
             get { return pause; }
             set
-            { 
+            {
                 pause = value;
                 notifyPropertyChanged("Pause");
             }
@@ -276,7 +300,7 @@ namespace AD_FlightGear
         {
             get { return time; }
             set
-            { 
+            {
                 time = value;
                 notifyPropertyChanged("Time");
             }
@@ -292,7 +316,7 @@ namespace AD_FlightGear
         private float speedHZ;
         public float SpeedHZ
         {
-            get { return speedHZ*10; }
+            get { return speedHZ * 10; }
             set
             {
                 speedHZ = value;
@@ -343,12 +367,13 @@ namespace AD_FlightGear
                 Yaw = dBflight.MapDb[DBflight.YawIndex]._vectorFloat[time].ToString("0.0");
 
                 //to stick
-                Throttle0 =Convert.ToDouble(dBflight.MapDb[DBflight.Throttle0Index]._vectorFloat[time]);
+                Throttle0 = Convert.ToDouble(dBflight.MapDb[DBflight.Throttle0Index]._vectorFloat[time]);
                 Throttle1 = Convert.ToDouble(dBflight.MapDb[DBflight.Throttle1Index]._vectorFloat[time]);
                 Rudder = Convert.ToDouble(dBflight.MapDb[DBflight.RudderIndex]._vectorFloat[time]);
                 Alieron = Convert.ToDouble(dBflight.MapDb[DBflight.AlieronIndex]._vectorFloat[time]);
                 Elevator = Convert.ToDouble(dBflight.MapDb[DBflight.ElevatorIndex]._vectorFloat[time]);
-
+                StickX = Alieron * 20 + 55.5;
+                StickY = Elevator * 20 + 55.5;
 
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
@@ -367,8 +392,9 @@ namespace AD_FlightGear
                         Time++;
                         notifyAllByTime(time);
 
-                        Thread.Sleep(Convert.ToInt32(1000/SpeedHZ));
-                    } if (time >= length)
+                        Thread.Sleep(Convert.ToInt32(1000 / SpeedHZ));
+                    }
+                    if (time >= length)
                     {
                         break;
                     }
