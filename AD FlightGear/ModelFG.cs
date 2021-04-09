@@ -15,6 +15,18 @@ namespace AD_FlightGear
     using OxyPlot;
     public class ModelFG : INotifyPropertyChanged
     {
+        /// ///////////////////////////////////////////////////////////
+        private int length;
+        public int Length {
+            get { return DBflight.Length; }
+            set { DBflight.Length = value;
+                notifyPropertyChanged("Length");
+            }
+        } 
+
+
+        /// ///////////////////////////////////////////////////////////
+
         //INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
         public void notifyPropertyChanged(string propName)
@@ -198,7 +210,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("Elevator");
             }
         }
-
+        
         private string timePassed;
         public string TimePassed
         {
@@ -312,7 +324,10 @@ namespace AD_FlightGear
         private int sec;
         public int Sec
         {
-            get { return Convert.ToInt32(time / SpeedHZ); }
+            get {
+                sec = Convert.ToInt32(Time / SpeedHZ);
+                return sec;
+            }
             set { sec = value; }
         }
 
@@ -332,6 +347,10 @@ namespace AD_FlightGear
             Sec = 0;
             int duration = DBflight.Length / 10;
             Time = 0;
+
+            // after recieving CSV file, notifying length update:
+            notifyPropertyChanged("Length"); ////////////////////////////////////////////////////////
+
 
             TimeSpan t_passed = TimeSpan.FromSeconds(sec);
             TimePassed = t_passed.ToString(@"hh\:mm\:ss");
@@ -385,7 +404,7 @@ namespace AD_FlightGear
         }
         public void start(int length)
         {
-            Time = 0;
+            Time = 0; /////////////??????????????????????????????????
             new Thread(delegate ()
             {
                 while (!stop)
@@ -410,6 +429,8 @@ namespace AD_FlightGear
 
         public void Initialize()
         {
+            Length = 0;////////////////////////////////////////////
+            Time = 0;/////////////////////////////////////////////////
             //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
             speedHZ = 1;
             dBflight._PathCsv = pathCsv;
@@ -417,7 +438,8 @@ namespace AD_FlightGear
             dBflight.InitializeDB();
             initGraphs();
             this.defaultClock();
-
+            StickX = 55.5;
+            StickY = 55.5;
             //start(dBflight.Length); 
         }
         public List<float> ListTime()

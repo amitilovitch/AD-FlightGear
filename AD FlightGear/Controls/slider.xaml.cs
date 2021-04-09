@@ -16,26 +16,25 @@ using System.Windows.Shapes;
 namespace AD_FlightGear.Controls
 {
     /// <summary>
-    /// Interaction logic for joystick.xaml
+    /// Interaction logic for slider.xaml
     /// </summary>
-    public partial class joystick : UserControl
+    public partial class slider : UserControl
     {
-        public joystick()
+        timeSliderViewModel vm;
+        public slider()
         {
             InitializeComponent();
         }
-        private joystickVM vm;
-        public joystickVM VM
+
+        private void f(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            get { return vm; }
-            set { this.vm = value; }
+            vm.changeTime(e.NewValue);
+            vm.changeClockTime();
         }
-        private void centerKnob_Completed(object sender, EventArgs e)
+
+        public void setVM(timeSliderViewModel vm)
         {
-        }
-        public void setVM(joystickVM newvm) /// לבדוק אם הוא יכול גם ללכת לסטר של התכונה
-        {
-            this.vm = newvm;
+            this.vm = vm;
             DataContext = vm;
         }
     }

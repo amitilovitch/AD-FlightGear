@@ -90,7 +90,7 @@ namespace AD_FlightGear
         public void createListLines()
         {
             _ListLine = File.ReadAllLines(_PathCsv);
-            length = _listLine.Length;
+            Length = _listLine.Length; ////////////////////////////////
 
             for (int i = 0; i < length; i++)
             {

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Emoji;/// /////////////////////////////////////////////
+
 
 namespace AD_FlightGear.Controls
 {
@@ -47,24 +49,28 @@ namespace AD_FlightGear.Controls
                 pauseFlag = false;
                 stopFlag = false;
                 vm.StartVideo(false, false);
-                Uri uri = new Uri("C:\\Users\\97255\\Desktop\\pause.png");
-                playImage.ImageSource = new BitmapImage(uri);
+                /*               Uri uri = new Uri("C:\\Users\\97255\\Desktop\\pause.png");
+                               playImage.ImageSource = new BitmapImage(uri);*/
+                this.playButton.Content = "⏸";
             }
             else if (firstP == false && pauseFlag == false && stopFlag == false)
             {
                 // pressed paused after loop started - needs to stop loop for the time being
                 pauseFlag = true;
-                vm.SetPause(true); 
-                  Uri uri = new Uri("C:\\Users\\97255\\Desktop\\play.png");
-                playImage.ImageSource = new BitmapImage(uri);
+                vm.SetPause(true);
+                /*                  Uri uri = new Uri("C:\\Users\\97255\\Desktop\\play.png");
+                                playImage.ImageSource = new BitmapImage(uri);*/
+                this.playButton.Content = "▶️";
             }
             else if (firstP == false && pauseFlag == true && stopFlag == false)
             {
                 // pressed play after the loop started - continue the loop
                 pauseFlag = false;
                 vm.SetPause(false);
-                Uri uri = new Uri("C:\\Users\\97255\\Desktop\\pause.png");
-                playImage.ImageSource = new BitmapImage(uri);
+ /*               Uri uri = new Uri("C:\\Users\\97255\\Desktop\\pause.png");
+                playImage.ImageSource = new BitmapImage(uri);*/
+                this.playButton.Content = "⏸";
+
             }
         }
 
@@ -76,8 +82,9 @@ namespace AD_FlightGear.Controls
                 pauseFlag = true;
                 firstP = true;
                 vm.SetStop(true);
-                Uri uri = new Uri("C:\\Users\\97255\\Desktop\\play.png");
-                playImage.ImageSource = new BitmapImage(uri);
+                /*                Uri uri = new Uri("C:\\Users\\97255\\Desktop\\play.png");
+                                playImage.ImageSource = new BitmapImage(uri);*/
+                this.playButton.Content = "▶️";
             }
         }
     }
