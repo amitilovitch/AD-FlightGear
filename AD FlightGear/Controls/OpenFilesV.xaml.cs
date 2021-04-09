@@ -49,7 +49,7 @@ namespace AD_FlightGear.Controls
             vM_OpenFiles.initDBreg();
         }
 
-        private void Button_dll(object sender, RoutedEventArgs e)
+/*        private void Button_dll(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             openFileDialog.Multiselect = false;
@@ -59,7 +59,7 @@ namespace AD_FlightGear.Controls
             {
                 vM_OpenFiles.VM_PathDll = openFileDialog.FileNames[0];
             }
-        }
+        }*/
 
         private void openCsvRun(object sender, RoutedEventArgs e)
         {

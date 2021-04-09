@@ -81,6 +81,7 @@ namespace AD_FlightGear
             {
                 pathCsv = value;
                 notifyPropertyChanged("PathDll");
+                initializeDll();
             }
         }
         private dynamic c;

@@ -47,25 +47,6 @@ namespace AD_FlightGear.Controls
             buttons = new List<Button>();
         }
         
-/*       public void initializeDll()
-         {
-              try{
-              Assembly dll = Assembly.LoadFile(PathDll);
-                Type[] type = dll.GetExportedTypes();
-
-                foreach(Type t in type)
-                {
-                    if (t.Name == "Graph_I")
-                    {
-                        c = Activator.CreateInstance(t);
-                    }
-                }
-                DLLgraph.Children.Add(c.create());
-            }
-            catch { "error dll"; }*/
-         // }
-
-         
 public void addButtons()
         {
             length = graphs_VM.VM_dBflight.MapDb.Count;
