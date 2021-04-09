@@ -50,8 +50,8 @@ namespace AD_FlightGear
             this.clock.setVM(vm_clock);
 
             graphs_vm graphs = new graphs_vm(modelFG);
-            dataGraphV.set_graphs_VM(graphs);
-            dataGraphV.addButtons();
+            dataGraph_V.set_graphs_VM(graphs);
+            dataGraph_V.addButtons();
 
             VM_OpenFiles vM_OpenFiles = new VM_OpenFiles(modelFG);
             OpenFilesV.setVM_OpenFiles(vM_OpenFiles);
@@ -69,6 +69,11 @@ namespace AD_FlightGear
         }
 
         private void sliders2_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dataGraphV_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

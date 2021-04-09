@@ -11,13 +11,14 @@ namespace AD_FlightGear
     using System.Collections.Generic;
     
     using OxyPlot;
-    public class graphs_vm : INotifyPropertyChanged 
+    public class graphs_vm : INotifyPropertyChanged
     {
         private ModelFG modelFG;
-        private IList<DataPoint> vM_Points;
         public string Title { get; private set; }
-        //List<DataPoint> return_list { get; set; }
-        public IList<DataPoint> VM_Points 
+        public string Title_upright { get; private set; }
+        private IList<DataPoint> vM_Points;
+
+        public IList<DataPoint> VM_Points
         {
             get
             {
@@ -26,25 +27,28 @@ namespace AD_FlightGear
             set
             {
                 vM_Points = value;
-                NotifyPropertyChanged("VM_Points");
+                notifyPropertyChanged("VM_Points");
             }
         }
+
         public graphs_vm(ModelFG modelFG)
         {
             this.modelFG = modelFG;
             modelFG.PropertyChanged +=
                 delegate (Object sender, PropertyChangedEventArgs e)
                 {
-                    NotifyPropertyChanged("VM_" + e.PropertyName);
+                    notifyPropertyChanged("VM_" + e.PropertyName);
                 };
             this.Title = "Data Graph";
+            this.Title_upright = "corellation";
             VM_Points = new List<DataPoint>
-                        {
-                        };
+            {
+
+            };
         }
         //public event PropertyChangedEventHandler PropChanged;
         public event PropertyChangedEventHandler PropertyChanged;
-        public void NotifyPropertyChanged(string propName)
+        public void notifyPropertyChanged(string propName)
         {
             if (PropertyChanged != null)
             {
@@ -59,34 +63,97 @@ namespace AD_FlightGear
             }
         }
 
-        public string VM_PathDll
-        {
-            get
-            {
-
-                return modelFG.PathDll;
-            }
-        }
-
-        public DBflightGear VM_dBflight
+        public DBflightGear VM_DBflight
         {
             get
             {
                 return modelFG.DBflight;
             }
         }
+        /*
+        public IList<DataPoint> VM_GraphPearson
+        {
+            get
+            {
+                return modelFG.GraphPearson;
+            }
+        }
+        */
+        public int VM_ChooseIndex
+        {
+            get
+            {
+                return modelFG.ChooseIndex;
+            }
+            set
+            {
+                modelFG.ChooseIndex = value;
+                notifyPropertyChanged("VM_ChooseIndex");
+            }
+        }
+        public IList<DataPoint> VM_GraphCorr
+        {
+            get
+            {
+                return modelFG.GraphCorr;
+            }
+        }
+        public IList<DataPoint> VM_GraphChoose
+        {
+            get
+            {
+                return modelFG.GraphChoose;
+            }
+        }
+        //חדש
+        public string VM_PathDll
+        {
+            get { return modelFG.PathDll; }
+            set
+            {
+                modelFG.PathDll = value;
+                notifyPropertyChanged("VM_PathDll");
+            }
+        }
+        //חדש
+        public dynamic VM_C
+        {
+            get { return modelFG.C; }
+            set
+            {
+                modelFG.C = value;
+                notifyPropertyChanged("VM_C");
+            }
+        }
+        public dynamic VM_Correlation
+        {
+            get { return modelFG.Correlation; }
+            set
+            {
+                modelFG.Correlation = value;
+                notifyPropertyChanged("VM_Correlation");
+            }
+        }
+        /*
+        public IList<DataPoint> VM_Points
+        {
+            get
+            {
+                return modelFG.Points;
+            }
+        }
+        */
         public void DataPoints_6(int value)
         {
-            
+
             List<DataPoint> return_list = new List<DataPoint>
             {
             };
-            //modelFG.dBflight.MapDb[value]
-            //return_list = null;
-                for (int i = 0; i < modelFG.Time;i++)
-                {
-                    return_list.Add(new DataPoint(modelFG.DBflight.MapDb[value]._vectorFloat[i], i));
-                }
+
+            for (int i = 0; i < modelFG.Time; i++)
+            {
+                return_list.Add(new DataPoint(i, modelFG.DBflight.MapDb[value]._vectorFloat[i]));
+            }
             VM_Points = return_list;
         }
     }
