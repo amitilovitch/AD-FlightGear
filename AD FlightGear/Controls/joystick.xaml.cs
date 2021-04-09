@@ -33,6 +33,10 @@ namespace AD_FlightGear.Controls
         private void centerKnob_Completed(object sender, EventArgs e)
         {
         }
+/*
+        public void Setter() {
+            this.stick.Margin =  "2, 2, 6, 7";
+        }*/
         public void setVM(joystickVM newvm) /// לבדוק אם הוא יכול גם ללכת לסטר של התכונה
         {
             this.vm = newvm;

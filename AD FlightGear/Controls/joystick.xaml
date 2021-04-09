@@ -57,6 +57,6 @@
             </Path.RenderTransform>
         </Path>
         
-        <local:stick x:Name="stick" Canvas.Left="{Binding VM_StickX}" Canvas.Top="{Binding VM_StickY}" Height="44" Width="44"/>
+        <local:stick x:Name="stick" Canvas.Left="{Binding VM_StickX}" Canvas.Top="{Binding VM_StickY}" Height="44" Width="44" Margin="55.5"/>
     </Canvas>
 </UserControl>
