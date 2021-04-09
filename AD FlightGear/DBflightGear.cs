@@ -11,6 +11,55 @@ namespace AD_FlightGear
 {
     public class DBflightGear
     {
+        double avg(float[] x, int size)
+        {
+            double sum = 0;
+            for (int i = 0; i < size; sum += x[i], i++) ;
+            return sum / size;
+        }
+
+        // returns the variance of X and Y
+        double var(float[] x, int size)
+        {
+            double av = avg(x, size);
+            double sum = 0;
+            for (int i = 0; i < size; i++)
+            {
+                sum += x[i] * x[i];
+            }
+            return sum / size - av * av;
+        }
+
+        // returns the covariance of X and Y
+        double cov(float[] x, float[] y, int size)
+        {
+            double sum = 0;
+            for (int i = 0; i < size; i++)
+            {
+                sum += x[i] * y[i];
+            }
+            sum /= size;
+
+            return sum - avg(x, size) * avg(y, size);
+        }
+
+
+        // returns the Pearson correlation coefficient of X and Y
+        double pearson(float[] x, float[] y, int size)
+        {
+            if (size == 0)
+            {
+                return 0;
+            }
+            double tempCov = cov(x, y, size);
+            double sqrtt = System.Math.Sqrt(var(x, size)) * System.Math.Sqrt(var(y, size));
+            if (tempCov == 0 || sqrtt == 0)
+            {
+                return 0;
+            }
+            return tempCov / sqrtt;
+            //return cov(x, y, size) / (System.Math.Sqrt(var(x, size)) * System.Math.Sqrt(var(y, size)));
+        }
         private int length;
         public int Length
         {
@@ -182,15 +231,43 @@ namespace AD_FlightGear
                 }
 
             }
-        } 
+        }
+
+        public void findCorrFeatures()
+        {
+
+            List<float> checkedList1;
+            List<float> checkedList2;
+            double pearsonReasult = 0;
+            double tempPearsonReasult, tempThreshold;
 
 
+            for (int i = 0; i < mapDb.Count; i++)
+            {
+                checkedList1 = mapDb[i]._vectorFloat;
+                for (int j = i + 1; j < mapDb.Count; j++)
+                {
+                    checkedList2 = mapDb[j]._vectorFloat;
+                    tempPearsonReasult = System.Math.Abs(pearson(checkedList1.ToArray(), checkedList2.ToArray(), checkedList1.Count));
+                    if (tempPearsonReasult > mapDb[i].CorrResult)
+                    {
+                        mapDb[i].CorrIndex = j;
+                        mapDb[i].CorrResult = tempPearsonReasult;
+                        mapDb[j].CorrIndex = i;
+                        mapDb[j].CorrResult = tempPearsonReasult;
+
+                    }
+                    tempPearsonReasult = 0;
+                }
+            }
+        }
         public void InitializeDB()
         {
             createListLines();
             createListDataFeature();
             createVectors();
             findIndexFeatures();
+            findCorrFeatures();
         }
     }
 }
