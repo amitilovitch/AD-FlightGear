@@ -9,7 +9,7 @@
     <Grid Margin="0,0,10,0">
         <Image HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="140" Margin="0,53,0,0"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top" Width="20" Click="Button_csv"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="88,10,0,0" VerticalAlignment="Top" Width="20" Click="Button_csv_reg"/>
         <Button Content="..." HorizontalAlignment="Left" Margin="88,45,0,0" VerticalAlignment="Top" Width="20" Click="openCsvRun"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,47,0,-4" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78"/>
     </Grid>
