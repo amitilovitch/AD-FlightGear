@@ -47,7 +47,7 @@ namespace AD_FlightGear.Controls
             buttons = new List<Button>();
         }
         
-/*          public void initializeDll()
+/*       public void initializeDll()
          {
               try{
               Assembly dll = Assembly.LoadFile(PathDll);
@@ -64,21 +64,8 @@ namespace AD_FlightGear.Controls
             }
             catch { "error dll"; }*/
          // }
-/*
-         * 
-         * public void updateChoose()
-         * {
-         *     c.updateChoose(PointsRun, PointsReg, Time);
-         * 
-         * }
 
-         * public void updateTime(double time)
-         * {
-         * 
-         *    // update all the graphs
-         *    c.updateTime(Time);
-         * }
-         */
+         
 public void addButtons()
         {
             length = graphs_VM.VM_dBflight.MapDb.Count;
