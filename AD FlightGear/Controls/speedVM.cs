@@ -18,10 +18,15 @@ namespace AD_FlightGear
         //private float speed;
         public string VM_Speed
         {
-            get { return model.SpeedHZ.ToString(); }
+            get {
+                float i = model.SpeedHZ/10;
+                string s = i.ToString();
+                return s; }
             set
             {
                 //speed = value;
+                if (float.Parse(value) <= 0)
+                    throw new Exception();
                 model.SpeedHZ = float.Parse(value);
             }
         }
