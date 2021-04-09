@@ -81,6 +81,7 @@ namespace AD_FlightGear
                 pathCsv = value;
                 notifyPropertyChanged("PathDll");
                 initializeDll();
+                notifyAllByChooseIndex();
             }
         }
         private dynamic c;
@@ -319,7 +320,7 @@ namespace AD_FlightGear
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion" + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
-            c.updateChoose(PointsRun, PointsReg, Time);
+            //c.updateChoose(PointsRun, PointsReg, Time);
         }
 
         private List<DataPoint> graphChoose;
@@ -502,12 +503,15 @@ namespace AD_FlightGear
                 GraphChoose = GraphChooseIn.GetRange(0, Convert.ToInt32(time));
 
                 //to plugin
-                c.updatTime(time);
+
+
+                //c.updatTime(time);
             }
         }
         public void start(int length)
         {
-            Time = 0; 
+            Time = 0;
+            ChooseIndex = 0;
             new Thread(delegate ()
             {
                 while (!stop)
@@ -558,8 +562,8 @@ namespace AD_FlightGear
         public void InitializeDbReg()
         {
             //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
-            dBflightReg._PathCsv = pathCsvReg;
-            dBflightReg.InitializeDB();
+            dBflightReg._PathCsvReg = pathCsvReg;
+            dBflightReg.InitializeDBreg();
         }
 
         public void InitializeDbRun()
@@ -568,7 +572,7 @@ namespace AD_FlightGear
             speedHZ = 1;
             dBflight._PathCsv = pathCsv;
             dBflight._PathXml = @"playback_small.xml";
-            dBflight.InitializeDB();
+            dBflight.InitializeDBrun();
             initGraphs();
             this.defaultClock();
         }

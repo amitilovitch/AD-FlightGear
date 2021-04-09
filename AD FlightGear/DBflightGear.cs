@@ -79,6 +79,13 @@ namespace AD_FlightGear
             get {return _pathCsv;}
             set {_pathCsv = value;}
         }
+
+        private string _pathCsvReg;
+        public string _PathCsvReg
+        {
+            get { return _pathCsvReg; }
+            set { _pathCsvReg = value; }
+        }
         private string _pathXml;
         public string _PathXml
         {
@@ -136,10 +143,10 @@ namespace AD_FlightGear
              mapDb = new List<MapVector>();
         }
 
-        public void createListLines()
+        public void createListLines(string path)
         {
-            _ListLine = File.ReadAllLines(_PathCsv);
-            Length = _listLine.Length; ////////////////////////////////
+            _ListLine = File.ReadAllLines(path);
+            length = _listLine.Length;
 
             for (int i = 0; i < length; i++)
             {
@@ -261,9 +268,18 @@ namespace AD_FlightGear
                 }
             }
         }
-        public void InitializeDB()
+        public void InitializeDBreg()
         {
-            createListLines();
+            createListLines(_pathCsvReg);
+            createListDataFeature();
+            createVectors();
+            findIndexFeatures();
+            findCorrFeatures();
+        }
+
+        public void InitializeDBrun()
+        {
+            createListLines(_pathCsv);
             createListDataFeature();
             createVectors();
             findIndexFeatures();
