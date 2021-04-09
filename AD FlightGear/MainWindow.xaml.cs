@@ -55,11 +55,7 @@ namespace AD_FlightGear
 
             VM_OpenFiles vM_OpenFiles = new VM_OpenFiles(modelFG);
             OpenFilesV.setVM_OpenFiles(vM_OpenFiles);
-
-/*            Assembly dll = Assembly.LoadFile(@"C:\Users\azran\source\repos\dllAnomally\dllAnomally\bin\Debug\dllAnomally.dll");
-            Type[] type = dll.GetExportedTypes();
-            c = Activator.CreateInstance(type[0]);
-            ohad.Children.Add(c);*/
+            
         } 
 
         private void FlightData_Loaded(object sender, RoutedEventArgs e)

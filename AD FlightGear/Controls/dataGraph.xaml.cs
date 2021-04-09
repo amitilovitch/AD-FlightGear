@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace AD_FlightGear.Controls
 {
@@ -30,6 +31,7 @@ namespace AD_FlightGear.Controls
         public IList<Button> buttons { get; set; }
         
         private graphs_vm graphs_VM;
+        private dynamic c;
 
         public void set_graphs_VM(graphs_vm graphs_)
         {
@@ -44,7 +46,8 @@ namespace AD_FlightGear.Controls
             InitializeComponent();
             buttons = new List<Button>();
         }
-        public void addButtons()
+        
+public void addButtons()
         {
             length = graphs_VM.VM_dBflight.MapDb.Count;
             for (int i = 0; i < graphs_VM.VM_dBflight.MapDb.Count; i++)
