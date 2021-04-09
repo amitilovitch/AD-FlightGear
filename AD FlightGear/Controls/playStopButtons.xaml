@@ -4,20 +4,22 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AD_FlightGear.Controls"
-             mc:Ignorable="d" 
+              xmlns:emoji="clr-namespace:Emoji.Wpf;assembly=Emoji.Wpf"  
+    mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="100" Foreground="#FFFF4040">
     <Grid>
-        <Button x:Name="playButton" Content="" HorizontalAlignment="Left" VerticalAlignment="Center" Width="35" Height="35"  Click="playButtonClick">
+        <Button x:Name="playButton" Content="▶️" HorizontalAlignment="Left" VerticalAlignment="Center" Width="35" Height="35"  Click="playButtonClick">
             <Button.Background>
-                <ImageBrush x:Name="playImage" ImageSource="play.png"/>
-
+                <ImageBrush x:Name="playImage" />
+                <!--ImageSource="play.png"-->
             </Button.Background>
         </Button>
-        <Button x:Name="stopButton1" Content="" HorizontalAlignment="Right" VerticalAlignment="Center" Width="35" Height="35" Click="stopButtonClick">
-            <Button.Background>
+        <Button x:Name="stopButton1" Content="⏹" HorizontalAlignment="Right" VerticalAlignment="Center" Width="35" Height="35" Click="stopButtonClick">
+            <!--<Button.Background>
                 <ImageBrush ImageSource="stop.png"/>
-            </Button.Background>
+            </Button.Background>-->
         </Button>
+        <!--!!!!!!!!!!!!!!!!!!!!!הוספתי ספרייה!!!!!!!!!!!!!!!!!!!!!!-->
 
     </Grid>
 </UserControl>

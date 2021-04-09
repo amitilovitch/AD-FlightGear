@@ -25,6 +25,7 @@ namespace AD_FlightGear.Controls
         public timeSlider()
         {
             InitializeComponent();
+            this.tSlider.Value = 0;
         }
 
         public void setVM(timeSliderViewModel vm)
@@ -37,6 +38,7 @@ namespace AD_FlightGear.Controls
         {
             // calling a function that will call the model and change the time property
             // and then the start loop will continue from a different location.
+            
             vm.changeTime(e.NewValue);
             vm.changeClockTime();
         }

@@ -52,6 +52,7 @@ namespace AD_FlightGear
             graphs_vm graphs = new graphs_vm(modelFG);
             dataGraphV.set_graphs_VM(graphs);
             dataGraphV.addButtons();
+
             VM_OpenFiles vM_OpenFiles = new VM_OpenFiles(modelFG);
             OpenFilesV.setVM_OpenFiles(vM_OpenFiles);
             
@@ -63,6 +64,11 @@ namespace AD_FlightGear
         }
 
         private void joystick_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void sliders2_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

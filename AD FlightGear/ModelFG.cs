@@ -15,6 +15,17 @@ namespace AD_FlightGear
 {
     public class ModelFG : INotifyPropertyChanged
     {
+        /// ///////////////////////////////////////////////////////////
+        private int length;
+        public int Length {
+            get { return DBflight.Length; }
+            set { DBflight.Length = value;
+                notifyPropertyChanged("Length");
+            }
+        } 
+
+
+        /// ///////////////////////////////////////////////////////////
 
         //INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
@@ -278,8 +289,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("Elevator");
             }
         }
-
-
+        
         private string timePassed;
         public string TimePassed
         {
@@ -425,7 +435,10 @@ namespace AD_FlightGear
         private int sec;
         public int Sec
         {
-            get { return Convert.ToInt32(time / SpeedHZ); }
+            get {
+                sec = Convert.ToInt32(Time / SpeedHZ);
+                return sec;
+            }
             set { sec = value; }
         }
 
@@ -445,6 +458,10 @@ namespace AD_FlightGear
             Sec = 0;
             int duration = DBflight.Length / 10;
             Time = 0;
+
+            // after recieving CSV file, notifying length update:
+            notifyPropertyChanged("Length"); ////////////////////////////////////////////////////////
+
 
             TimeSpan t_passed = TimeSpan.FromSeconds(sec);
             TimePassed = t_passed.ToString(@"hh\:mm\:ss");

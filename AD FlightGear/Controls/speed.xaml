@@ -7,7 +7,7 @@
              mc:Ignorable="d" Height="74" Width="58.001">
     <Canvas Margin="0,0,0,45">
         <TextBlock x:Name="text" TextWrapping="Wrap" Text="Speed" VerticalAlignment="Top" Height="24" FontSize="13" Margin="10,50,-1,0" FontWeight="Bold"/>
-        <TextBox x:Name="input" Height="40" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" FontWeight="Bold" TextAlignment="Center" 
+        <TextBox x:Name="input" Height="35" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="17" FontWeight="Bold" TextAlignment="Center" 
                  TextChanged="input_TextChanged" MaxLength="5" KeyDown="KeyDownHandler" Canvas.Left="1" Canvas.Top="10" Width="56"/>
 
 

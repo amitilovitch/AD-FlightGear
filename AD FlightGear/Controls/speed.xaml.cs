@@ -24,7 +24,7 @@ namespace AD_FlightGear.Controls
         public speed()
         {
             InitializeComponent();
-            this.input.Text = "1.0";
+            this.input.Text = "1.00";
         }
 
         private speedVM vm;
@@ -54,9 +54,17 @@ namespace AD_FlightGear.Controls
 
         private void KeyDownHandler(object sender, KeyEventArgs e)
         {
+            //string tmp = String.Copy(e.);
             if (e.Key == Key.Enter)
             {
-                vm.VM_Speed = input.Text;
+                try
+                {
+                    vm.VM_Speed = input.Text;
+                }
+                catch {
+                    this.input.Text ="1.00";
+                    vm.VM_Speed = "1.00";
+                }
             }
         }
     }

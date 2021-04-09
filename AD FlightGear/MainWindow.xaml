@@ -7,19 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Controls:FlightData x:Name="FlightData" Margin="522,0,0,346"/>
-        <Controls:OpenFilesV x:Name="OpenFilesV" Margin="0,390,514,110"/>
-        <Controls:dataGraph  x:Name="dataGraphV"/>
-        <DockPanel x:Name="ohad" Width="150" Height="150"/>
-        <Label x:Name="dd" Width="100" Height="200" Margin="367,72,326.333,298.667"/>  <!--!!!!!!!-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="237*"/>
+            <RowDefinition Height="334*"/>
+        </Grid.RowDefinitions>
+        <Controls:dataGraph  x:Name="dataGraphV" Margin="-1,0,1,0" Grid.RowSpan="2"/>
 
-        <Controls:twoSliders x:Name="sliders2" Margin="477,210,41.333,135.667"/>
-        <Controls:speed x:Name="speed" Margin="342,273,344,173"/>
-        <Controls:joystick x:Name="joystick" Margin="549,230,89.333,135.667"/>
-        <Controls:playStopButtons x:Name="playStopButtons" Margin="137,324,540.333,210.667"/>
-        <Controls:timeSlider x:Name="timeSliders" Margin="0,440,0.333,-94.333"/>
-        <Controls:Clock x:Name="clock" Margin="0,129,593.333,198.667"/>
-        
+        <Controls:FlightData x:Name="FlightData" Margin="522,0,0.333,11.667"/>
+        <Controls:OpenFilesV x:Name="OpenFilesV" Margin="43,217,471,76" Grid.Row="1"/>
+
+        <Controls:twoSliders x:Name="sliders2" Margin="509,209,10,131" Grid.RowSpan="2" Loaded="sliders2_Loaded"/>
+        <Controls:speed x:Name="speed" Margin="477,213,251,47" RenderTransformOrigin="0.471,-0.865" Grid.Row="1"/>
+        <Controls:joystick x:Name="joystick" Margin="567,225,48,140" Grid.RowSpan="2"/>
+        <Controls:playStopButtons x:Name="playStopButtons" Margin="362,217,344,71" RenderTransformOrigin="0.397,-3.019" Grid.Row="1"/>
+        <Controls:timeSlider x:Name="timeSliders" Margin="43,284,30,10" Grid.Row="1"/>
+        <Controls:Clock x:Name="clock" Margin="556,211,37,52" Grid.Row="1"/>
 
     </Grid>
 </Window>
