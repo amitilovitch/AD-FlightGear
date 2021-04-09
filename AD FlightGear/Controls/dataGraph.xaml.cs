@@ -35,10 +35,8 @@ namespace AD_FlightGear.Controls
 
         public void set_graphs_VM(graphs_vm graphs_)
         {
-            
                 this.graphs_VM = graphs_;
-                DataContext = graphs_VM;
-            
+                DataContext = graphs_VM;  
         }
         public dataGraph()
 
