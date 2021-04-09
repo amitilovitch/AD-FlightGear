@@ -24,7 +24,7 @@ namespace AD_FlightGear.Controls
         public speed()
         {
             InitializeComponent();
-            this.input.Text = "1.00";
+            this.input.Text = "01.00";
         }
 
         private speedVM vm;
@@ -60,10 +60,11 @@ namespace AD_FlightGear.Controls
                 try
                 {
                     vm.VM_Speed = input.Text;
+                    input.Text = vm.VM_Speed;
                 }
                 catch {
-                    this.input.Text ="1.00";
-                    vm.VM_Speed = "1.00";
+                    this.input.Text ="01.00";
+                    vm.VM_Speed = "01.00";
                 }
             }
         }

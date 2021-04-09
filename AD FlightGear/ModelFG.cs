@@ -426,7 +426,7 @@ namespace AD_FlightGear
         {
             get
             {
-                sec = Convert.ToInt32(Time / SpeedHZ);
+                sec = Convert.ToInt32(Time / 10);
                 return sec;
             }
             set { sec = value; }
@@ -575,6 +575,7 @@ namespace AD_FlightGear
             dBflight.InitializeDBrun();
             initGraphs();
             this.defaultClock();
+            this.SpeedHZ = 1;
         }
     }
 }
