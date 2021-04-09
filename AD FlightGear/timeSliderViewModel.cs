@@ -41,7 +41,7 @@ namespace AD_FlightGear
         {
             get
             {
-                return model.Length;
+                return model.DBflight.Length;
             }
         }
 

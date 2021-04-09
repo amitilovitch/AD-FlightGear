@@ -495,8 +495,8 @@ namespace AD_FlightGear
                 Rudder = Convert.ToDouble(dBflight.MapDb[DBflight.RudderIndex]._vectorFloat[time]);
                 Alieron = Convert.ToDouble(dBflight.MapDb[DBflight.AlieronIndex]._vectorFloat[time]);
                 Elevator = Convert.ToDouble(dBflight.MapDb[DBflight.ElevatorIndex]._vectorFloat[time]);
-                StickX = Alieron * 20 + 55.5;
-                StickY = Elevator * 20 + 55.5;
+                StickX = Alieron * 35 ;
+                StickY = Elevator * 35 ;
 
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
