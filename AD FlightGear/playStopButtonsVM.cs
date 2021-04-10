@@ -56,5 +56,17 @@ namespace AD_FlightGear
             model.start(model.DBflight.Length);
         }
 
+
+        public bool IsRegLoaded
+        {
+            get { return model.IsRegLoaded; }
+            set { model.IsRegLoaded = value; }
+        }
+
+        public bool IsRunLoaded
+        {
+            get { return model.IsRunLoaded; }
+            set { model.IsRunLoaded = value; }
+        }
     }
 }

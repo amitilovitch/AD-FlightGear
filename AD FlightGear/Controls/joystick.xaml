@@ -10,8 +10,18 @@
         <Ellipse HorizontalAlignment="Left" Height="155" VerticalAlignment="Top" Width="155" Canvas.Left="0" RenderTransformOrigin="0.5,0.5" Canvas.Top="0">
             <Ellipse.Fill>
                 <RadialGradientBrush>
-                    <GradientStop Color="#FF2C2A2A" Offset="1" />
-                    <GradientStop Color="#FF3A3737" />
+                    <GradientStop Color="#FF2C2A2A" Offset="0.484"/>
+                    <GradientStop Color="#FF3A3737"/>
+                    <GradientStop Color="#FFFBF9F9" Offset="0.312"/>
+                </RadialGradientBrush>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Ellipse Height="155" Canvas.Left="0" Width="155">
+            <Ellipse.Fill>
+                <RadialGradientBrush>
+                    <GradientStop Color="#FF2C2A2A" Offset="0.751"/>
+                    <GradientStop Color="#FF3A3737"/>
+                    <GradientStop Color="#FFFBF9F9" Offset="0.312"/>
                 </RadialGradientBrush>
             </Ellipse.Fill>
         </Ellipse>
@@ -56,7 +66,8 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        
+
         <local:stick x:Name="stick" Canvas.Left="{Binding VM_StickX}" Canvas.Top="{Binding VM_StickY}" Height="44" Width="44" Margin="55.5"/>
+
     </Canvas>
 </UserControl>

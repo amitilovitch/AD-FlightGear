@@ -15,18 +15,6 @@ namespace AD_FlightGear
 {
     public class ModelFG : INotifyPropertyChanged
     {
-        /// ///////////////////////////////////////////////////////////
-        private int length;
-        public int Length {
-            get { return DBflight.Length; }
-            set { DBflight.Length = value;
-                notifyPropertyChanged("Length");
-            }
-        } 
-
-
-        /// ///////////////////////////////////////////////////////////
-
         //INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
         public void notifyPropertyChanged(string propName)
@@ -35,6 +23,28 @@ namespace AD_FlightGear
             {
                 this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
+        }
+
+        private int length;
+        public int Length {
+            get { return dBflight.Length; }
+            set { dBflight.Length = value;
+                notifyPropertyChanged("Length");
+            }
+        }
+
+        private bool isRegLoaded = false;
+        public bool IsRegLoaded
+        {
+            get { return isRegLoaded; }
+            set { isRegLoaded = value; }
+        }        
+        
+        private bool isRunLoaded = false;
+        public bool IsRunLoaded
+        {
+            get { return isRunLoaded; }
+            set { isRunLoaded = value; }
         }
 
         private DBflightGear dBflight;
@@ -435,8 +445,9 @@ namespace AD_FlightGear
         private int sec;
         public int Sec
         {
-            get {
-                sec = Convert.ToInt32(Time / SpeedHZ);
+            get
+            {
+                sec = Convert.ToInt32(Time / 10);
                 return sec;
             }
             set { sec = value; }
@@ -460,7 +471,7 @@ namespace AD_FlightGear
             Time = 0;
 
             // after recieving CSV file, notifying length update:
-            notifyPropertyChanged("Length"); ////////////////////////////////////////////////////////
+            notifyPropertyChanged("Length"); 
 
 
             TimeSpan t_passed = TimeSpan.FromSeconds(sec);
@@ -505,8 +516,8 @@ namespace AD_FlightGear
                 Rudder = Convert.ToDouble(dBflight.MapDb[DBflight.RudderIndex]._vectorFloat[time]);
                 Alieron = Convert.ToDouble(dBflight.MapDb[DBflight.AlieronIndex]._vectorFloat[time]);
                 Elevator = Convert.ToDouble(dBflight.MapDb[DBflight.ElevatorIndex]._vectorFloat[time]);
-                StickX = Alieron * 20 + 55.5;
-                StickY = Elevator * 20 + 55.5;
+                StickX = Alieron * 35 ;
+                StickY = Elevator * 35 ;
 
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
@@ -586,6 +597,7 @@ namespace AD_FlightGear
             //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
             dBflightReg._PathCsvReg = pathCsvReg;
             dBflightReg.InitializeDBreg();
+            IsRegLoaded = true;
             copyCorrFromDBRegToDBRun();
         }
 
@@ -599,6 +611,8 @@ namespace AD_FlightGear
             copyCorrFromDBRegToDBRun();
             initGraphs();
             this.defaultClock();
+            this.SpeedHZ = 1;
+            IsRunLoaded = true;
         }
     }
 }

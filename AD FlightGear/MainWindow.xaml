@@ -11,10 +11,10 @@
             <RowDefinition Height="237*"/>
             <RowDefinition Height="334*"/>
         </Grid.RowDefinitions>
-        <Controls:dataGraph  x:Name="dataGraphV" Margin="-1,0,1,0" Grid.RowSpan="2"/>
+        <Controls:dataGraph  x:Name="dataGraph_V" Grid.RowSpan="2" Loaded="dataGraphV_Loaded"/>
 
         <Controls:FlightData x:Name="FlightData" Margin="522,0,0.333,11.667"/>
-        <Controls:OpenFilesV x:Name="OpenFilesV" Margin="43,217,619,47" Grid.Row="1"/>
+        <Controls:OpenFilesV x:Name="OpenFilesV" Margin="25,175,637,89" Grid.Row="1"/>
 
         <Controls:twoSliders x:Name="sliders2" Margin="509,209,10,131" Grid.RowSpan="2" Loaded="sliders2_Loaded"/>
         <Controls:speed x:Name="speed" Margin="477,213,251,47" RenderTransformOrigin="0.471,-0.865" Grid.Row="1"/>

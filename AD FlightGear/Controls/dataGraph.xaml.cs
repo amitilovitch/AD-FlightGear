@@ -27,16 +27,17 @@ namespace AD_FlightGear.Controls
         private int length;
         public string Title_Left { get; set; }
         public Button selectedItem { get; set; }
-        
+
         public IList<Button> buttons { get; set; }
-        
+
         private graphs_vm graphs_VM;
-        private dynamic c;
 
         public void set_graphs_VM(graphs_vm graphs_)
         {
-                this.graphs_VM = graphs_;
-                DataContext = graphs_VM;  
+
+            this.graphs_VM = graphs_;
+            DataContext = graphs_VM;
+
         }
         public dataGraph()
 
@@ -45,14 +46,13 @@ namespace AD_FlightGear.Controls
             InitializeComponent();
             buttons = new List<Button>();
         }
-        
-public void addButtons()
+        public void addButtons()
         {
-            length = graphs_VM.VM_dBflight.MapDb.Count;
-            for (int i = 0; i < graphs_VM.VM_dBflight.MapDb.Count; i++)
+            length = graphs_VM.VM_DBflight.MapDb.Count;
+            for (int i = 0; i < graphs_VM.VM_DBflight.MapDb.Count; i++)
             {
-                buttons.Add(new Button { ButtonContent = graphs_VM.VM_dBflight.MapDb[i].Name, ButtonID = (i).ToString() });
-                
+                buttons.Add(new Button { ButtonContent = graphs_VM.VM_DBflight.MapDb[i].Name, ButtonID = (i).ToString() });
+
             }
             data_list.ItemsSource = buttons;
 
@@ -71,13 +71,11 @@ public void addButtons()
             {
                 object selectedItem_object = data_list.SelectedItem;
                 selectedItem = (Button)selectedItem_object;
-
+                graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
-                //InitializeComponent();
-                //DataContext = graphs_VM;
             }
         }
-    
+
 
         private void ic_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
@@ -87,6 +85,21 @@ public void addButtons()
         private void data_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        //חדש
+        private void Button_dll(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Multiselect = false;
+            openFileDialog.Filter = "dll files (*.dll)|*.dll|All files (*.*)|*.*";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (openFileDialog.ShowDialog() == true)
+            {
+                graphs_VM.VM_PathDll = openFileDialog.FileNames[0];
+                DLLgraph.Children.Add(graphs_VM.VM_C.create());
+
+            }
         }
     }
 }
