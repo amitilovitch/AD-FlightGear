@@ -15,6 +15,18 @@ namespace AD_FlightGear
 {
     public class ModelFG : INotifyPropertyChanged
     {
+        /// ///////////////////////////////////////////////////////////
+        private int length;
+        public int Length {
+            get { return DBflight.Length; }
+            set { DBflight.Length = value;
+                notifyPropertyChanged("Length");
+            }
+        } 
+
+
+        /// ///////////////////////////////////////////////////////////
+
         //INotifyPropertyChanged implementation
         public event PropertyChangedEventHandler PropertyChanged;
         public void notifyPropertyChanged(string propName)
@@ -95,7 +107,7 @@ namespace AD_FlightGear
             }
         }
 
-        public void initializeDll()
+        public void initializeDll ()
         {
             try
             {
@@ -109,8 +121,7 @@ namespace AD_FlightGear
                         c = Activator.CreateInstance(t);
                     }
                 }
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
                 Console.WriteLine("Error load dll", e);
             }
@@ -278,7 +289,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("Elevator");
             }
         }
-
+        
         private string timePassed;
         public string TimePassed
         {
@@ -424,8 +435,7 @@ namespace AD_FlightGear
         private int sec;
         public int Sec
         {
-            get
-            {
+            get {
                 sec = Convert.ToInt32(Time / SpeedHZ);
                 return sec;
             }
@@ -450,7 +460,7 @@ namespace AD_FlightGear
             Time = 0;
 
             // after recieving CSV file, notifying length update:
-            notifyPropertyChanged("Length"); 
+            notifyPropertyChanged("Length"); ////////////////////////////////////////////////////////
 
 
             TimeSpan t_passed = TimeSpan.FromSeconds(sec);
@@ -495,8 +505,8 @@ namespace AD_FlightGear
                 Rudder = Convert.ToDouble(dBflight.MapDb[DBflight.RudderIndex]._vectorFloat[time]);
                 Alieron = Convert.ToDouble(dBflight.MapDb[DBflight.AlieronIndex]._vectorFloat[time]);
                 Elevator = Convert.ToDouble(dBflight.MapDb[DBflight.ElevatorIndex]._vectorFloat[time]);
-                StickX = Alieron * 35 ;
-                StickY = Elevator * 35 ;
+                StickX = Alieron * 20 + 55.5;
+                StickY = Elevator * 20 + 55.5;
 
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
@@ -578,5 +588,3 @@ namespace AD_FlightGear
         }
     }
 }
-
-
