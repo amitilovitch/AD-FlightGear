@@ -59,7 +59,7 @@ namespace AD_FlightGear
 
             VM_OpenFiles vM_OpenFiles = new VM_OpenFiles(modelFG);
             OpenFilesV.setVM_OpenFiles(vM_OpenFiles);
-            
+
         } 
 
         private void FlightData_Loaded(object sender, RoutedEventArgs e)
