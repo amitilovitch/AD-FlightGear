@@ -117,7 +117,7 @@ namespace AD_FlightGear
             }
         }
 
-        public void initializeDll()
+        public void initializeDll ()
         {
             try
             {
@@ -131,8 +131,7 @@ namespace AD_FlightGear
                         c = Activator.CreateInstance(t);
                     }
                 }
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
                 Console.WriteLine("Error load dll", e);
             }
@@ -300,7 +299,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("Elevator");
             }
         }
-
+        
         private string timePassed;
         public string TimePassed
         {
@@ -576,6 +575,18 @@ namespace AD_FlightGear
             }
             return points;
         }
+
+        public void copyCorrFromDBRegToDBRun()
+        {
+            if ((pathCsvReg != null) && (pathCsv != null)) {
+                int size = dBflightReg.MapDb.Count();
+                for(int i = 0; i < size; i++)
+                {
+                    dBflight.MapDb[i].CorrIndex = DBflightReg.MapDb[i].CorrIndex;
+                    DBflight.MapDb[i].CorrResult = dBflightReg.MapDb[i].CorrResult;
+                }
+            }
+        }
         public void initGraphs()
         {
             GraphCorrIn = PointList(ListTime(), dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
@@ -587,6 +598,7 @@ namespace AD_FlightGear
             dBflightReg._PathCsvReg = pathCsvReg;
             dBflightReg.InitializeDBreg();
             IsRegLoaded = true;
+            copyCorrFromDBRegToDBRun();
         }
 
         public void InitializeDbRun()
@@ -596,6 +608,7 @@ namespace AD_FlightGear
             dBflight._PathCsv = pathCsv;
             dBflight._PathXml = @"playback_small.xml";
             dBflight.InitializeDBrun();
+            copyCorrFromDBRegToDBRun();
             initGraphs();
             this.defaultClock();
             this.SpeedHZ = 1;
@@ -603,5 +616,3 @@ namespace AD_FlightGear
         }
     }
 }
-
-

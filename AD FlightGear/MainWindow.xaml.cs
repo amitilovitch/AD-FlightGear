@@ -25,8 +25,10 @@ namespace AD_FlightGear
 
         public MainWindow()
         {
+            
             InitializeComponent();
             ModelFG modelFG = new ModelFG();
+
             //modelFG.Initialize();
             VM_FlightData vM_FlightData = new VM_FlightData(modelFG);
             FlightData.setVm_flightData(vM_FlightData);
