@@ -29,10 +29,16 @@ namespace AD_FlightGear
             }
         }
 
-        private int lior;
-        public int Lior {
-            get { return lior; }
-            set { this.lior = value; }
+        public bool IsRegLoaded
+        {
+            get { return model.IsRegLoaded; }
+            set { model.IsRegLoaded = value; }
+        }
+
+        public bool IsRunLoaded
+        {
+            get { return model.IsRunLoaded; }
+            set { model.IsRunLoaded = value; }
         }
     }
 }
