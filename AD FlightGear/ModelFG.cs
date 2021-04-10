@@ -376,7 +376,18 @@ namespace AD_FlightGear
             }
         }
 
-
+        private List<Button> buttons;
+        public List<Button> Buttons
+        {
+            get
+            {
+                return buttons;
+            }
+            set
+            {
+                buttons = value;
+            }
+        }
 
         private List<DataPoint> graphCorr;
         public List<DataPoint> GraphCorr
@@ -501,6 +512,7 @@ namespace AD_FlightGear
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
                 GraphChoose = GraphChooseIn.GetRange(0, Convert.ToInt32(time));
+                Buttons = dBflight._ListFeatureBottuns;
 
                 //to plugin
 

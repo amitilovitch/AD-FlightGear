@@ -70,6 +70,13 @@ namespace AD_FlightGear
                 return modelFG.DBflight;
             }
         }
+        public List<Button> VM_Buttons
+        {
+            get
+            {
+                return modelFG.Buttons;
+            }
+        }
         /*
         public IList<DataPoint> VM_GraphPearson
         {
@@ -132,7 +139,7 @@ namespace AD_FlightGear
             {
                 modelFG.Correlation = value;
                 notifyPropertyChanged("VM_Correlation");
-            }
+            }          
         }
         /*
         public IList<DataPoint> VM_Points

@@ -37,14 +37,20 @@ namespace AD_FlightGear.Controls
 
             this.graphs_VM = graphs_;
             DataContext = graphs_VM;
+            buttons = new List<Button>();
+            buttons = graphs_VM.VM_Buttons;
 
+            data_list.ItemsSource = buttons;
         }
         public dataGraph()
 
         {
             InitializeComponent();
-            buttons = new List<Button>();
+           // buttons = new List<string>();
+          //  buttons = graphs_VM.VM_DBflight._ListFeature;
+           // data_list.ItemsSource = graphs_VM.VM_DBflight._ListFeature; 
         }
+        /*
         public void addButtons()
         {
             length = graphs_VM.VM_DBflight.MapDb.Count;
@@ -54,16 +60,15 @@ namespace AD_FlightGear.Controls
 
             }
             data_list.ItemsSource = buttons;
-
-
-
         }
+        */
+        /*
         public class Button
         {
             public string ButtonContent { get; set; }
             public string ButtonID { get; set; }
         }
-
+        */
         public void data_list_MouseDoubleClick(Object sender, MouseButtonEventArgs e)
         {
             if (data_list.SelectedItem != null)
@@ -72,6 +77,7 @@ namespace AD_FlightGear.Controls
                 selectedItem = (Button)selectedItem_object;
                 graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
+                
             }
         }
 

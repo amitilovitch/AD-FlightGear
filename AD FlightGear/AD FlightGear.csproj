@@ -101,6 +101,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Button.cs" />
     <Compile Include="ClockVM.cs" />
     <Compile Include="Controls\Clock.xaml.cs">
       <DependentUpon>Clock.xaml</DependentUpon>

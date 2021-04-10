@@ -127,9 +127,14 @@ namespace AD_FlightGear
         public int ElevatorIndex { get; set; }
 
         private List<string> _listFeature;
-        public List<string> ListString
+        public List<string> _ListFeature
         {
             get { return _listFeature; }
+        }
+        private List<Button> _listFeatureBottuns;
+        public List<Button> _ListFeatureBottuns
+        {
+            get { return _listFeatureBottuns; }
         }
 
         private List<MapVector> mapDb;
@@ -174,6 +179,16 @@ namespace AD_FlightGear
                 mapDb.Add(new MapVector(NameList[i].InnerText,
                     TypeList[i].InnerText,
                     NodeList[i].InnerText, i));
+            }
+        }
+        public void createListButtons()
+        {
+            this._listFeatureBottuns = new List<Button>();
+            length = this.MapDb.Count;
+            for (int i = 0; i < length; i++)
+            {
+                this._listFeatureBottuns.Add(new Button { ButtonContent = this.MapDb[i].Name, ButtonID = (i).ToString() });
+
             }
         }
         public void createVectors()
@@ -275,15 +290,18 @@ namespace AD_FlightGear
             createVectors();
             findIndexFeatures();
             findCorrFeatures();
+            createListButtons();
         }
 
         public void InitializeDBrun()
         {
             createListLines(_pathCsv);
             createListDataFeature();
+            //createListButtons();
             createVectors();
             findIndexFeatures();
             findCorrFeatures();
+            //createListButtons();
         }
     }
 }

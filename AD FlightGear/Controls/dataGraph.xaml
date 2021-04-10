@@ -21,7 +21,7 @@
 
         <DockPanel x:Name="DLLgraph" Margin="177,167,310,0" RenderTransformOrigin="0.493,0.546" Grid.RowSpan="4"/>
         <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="177,10,460,41" RenderTransformOrigin="0.759,0.177">
-            <oxy:LineSeries ItemsSource="{Binding VM_Points}"/>
+            <oxy:LineSeries ItemsSource="{Binding VM_GraphChoose}"/>
         </oxy:Plot>
         <oxy:Plot x:Name="graph_upRight" Title="{Binding Title_upright}" Margin="335,10,310,41" RenderTransformOrigin="0.759,0.177">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"/>
