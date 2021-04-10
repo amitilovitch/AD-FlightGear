@@ -28,11 +28,5 @@ namespace AD_FlightGear
                 model.SpeedHZ = float.Parse(value);
             }
         }
-
-        private int lior;
-        public int Lior {
-            get { return lior; }
-            set { this.lior = value; }
-        }
     }
 }
