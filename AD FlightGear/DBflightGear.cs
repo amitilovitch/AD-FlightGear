@@ -282,6 +282,7 @@ namespace AD_FlightGear
             createListLines(_pathCsv);
             createListDataFeature();
             createVectors();
+            findIndexFeatures();
         }
     }
 }
