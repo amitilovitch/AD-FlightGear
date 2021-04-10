@@ -41,6 +41,7 @@ namespace AD_FlightGear.Controls
         public dataGraph()
 
         {
+
             InitializeComponent();
             buttons = new List<Button>();
         }

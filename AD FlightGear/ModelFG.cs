@@ -564,6 +564,18 @@ namespace AD_FlightGear
             }
             return points;
         }
+
+        public void copyCorrFromDBRegToDBRun()
+        {
+            if ((pathCsvReg != null) && (pathCsv != null)) {
+                int size = dBflightReg.MapDb.Count();
+                for(int i = 0; i < size; i++)
+                {
+                    dBflight.MapDb[i].CorrIndex = DBflightReg.MapDb[i].CorrIndex;
+                    DBflight.MapDb[i].CorrResult = dBflightReg.MapDb[i].CorrResult;
+                }
+            }
+        }
         public void initGraphs()
         {
             GraphCorrIn = PointList(ListTime(), dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
@@ -574,6 +586,7 @@ namespace AD_FlightGear
             //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
             dBflightReg._PathCsvReg = pathCsvReg;
             dBflightReg.InitializeDBreg();
+            copyCorrFromDBRegToDBRun();
         }
 
         public void InitializeDbRun()
@@ -583,6 +596,7 @@ namespace AD_FlightGear
             dBflight._PathCsv = pathCsv;
             dBflight._PathXml = @"playback_small.xml";
             dBflight.InitializeDBrun();
+            copyCorrFromDBRegToDBRun();
             initGraphs();
             this.defaultClock();
         }

@@ -127,7 +127,7 @@ namespace AD_FlightGear
         public int ElevatorIndex { get; set; }
 
         private List<string> _listFeature;
-        public List<string> ListString
+        public List<string> ListFeature
         {
             get { return _listFeature; }
         }
@@ -282,8 +282,6 @@ namespace AD_FlightGear
             createListLines(_pathCsv);
             createListDataFeature();
             createVectors();
-            findIndexFeatures();
-            findCorrFeatures();
         }
     }
 }
