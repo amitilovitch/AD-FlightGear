@@ -25,6 +25,28 @@ namespace AD_FlightGear
             }
         }
 
+        private int length;
+        public int Length {
+            get { return dBflight.Length; }
+            set { dBflight.Length = value;
+                notifyPropertyChanged("Length");
+            }
+        }
+
+        private bool isRegLoaded = false;
+        public bool IsRegLoaded
+        {
+            get { return isRegLoaded; }
+            set { isRegLoaded = value; }
+        }        
+        
+        private bool isRunLoaded = false;
+        public bool IsRunLoaded
+        {
+            get { return isRunLoaded; }
+            set { isRunLoaded = value; }
+        }
+
         private DBflightGear dBflight;
         public DBflightGear DBflight
         {
@@ -564,6 +586,7 @@ namespace AD_FlightGear
             //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
             dBflightReg._PathCsvReg = pathCsvReg;
             dBflightReg.InitializeDBreg();
+            IsRegLoaded = true;
         }
 
         public void InitializeDbRun()
@@ -576,6 +599,7 @@ namespace AD_FlightGear
             initGraphs();
             this.defaultClock();
             this.SpeedHZ = 1;
+            IsRunLoaded = true;
         }
     }
 }

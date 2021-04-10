@@ -42,6 +42,8 @@ namespace AD_FlightGear
 
             timeSliderViewModel vm_timeSlider = new timeSliderViewModel(modelFG);
             this.timeSliders.setVM(vm_timeSlider);
+            modelFG.Time = 0;
+            modelFG.Length = 100;
 
             playStopButtonsVM vm_buttons = new playStopButtonsVM(modelFG);
             this.playStopButtons.setVM(vm_buttons);
