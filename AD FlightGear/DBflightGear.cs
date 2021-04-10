@@ -279,9 +279,10 @@ namespace AD_FlightGear
 
         public void InitializeDBrun()
         {
-            createListLines(_pathCsv);
+            createListLines(_pathCsv); 
             createListDataFeature();
             createVectors();
+            findIndexFeatures();
         }
     }
 }
