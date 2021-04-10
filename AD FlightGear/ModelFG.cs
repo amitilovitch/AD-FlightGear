@@ -100,10 +100,9 @@ namespace AD_FlightGear
             get { return pathDll; }
             set
             {
-                pathCsv = value;
+                pathDll = value;
                 notifyPropertyChanged("PathDll");
                 initializeDll();
-                notifyAllByChooseIndex();
             }
         }
         private dynamic c;
@@ -128,7 +127,7 @@ namespace AD_FlightGear
                 {
                     if (t.Name == "Graph_I")
                     {
-                        c = Activator.CreateInstance(t);
+                        C = Activator.CreateInstance(t);
                     }
                 }
             } catch (Exception e)
@@ -332,13 +331,17 @@ namespace AD_FlightGear
 
             }
         }
-
+        private int corrIndex;
+        public int CorrIndex
+        {
+            get { return dBflight.MapDb[chooseIndex].CorrIndex; }
+        }
         public void notifyAllByChooseIndex()
         {
-            GraphCorrIn = PointList(ListTime(), dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
+            GraphCorrIn = PointList(ListTime(), dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             GraphChooseIn = PointList(ListTime(), dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.Length);
-            pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[dBflightReg.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflightReg.Length);
-            pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
+            pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[CorrIndex]._vectorFloat, dBflightReg.Length);
+            pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion" + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
             //c.updateChoose(PointsRun, PointsReg, Time);
@@ -531,8 +534,8 @@ namespace AD_FlightGear
         }
         public void start(int length)
         {
-            Time = 0;
             ChooseIndex = 0;
+            Time = 0;
             new Thread(delegate ()
             {
                 while (!stop)
