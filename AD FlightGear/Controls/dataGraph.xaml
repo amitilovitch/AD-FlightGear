@@ -20,9 +20,9 @@
         </Grid.RowDefinitions>
 
         <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="177,10,460,41" RenderTransformOrigin="0.759,0.177">
-            <oxy:LineSeries ItemsSource="{Binding VM_Points}"/>
+            <oxy:LineSeries ItemsSource="{Binding VM_GraphChoose}"/>
         </oxy:Plot>
-        <oxy:Plot x:Name="graph_upRight" Title="{Binding Title_upright}" Margin="335,10,310,41" RenderTransformOrigin="0.759,0.177">
+        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="335,10,310,41" RenderTransformOrigin="0.759,0.177">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"/>
         </oxy:Plot>
 
@@ -46,24 +46,6 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <!--
-        <ItemsControl x:Name="id" Margin="364,114,378,49" RenderTransformOrigin="0.5,0.536" MouseDoubleClick="ic_MouseDoubleClick" Grid.RowSpan="4">
-            <ItemsControl.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0.24"/>
-                    <RotateTransform Angle="-0.788"/>
-                    <TranslateTransform X="0.007" Y="0.48"/>
-                </TransformGroup>
-            </ItemsControl.RenderTransform>
-            <ItemsControl.ItemTemplate>
 
-                <DataTemplate>
-                    <Button Content ="{Binding ButtonContent}"/>
-
-
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl> -->
     </Grid>
 </UserControl>

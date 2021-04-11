@@ -10,6 +10,7 @@ using System.Windows;
 
 using OxyPlot;
 using System.Reflection;
+using System.Net.Sockets;
 using System.Drawing;
 
 namespace AD_FlightGear
@@ -344,7 +345,7 @@ namespace AD_FlightGear
             GraphChooseIn = PointList(ListTime(), dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.Length);
             pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[CorrIndex]._vectorFloat, dBflightReg.Length);
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
-            Correlation = "Correaltion" + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
+            Correlation = "Correaltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
             //c.updateChoose(PointsRun, PointsReg, Time);
         }
@@ -402,7 +403,18 @@ namespace AD_FlightGear
             }
         }
 
-
+        private List<Button> buttons;
+        public List<Button> Buttons
+        {
+            get
+            {
+                return buttons;
+            }
+            set
+            {
+                buttons = value;
+            }
+        }
 
         private List<DataPoint> graphCorr;
         public List<DataPoint> GraphCorr
@@ -527,6 +539,7 @@ namespace AD_FlightGear
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
                 GraphChoose = GraphChooseIn.GetRange(0, Convert.ToInt32(time));
+               
 
                 //to plugin
 
@@ -537,6 +550,8 @@ namespace AD_FlightGear
         }
         public void start(int length)
         {
+         //   var client = new TcpClient("localhost", 5400);
+         //   var stream = client.GetStream();
             ChooseIndex = 0;
             Time = 0;
             new Thread(delegate ()
@@ -545,6 +560,8 @@ namespace AD_FlightGear
                 {
                     if (!pause)
                     {
+                 //       byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time*10]);
+                //        stream.Write(sendbuf, 0, sendbuf.Length);
                         Time++;
                         Thread.Sleep(Convert.ToInt32(1000 / SpeedHZ));
                     }
@@ -556,6 +573,8 @@ namespace AD_FlightGear
                     else { continue; }
                 }
             }).Start();
+         //   stream.Close();
+        //    client.Close();
         }
 
 

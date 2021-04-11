@@ -44,7 +44,10 @@ namespace AD_FlightGear.Controls
         {
             InitializeComponent();
             buttons = new List<Button>();
+          //  buttons = graphs_VM.VM_DBflight._ListFeature;
+           // data_list.ItemsSource = graphs_VM.VM_DBflight._ListFeature; 
         }
+        /*
         public void addButtons()
         {
             length = graphs_VM.VM_DBflight.MapDb.Count;
@@ -55,14 +58,14 @@ namespace AD_FlightGear.Controls
             }
             data_list.ItemsSource = buttons;
         }
-
-        
+        */
+        /*
         public class Button
         {
             public string ButtonContent { get; set; }
             public string ButtonID { get; set; }
         }
-
+        */
         public void data_list_MouseDoubleClick(Object sender, MouseButtonEventArgs e)
         {
             if (data_list.SelectedItem != null)
@@ -71,6 +74,7 @@ namespace AD_FlightGear.Controls
                 selectedItem = (Button)selectedItem_object;
                 graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
+                
             }
         }
 
@@ -146,6 +150,15 @@ namespace AD_FlightGear.Controls
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
             graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\circle\circle\bin\Debug\circle.dll";
+                    DLLgraph.Children.Add(graphs_VM.VM_C.create());
+                    graphs_VM.initDBrun();
+            length = graphs_VM.VM_DBflight.MapDb.Count;
+            for (int i = 0; i < graphs_VM.VM_DBflight.MapDb.Count; i++)
+            {
+                buttons.Add(new Button { ButtonContent = graphs_VM.VM_DBflight.MapDb[i].Name, ButtonID = (i).ToString() });
+
+            }
+            data_list.ItemsSource = buttons;
             /*            UserControl graph = graphs_VM.VM_C.create();
                         DLLgraph.Children.Add(graphs_VM.VM_C.create());*/
             initializeDll();
