@@ -11,18 +11,18 @@ namespace AD_FlightGear
 {
     public class DBflightGear
     {
-        double avg(float[] x, int size)
+        float avg(float[] x, int size)
         {
-            double sum = 0;
+            float sum = 0;
             for (int i = 0; i < size; sum += x[i], i++) ;
             return sum / size;
         }
 
         // returns the variance of X and Y
-        double var(float[] x, int size)
+        float var(float[] x, int size)
         {
-            double av = avg(x, size);
-            double sum = 0;
+            float av = avg(x, size);
+            float sum = 0;
             for (int i = 0; i < size; i++)
             {
                 sum += x[i] * x[i];
@@ -31,9 +31,9 @@ namespace AD_FlightGear
         }
 
         // returns the covariance of X and Y
-        double cov(float[] x, float[] y, int size)
+        float cov(float[] x, float[] y, int size)
         {
-            double sum = 0;
+            float sum = 0;
             for (int i = 0; i < size; i++)
             {
                 sum += x[i] * y[i];
@@ -45,14 +45,14 @@ namespace AD_FlightGear
 
 
         // returns the Pearson correlation coefficient of X and Y
-        double pearson(float[] x, float[] y, int size)
+        float pearson(float[] x, float[] y, int size)
         {
             if (size == 0)
             {
                 return 0;
             }
-            double tempCov = cov(x, y, size);
-            double sqrtt = System.Math.Sqrt(var(x, size)) * System.Math.Sqrt(var(y, size));
+            float tempCov = cov(x, y, size);
+            float sqrtt = (float)(System.Math.Sqrt(var(x, size)) * System.Math.Sqrt(var(y, size)));
             if (tempCov == 0 || sqrtt == 0)
             {
                 return 0;

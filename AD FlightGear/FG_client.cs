@@ -21,20 +21,20 @@ namespace AD_FlightGear
         {
             try
             {
-             //   var client = new TcpClient("localhost", 5400);
-            //    var stream = client.GetStream();
+                var client = new TcpClient("localhost", 5400);
+                var stream = client.GetStream();
                 //listener.Start();
                 int i = 0;
                 while (i < _Lines_from_csv.Length)
                 {
-               //     byte[] sendbuf = Encoding.ASCII.GetBytes(_Lines_from_csv[i]);
-               //     stream.Write(sendbuf, 0, sendbuf.Length);
+                    byte[] sendbuf = Encoding.ASCII.GetBytes(_Lines_from_csv[i]);
+                    stream.Write(sendbuf, 0, sendbuf.Length);
                     i++;
                     Thread.Sleep(100);
                 }
 
-            //    stream.Close();
-            //    client.Close();
+               stream.Close();
+               client.Close();
             }
             catch
             {
