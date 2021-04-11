@@ -74,7 +74,7 @@ namespace AD_FlightGear.Controls
                 selectedItem = (Button)selectedItem_object;
                 graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
-                
+                graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
             }
         }
 
@@ -150,8 +150,9 @@ namespace AD_FlightGear.Controls
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
             graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\circle\circle\bin\Debug\circle.dll";
-                    DLLgraph.Children.Add(graphs_VM.VM_C.create());
-                    graphs_VM.initDBrun();
+            initializeDll();
+
+            graphs_VM.initDBrun();
             length = graphs_VM.VM_DBflight.MapDb.Count;
             for (int i = 0; i < graphs_VM.VM_DBflight.MapDb.Count; i++)
             {
@@ -159,11 +160,6 @@ namespace AD_FlightGear.Controls
 
             }
             data_list.ItemsSource = buttons;
-            /*            UserControl graph = graphs_VM.VM_C.create();
-                        DLLgraph.Children.Add(graphs_VM.VM_C.create());*/
-            initializeDll();
-
-            graphs_VM.initDBrun();
         }
     }
 }

@@ -62,6 +62,13 @@ namespace AD_FlightGear
                 return modelFG.Time;
             }
         }
+        public int VM_TimeInt
+        {
+            get
+            {
+                return (Convert.ToInt32(modelFG.Time));
+            }
+        }
 
         public DBflightGear VM_DBflight
         {
@@ -115,14 +122,14 @@ namespace AD_FlightGear
         }
 
 
-        public IList<DataPoint> VM_PointsReg
+        public List<DataPoint> VM_PointsReg
         {
             get
             {
                 return modelFG.PointsReg;
             }
         }
-        public IList<DataPoint> VM_PointsRun
+        public List<DataPoint> VM_PointsRun
         {
             get
             {
