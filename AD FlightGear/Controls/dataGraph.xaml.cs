@@ -74,7 +74,9 @@ namespace AD_FlightGear.Controls
                 selectedItem = (Button)selectedItem_object;
                 graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
-                
+
+
+                //graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
             }
         }
 
@@ -89,9 +91,30 @@ namespace AD_FlightGear.Controls
 
         }
 
-        
 
         //חדש
+
+        public void initializeDll()
+        {
+            try
+            {
+                Assembly dll = Assembly.LoadFile(graphs_VM.VM_PathDll);
+                Type[] type = dll.GetExportedTypes();
+
+                foreach (Type t in type)
+                {
+                    if (t.Name == "Graph_I")
+                    {
+                        graphs_VM.VM_C = Activator.CreateInstance(t);
+                    }
+                }
+                DLLgraph.Children.Add(graphs_VM.VM_C.create());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error load dll", e);
+            }
+        }
         private void Button_dll(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
@@ -101,7 +124,7 @@ namespace AD_FlightGear.Controls
             if (openFileDialog.ShowDialog() == true)
             {
                 graphs_VM.VM_PathDll = openFileDialog.FileNames[0];
-                DLLgraph.Children.Add(graphs_VM.VM_C.create());
+                initializeDll();
             }
         }
 
@@ -128,9 +151,10 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
-       //     graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\circle\circle\bin\Debug\circle.dll";
-     //               DLLgraph.Children.Add(graphs_VM.VM_C.create());
-                    graphs_VM.initDBrun();
+            //graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\circle\circle\bin\Debug\circle.dll";
+            //initializeDll();
+
+            graphs_VM.initDBrun();
             length = graphs_VM.VM_DBflight.MapDb.Count;
             for (int i = 0; i < graphs_VM.VM_DBflight.MapDb.Count; i++)
             {

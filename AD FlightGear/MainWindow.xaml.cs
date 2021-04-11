@@ -57,6 +57,7 @@ namespace AD_FlightGear
             dataGraph_V.set_graphs_VM(graphs);
            // dataGraph_V.addButtons();
 
+
         } 
 
         private void FlightData_Loaded(object sender, RoutedEventArgs e)

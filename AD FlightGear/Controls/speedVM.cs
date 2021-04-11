@@ -28,5 +28,17 @@ namespace AD_FlightGear
                 model.SpeedHZ = float.Parse(value);
             }
         }
+
+        public bool IsRegLoaded
+        {
+            get { return model.IsRegLoaded; }
+            set { model.IsRegLoaded = value; }
+        }
+
+        public bool IsRunLoaded
+        {
+            get { return model.IsRunLoaded; }
+            set { model.IsRunLoaded = value; }
+        }
     }
 }

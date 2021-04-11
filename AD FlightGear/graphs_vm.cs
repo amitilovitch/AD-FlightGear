@@ -62,6 +62,13 @@ namespace AD_FlightGear
                 return modelFG.Time;
             }
         }
+        public int VM_TimeInt
+        {
+            get
+            {
+                return (Convert.ToInt32(modelFG.Time));
+            }
+        }
 
         public DBflightGear VM_DBflight
         {
@@ -77,6 +84,38 @@ namespace AD_FlightGear
                 return modelFG.Buttons;
             }
         }
+
+        public List<DataPoint> VM_GreyPoints
+        {
+            get
+            {
+                return modelFG.Ad.GreyPoints;
+            }
+        }
+        public List<DataPoint> VM_BluePoints
+        {
+            get
+            {
+                return modelFG.Ad.BluePoints;
+            }
+        }
+
+        public List<DataPoint> VM_RedPoints
+        {
+            get
+            {
+                return modelFG.Ad.RedPoints;
+            }
+        }
+
+        public List<DataPoint> VM_ListPointCircle
+        {
+            get
+            {
+                return modelFG.Ad.ListPointCircle;
+            }
+        }
+
         /*
         public IList<DataPoint> VM_GraphPearson
         {
@@ -111,6 +150,22 @@ namespace AD_FlightGear
             get
             {
                 return modelFG.GraphChoose;
+            }
+        }
+
+
+        public List<DataPoint> VM_PointsReg
+        {
+            get
+            {
+                return modelFG.PointsReg;
+            }
+        }
+        public List<DataPoint> VM_PointsRun
+        {
+            get
+            {
+                return modelFG.PointsRun;
             }
         }
         //חדש
@@ -167,7 +222,6 @@ namespace AD_FlightGear
 
         public void initDBreg() { modelFG.InitializeDbReg(); }
         public void initDBrun() { modelFG.InitializeDbRun(); }
-        public void initDll() { modelFG.initializeDll(); }
         public void DataPoints_6(int value)
         {
 

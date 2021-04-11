@@ -21,21 +21,22 @@
                 <RadialGradientBrush>
                     <GradientStop Color="#FF2C2A2A" Offset="0.751"/>
                     <GradientStop Color="#FF3A3737"/>
-                    <GradientStop Color="#FFFBF9F9" Offset="0.312"/>
+                    <GradientStop Color="#FFFBF9F9"/>
+                    <GradientStop Color="#FFEFEDED" Offset="0.187"/>
                 </RadialGradientBrush>
             </Ellipse.Fill>
         </Ellipse>
         <Ellipse HorizontalAlignment="Left" Height="78" VerticalAlignment="Top" Width="78" Canvas.Left="38.5" Canvas.Top="38.5" RenderTransformOrigin="-0.038,0.295">
             <Ellipse.Fill>
                 <RadialGradientBrush>
-                    <GradientStop Color="#FF0E0E0E" Offset="1" />
-                    <GradientStop Color="#FF1D1D1D" />
-                    <GradientStop Color="#FF323030" Offset="0.453" />
+                    <GradientStop Color="#FF0E0E0E" Offset="0.751"/>
+                    <GradientStop Color="#FF1D1D1D"/>
+                    <GradientStop Color="White"/>
                 </RadialGradientBrush>
             </Ellipse.Fill>
         </Ellipse>
-        <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FF575757" HorizontalAlignment="Left" Height="9.708" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="20.75" Canvas.Left="67" Canvas.Top="16" />
-        <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FF575757" HorizontalAlignment="Left" Height="9.708" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="20.75" Canvas.Left="56" Canvas.Top="-90.333" RenderTransformOrigin="0.521,0.342" >
+        <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FFCFCFCF" HorizontalAlignment="Left" Height="9.708" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="20.75" Canvas.Left="66.667" Canvas.Top="7.667" />
+        <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FFCFCFCF" HorizontalAlignment="Left" Height="9.708" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="20.75" Canvas.Left="56" Canvas.Top="-83" RenderTransformOrigin="0.521,0.342" >
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -46,7 +47,7 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FF575757" HorizontalAlignment="Left" Height="9.708" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="20.75" Canvas.Left="10.333" Canvas.Top="72" RenderTransformOrigin="0.5,0.5" >
+        <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FFCFCFCF" HorizontalAlignment="Left" Height="9.708" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="20.75" Canvas.Left="3" Canvas.Top="72" RenderTransformOrigin="0.5,0.5" >
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -56,7 +57,7 @@
                 </TransformGroup>
             </Path.RenderTransform>
         </Path>
-        <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FF575757" HorizontalAlignment="Left" Height="9.708" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="20.75" Canvas.Left="124.667" Canvas.Top="72.5" RenderTransformOrigin="0.5,0.5" >
+        <Path Data="M205.75,65.625 L226.875,47.25 L248.5,65.625 z" Fill="#FFCFCFCF" HorizontalAlignment="Left" Height="9.708" Stretch="Fill" UseLayoutRounding="False" VerticalAlignment="Top" Width="20.75" Canvas.Left="132.333" Canvas.Top="72.667" RenderTransformOrigin="0.5,0.5" >
             <Path.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -67,7 +68,7 @@
             </Path.RenderTransform>
         </Path>
 
-        <local:stick x:Name="stick" Canvas.Left="{Binding VM_StickX}" Canvas.Top="{Binding VM_StickY}" Height="44" Width="44" Margin="55.5"/>
+        <local:stick x:Name="stick" Canvas.Left="{Binding VM_StickX}" Canvas.Top="{Binding VM_StickY}" Height="44" Width="44" Margin="56"/>
 
     </Canvas>
 </UserControl>

@@ -57,14 +57,23 @@ namespace AD_FlightGear.Controls
             //string tmp = String.Copy(e.);
             if (e.Key == Key.Enter)
             {
-                try
+                if (!vm.IsRegLoaded || !vm.IsRunLoaded)
                 {
-                    vm.VM_Speed = input.Text;
-                    input.Text = vm.VM_Speed;
-                }
-                catch {
-                    this.input.Text ="01.00";
+                    this.input.Text = "01.00";
                     vm.VM_Speed = "01.00";
+                }
+                else
+                {
+                    try
+                    {
+                        vm.VM_Speed = input.Text;
+                        input.Text = vm.VM_Speed;
+                    }
+                    catch (Exception ex)
+                    {
+                        this.input.Text = "01.00";
+                        vm.VM_Speed = "01.00";
+                    }
                 }
             }
         }
