@@ -106,6 +106,22 @@ namespace AD_FlightGear
                 return modelFG.GraphChoose;
             }
         }
+
+
+        public IList<DataPoint> VM_PointsReg
+        {
+            get
+            {
+                return modelFG.PointsReg;
+            }
+        }
+        public IList<DataPoint> VM_PointsRun
+        {
+            get
+            {
+                return modelFG.PointsRun;
+            }
+        }
         //חדש
         public string VM_PathDll
         {
@@ -159,7 +175,6 @@ namespace AD_FlightGear
 
         public void initDBreg() { modelFG.InitializeDbReg(); }
         public void initDBrun() { modelFG.InitializeDbRun(); }
-        public void initDll() { modelFG.initializeDll(); }
         public void DataPoints_6(int value)
         {
 

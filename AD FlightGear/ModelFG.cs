@@ -10,6 +10,7 @@ using System.Windows;
 
 using OxyPlot;
 using System.Reflection;
+using System.Drawing;
 
 namespace AD_FlightGear
 {
@@ -102,7 +103,8 @@ namespace AD_FlightGear
             {
                 pathDll = value;
                 notifyPropertyChanged("PathDll");
-                initializeDll();
+                //initializeDll();
+                //c.updateChoose(PointsRun, PointsReg, Time);
             }
         }
         private dynamic c;
@@ -116,7 +118,7 @@ namespace AD_FlightGear
             }
         }
 
-        public void initializeDll ()
+/*        public void initializeDll ()
         {
             try
             {
@@ -134,7 +136,7 @@ namespace AD_FlightGear
             {
                 Console.WriteLine("Error load dll", e);
             }
-        }
+        }*/
 
 
 
@@ -528,6 +530,7 @@ namespace AD_FlightGear
 
                 //to plugin
 
+                //c.update_color(Brushes.Red);
 
                 //c.updatTime(time);
             }
@@ -597,7 +600,7 @@ namespace AD_FlightGear
         }
         public void InitializeDbReg()
         {
-            //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
+            //string pathCsvReg = @"C:\Users\azran\source\repos\AD FlightGear\AD FlightGear\reg_flight.csv";
             dBflightReg._PathCsvReg = pathCsvReg;
             dBflightReg.InitializeDBreg();
             IsRegLoaded = true;
@@ -606,7 +609,7 @@ namespace AD_FlightGear
 
         public void InitializeDbRun()
         {
-            //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
+            //string pathCsv = @"C:\Users\azran\source\repos\AD FlightGear\AD FlightGear\reg_flight.csv";
             speedHZ = 1;
             dBflight._PathCsv = pathCsv;
             dBflight._PathXml = @"playback_small.xml";
