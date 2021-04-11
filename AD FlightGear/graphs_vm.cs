@@ -145,7 +145,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_C");
             }
         }
-        public dynamic VM_Correlation
+        public string VM_Correlation
         {
             get { return modelFG.Correlation; }
             set
@@ -154,15 +154,16 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_Correlation");
             }          
         }
-        /*
-        public IList<DataPoint> VM_Points
+        public string VM_NameCorrelation
         {
-            get
+            get { return modelFG.NameCorrelation; }
+            set
             {
-                return modelFG.Points;
+                modelFG.NameCorrelation = value;
+                notifyPropertyChanged("VM_NameCorrelation");
             }
         }
-        */
+
 
         public void initDBreg() { modelFG.InitializeDbReg(); }
         public void initDBrun() { modelFG.InitializeDbRun(); }

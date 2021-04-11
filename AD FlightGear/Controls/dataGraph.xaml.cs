@@ -43,7 +43,7 @@ namespace AD_FlightGear.Controls
 
         {
             InitializeComponent();
-           // buttons = new List<string>();
+            buttons = new List<Button>();
           //  buttons = graphs_VM.VM_DBflight._ListFeature;
            // data_list.ItemsSource = graphs_VM.VM_DBflight._ListFeature; 
         }
@@ -129,8 +129,15 @@ namespace AD_FlightGear.Controls
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
             graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\circle\circle\bin\Debug\circle.dll";
-            DLLgraph.Children.Add(graphs_VM.VM_C.create());
-            graphs_VM.initDBrun();
+                    DLLgraph.Children.Add(graphs_VM.VM_C.create());
+                    graphs_VM.initDBrun();
+            length = graphs_VM.VM_DBflight.MapDb.Count;
+            for (int i = 0; i < graphs_VM.VM_DBflight.MapDb.Count; i++)
+            {
+                buttons.Add(new Button { ButtonContent = graphs_VM.VM_DBflight.MapDb[i].Name, ButtonID = (i).ToString() });
+
+            }
+            data_list.ItemsSource = buttons;
         }
     }
 }
