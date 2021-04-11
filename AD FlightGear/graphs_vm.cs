@@ -84,6 +84,38 @@ namespace AD_FlightGear
                 return modelFG.Buttons;
             }
         }
+
+        public List<DataPoint> VM_GreyPoints
+        {
+            get
+            {
+                return modelFG.Ad.GreyPoints;
+            }
+        }
+        public List<DataPoint> VM_BluePoints
+        {
+            get
+            {
+                return modelFG.Ad.BluePoints;
+            }
+        }
+
+        public List<DataPoint> VM_RedPoints
+        {
+            get
+            {
+                return modelFG.Ad.RedPoints;
+            }
+        }
+
+        public List<DataPoint> VM_ListPointCircle
+        {
+            get
+            {
+                return modelFG.Ad.ListPointCircle;
+            }
+        }
+
         /*
         public IList<DataPoint> VM_GraphPearson
         {

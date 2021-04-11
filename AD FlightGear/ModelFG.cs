@@ -63,6 +63,13 @@ namespace AD_FlightGear
             get { return dBflightReg; }
             set { dBflightReg = value; }
         }
+
+        private AnomalyDetect ad;
+        public AnomalyDetect Ad
+        {
+            get { return ad; }
+            set { ad = value; }
+        }
         public ModelFG()
         {
             dBflight = new DBflightGear();
@@ -73,6 +80,13 @@ namespace AD_FlightGear
             GraphCorrIn = new List<DataPoint>();
             pointsRun = new List<DataPoint>();
             pointsReg = new List<DataPoint>();
+
+            //to check circle
+            //to checkdll
+            ad = ad = new AnomalyDetect();
+            
+            /////////////
+            /////////
         }
         private string pathCsv;
         public string PathCsv
@@ -341,13 +355,19 @@ namespace AD_FlightGear
         }
         public void notifyAllByChooseIndex()
         {
+            
             GraphCorrIn = PointList(ListTime(), dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             GraphChooseIn = PointList(ListTime(), dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.Length);
             pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[CorrIndex]._vectorFloat, dBflightReg.Length);
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
-            //c.updateChoose(PointsRun, PointsReg, Time);
+
+            ////////
+            ///////////////////////////////
+            int time = Convert.ToInt32(Time);
+            Ad.updateChooseAd(PointsRun, PointsReg, time);
+            ////////////////////////////////////
         }
 
         private List<DataPoint> graphChoose;
@@ -539,12 +559,12 @@ namespace AD_FlightGear
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
                 GraphChoose = GraphChooseIn.GetRange(0, Convert.ToInt32(time));
-               
+
 
                 //to plugin
 
                 //c.update_color(Brushes.Red);
-
+                ad.updateTimeAd(time);
                 //c.updatTime(time);
             }
         }
@@ -630,6 +650,8 @@ namespace AD_FlightGear
         {
             //string pathCsv = @"C:\Users\azran\source\repos\AD FlightGear\AD FlightGear\reg_flight.csv";
             speedHZ = 1;
+
+
             dBflight._PathCsv = pathCsv;
             dBflight._PathXml = @"playback_small.xml";
             dBflight.InitializeDBrun();
@@ -638,6 +660,7 @@ namespace AD_FlightGear
             this.defaultClock();
             this.SpeedHZ = 1;
             IsRunLoaded = true;
+            
         }
     }
 }
