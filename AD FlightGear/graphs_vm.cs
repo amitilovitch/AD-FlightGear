@@ -70,6 +70,13 @@ namespace AD_FlightGear
                 return modelFG.DBflight;
             }
         }
+        public List<Button> VM_Buttons
+        {
+            get
+            {
+                return modelFG.Buttons;
+            }
+        }
         /*
         public IList<DataPoint> VM_GraphPearson
         {
@@ -91,6 +98,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_ChooseIndex");
             }
         }
+
         public IList<DataPoint> VM_GraphCorr
         {
             get
@@ -105,6 +113,22 @@ namespace AD_FlightGear
                 return modelFG.GraphChoose;
             }
         }
+
+
+        public IList<DataPoint> VM_PointsReg
+        {
+            get
+            {
+                return modelFG.PointsReg;
+            }
+        }
+        public IList<DataPoint> VM_PointsRun
+        {
+            get
+            {
+                return modelFG.PointsRun;
+            }
+        }
         //חדש
         public string VM_PathDll
         {
@@ -114,6 +138,18 @@ namespace AD_FlightGear
                 modelFG.PathDll = value;
                 notifyPropertyChanged("VM_PathDll");
             }
+        }
+
+        public string VM_PathCsv
+        {
+            get { return modelFG.PathCsv; }
+            set { modelFG.PathCsv = value; }
+        }
+
+        public string VM_PathCsvReg
+        {
+            get { return modelFG.PathCsvReg; }
+            set { modelFG.PathCsvReg = value; }
         }
         //חדש
         public dynamic VM_C
@@ -125,24 +161,28 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_C");
             }
         }
-        public dynamic VM_Correlation
+        public string VM_Correlation
         {
             get { return modelFG.Correlation; }
             set
             {
                 modelFG.Correlation = value;
                 notifyPropertyChanged("VM_Correlation");
-            }
+            }          
         }
-        /*
-        public IList<DataPoint> VM_Points
+        public string VM_NameCorrelation
         {
-            get
+            get { return modelFG.NameCorrelation; }
+            set
             {
-                return modelFG.Points;
+                modelFG.NameCorrelation = value;
+                notifyPropertyChanged("VM_NameCorrelation");
             }
         }
-        */
+
+
+        public void initDBreg() { modelFG.InitializeDbReg(); }
+        public void initDBrun() { modelFG.InitializeDbRun(); }
         public void DataPoints_6(int value)
         {
 

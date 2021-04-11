@@ -55,10 +55,7 @@ namespace AD_FlightGear
 
             graphs_vm graphs = new graphs_vm(modelFG);
             dataGraph_V.set_graphs_VM(graphs);
-            dataGraph_V.addButtons();
-
-            VM_OpenFiles vM_OpenFiles = new VM_OpenFiles(modelFG);
-            OpenFilesV.setVM_OpenFiles(vM_OpenFiles);
+           // dataGraph_V.addButtons();
 
 
         } 

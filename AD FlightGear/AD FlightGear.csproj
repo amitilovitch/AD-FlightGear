@@ -101,6 +101,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Button.cs" />
     <Compile Include="ClockVM.cs" />
     <Compile Include="Controls\Clock.xaml.cs">
       <DependentUpon>Clock.xaml</DependentUpon>
@@ -111,9 +112,6 @@
     </Compile>
     <Compile Include="Controls\joystick.xaml.cs">
       <DependentUpon>joystick.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\OpenFilesV.xaml.cs">
-      <DependentUpon>OpenFilesV.xaml</DependentUpon>
     </Compile>
     <Compile Include="Controls\playStopButtons.xaml.cs">
       <DependentUpon>playStopButtons.xaml</DependentUpon>
@@ -134,6 +132,7 @@
     <Compile Include="Controls\twoSliders.xaml.cs">
       <DependentUpon>twoSliders.xaml</DependentUpon>
     </Compile>
+    <Compile Include="FG_client.cs" />
     <Compile Include="graphs_vm.cs" />
     <Compile Include="joystickVM.cs" />
     <Compile Include="playStopButtonsVM.cs" />
@@ -141,7 +140,6 @@
     <Compile Include="twoSlidersVM.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="VM_FlightData.cs" />
-    <Compile Include="VM_OpenFiles.cs" />
     <Page Include="Controls\Clock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,10 +153,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\joystick.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\OpenFilesV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -19,17 +19,22 @@
             <RowDefinition Height="64*"/>
         </Grid.RowDefinitions>
 
-        <DockPanel x:Name="DLLgraph" Margin="177,167,310,0" RenderTransformOrigin="0.493,0.546" Grid.RowSpan="4"/>
         <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="177,10,460,41" RenderTransformOrigin="0.759,0.177">
-            <oxy:LineSeries ItemsSource="{Binding VM_Points}"/>
+            <oxy:LineSeries ItemsSource="{Binding VM_GraphChoose}"/>
         </oxy:Plot>
-        <oxy:Plot x:Name="graph_upRight" Title="{Binding Title_upright}" Margin="335,10,310,41" RenderTransformOrigin="0.759,0.177">
+        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="335,10,310,41" RenderTransformOrigin="0.759,0.177">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"/>
         </oxy:Plot>
 
         <!-- חדש-->
-        <TextBlock HorizontalAlignment="Left" Margin="48,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="5"><Run Text="Open dll"/></TextBlock>
-        <Button Content="..." HorizontalAlignment="Left" Margin="110,12,0,0" VerticalAlignment="Top" Width="23" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="5"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="4"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="92,40,0,0" VerticalAlignment="Top" Width="24" Click="openCsvRun" Grid.Row="4"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78" Grid.Row="4"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="92,8,0,0" VerticalAlignment="Top" Width="24" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="4"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="5"><Run Text="Open dll"/></TextBlock>
+        <Button Content="..." HorizontalAlignment="Left" Margin="92,12,0,0" VerticalAlignment="Top" Width="24" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="5"/>
+        <DockPanel x:Name="DLLgraph" Margin="177,149,310,10"  Width="300" Height="200"/>
 
         <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,618,10" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4">
 
@@ -41,24 +46,6 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <!--
-        <ItemsControl x:Name="id" Margin="364,114,378,49" RenderTransformOrigin="0.5,0.536" MouseDoubleClick="ic_MouseDoubleClick" Grid.RowSpan="4">
-            <ItemsControl.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0.24"/>
-                    <RotateTransform Angle="-0.788"/>
-                    <TranslateTransform X="0.007" Y="0.48"/>
-                </TransformGroup>
-            </ItemsControl.RenderTransform>
-            <ItemsControl.ItemTemplate>
 
-                <DataTemplate>
-                    <Button Content ="{Binding ButtonContent}"/>
-
-
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl> -->
     </Grid>
 </UserControl>
