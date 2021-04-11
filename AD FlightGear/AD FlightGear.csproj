@@ -113,9 +113,6 @@
     <Compile Include="Controls\joystick.xaml.cs">
       <DependentUpon>joystick.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\OpenFilesV.xaml.cs">
-      <DependentUpon>OpenFilesV.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\playStopButtons.xaml.cs">
       <DependentUpon>playStopButtons.xaml</DependentUpon>
     </Compile>
@@ -142,7 +139,6 @@
     <Compile Include="twoSlidersVM.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="VM_FlightData.cs" />
-    <Compile Include="VM_OpenFiles.cs" />
     <Page Include="Controls\Clock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,10 +152,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\joystick.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\OpenFilesV.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -27,20 +27,17 @@ namespace AD_FlightGear.Controls
         private int length;
         public string Title_Left { get; set; }
         public Button selectedItem { get; set; }
+        
 
+        
         public IList<Button> buttons { get; set; }
 
         private graphs_vm graphs_VM;
 
         public void set_graphs_VM(graphs_vm graphs_)
         {
-
             this.graphs_VM = graphs_;
             DataContext = graphs_VM;
-            buttons = new List<Button>();
-            buttons = graphs_VM.VM_Buttons;
-
-            data_list.ItemsSource = buttons;
         }
         public dataGraph()
 
@@ -92,6 +89,8 @@ namespace AD_FlightGear.Controls
 
         }
 
+        
+
         //חדש
         private void Button_dll(object sender, RoutedEventArgs e)
         {
@@ -103,8 +102,35 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathDll = openFileDialog.FileNames[0];
                 DLLgraph.Children.Add(graphs_VM.VM_C.create());
-
             }
+        }
+
+        private void openCsvReg(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Multiselect = false;
+            openFileDialog.Filter = "csv files (*.csv)|*.csv";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (openFileDialog.ShowDialog() == true)
+            {
+                graphs_VM.VM_PathCsvReg = openFileDialog.FileNames[0];
+            }
+            graphs_VM.initDBreg();
+        }
+
+        private void openCsvRun(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Multiselect = false;
+            openFileDialog.Filter = "csv files (*.csv)|*.csv";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (openFileDialog.ShowDialog() == true)
+            {
+                graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
+            }
+            graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\circle\circle\bin\Debug\circle.dll";
+            DLLgraph.Children.Add(graphs_VM.VM_C.create());
+            graphs_VM.initDBrun();
         }
     }
 }

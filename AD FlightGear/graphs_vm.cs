@@ -98,6 +98,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_ChooseIndex");
             }
         }
+
         public IList<DataPoint> VM_GraphCorr
         {
             get
@@ -121,6 +122,18 @@ namespace AD_FlightGear
                 modelFG.PathDll = value;
                 notifyPropertyChanged("VM_PathDll");
             }
+        }
+
+        public string VM_PathCsv
+        {
+            get { return modelFG.PathCsv; }
+            set { modelFG.PathCsv = value; }
+        }
+
+        public string VM_PathCsvReg
+        {
+            get { return modelFG.PathCsvReg; }
+            set { modelFG.PathCsvReg = value; }
         }
         //חדש
         public dynamic VM_C
@@ -150,6 +163,10 @@ namespace AD_FlightGear
             }
         }
         */
+
+        public void initDBreg() { modelFG.InitializeDbReg(); }
+        public void initDBrun() { modelFG.InitializeDbRun(); }
+        public void initDll() { modelFG.initializeDll(); }
         public void DataPoints_6(int value)
         {
 

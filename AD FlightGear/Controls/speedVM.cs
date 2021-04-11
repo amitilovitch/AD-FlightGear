@@ -11,8 +11,6 @@ namespace AD_FlightGear
         public speedVM(ModelFG m)
         {
             this.model = m;
-            //this.speed = 1;
-            /// model.PropertyChanged?????
         }
 
         //private float speed;
@@ -25,7 +23,7 @@ namespace AD_FlightGear
             set
             {
                 //speed = value;
-                if (float.Parse(value) <= 0)
+                if (float.Parse(value) <= 0||float.Parse(value)>99.99)
                     throw new Exception();
                 model.SpeedHZ = float.Parse(value);
             }

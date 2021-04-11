@@ -25,8 +25,10 @@ namespace AD_FlightGear
 
         public MainWindow()
         {
+            
             InitializeComponent();
             ModelFG modelFG = new ModelFG();
+
             //modelFG.Initialize();
             VM_FlightData vM_FlightData = new VM_FlightData(modelFG);
             FlightData.setVm_flightData(vM_FlightData);
@@ -42,6 +44,8 @@ namespace AD_FlightGear
 
             timeSliderViewModel vm_timeSlider = new timeSliderViewModel(modelFG);
             this.timeSliders.setVM(vm_timeSlider);
+            modelFG.Time = 0;
+            modelFG.Length = 100;
 
             playStopButtonsVM vm_buttons = new playStopButtonsVM(modelFG);
             this.playStopButtons.setVM(vm_buttons);
@@ -53,8 +57,6 @@ namespace AD_FlightGear
             dataGraph_V.set_graphs_VM(graphs);
            // dataGraph_V.addButtons();
 
-            VM_OpenFiles vM_OpenFiles = new VM_OpenFiles(modelFG);
-            OpenFilesV.setVM_OpenFiles(vM_OpenFiles);
         } 
 
         private void FlightData_Loaded(object sender, RoutedEventArgs e)

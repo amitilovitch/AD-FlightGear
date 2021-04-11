@@ -290,14 +290,12 @@ namespace AD_FlightGear
             createVectors();
             findIndexFeatures();
             findCorrFeatures();
-            createListButtons();
         }
 
         public void InitializeDBrun()
         {
-            createListLines(_pathCsv);
+            createListLines(_pathCsv); 
             createListDataFeature();
-            //createListButtons();
             createVectors();
             findIndexFeatures();
             findCorrFeatures();

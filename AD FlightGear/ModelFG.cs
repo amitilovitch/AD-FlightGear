@@ -25,6 +25,28 @@ namespace AD_FlightGear
             }
         }
 
+        private int length;
+        public int Length {
+            get { return dBflight.Length; }
+            set { dBflight.Length = value;
+                notifyPropertyChanged("Length");
+            }
+        }
+
+        private bool isRegLoaded = false;
+        public bool IsRegLoaded
+        {
+            get { return isRegLoaded; }
+            set { isRegLoaded = value; }
+        }        
+        
+        private bool isRunLoaded = false;
+        public bool IsRunLoaded
+        {
+            get { return isRunLoaded; }
+            set { isRunLoaded = value; }
+        }
+
         private DBflightGear dBflight;
         public DBflightGear DBflight
         {
@@ -78,10 +100,9 @@ namespace AD_FlightGear
             get { return pathDll; }
             set
             {
-                pathCsv = value;
+                pathDll = value;
                 notifyPropertyChanged("PathDll");
                 initializeDll();
-                notifyAllByChooseIndex();
             }
         }
         private dynamic c;
@@ -95,7 +116,7 @@ namespace AD_FlightGear
             }
         }
 
-        public void initializeDll()
+        public void initializeDll ()
         {
             try
             {
@@ -106,11 +127,10 @@ namespace AD_FlightGear
                 {
                     if (t.Name == "Graph_I")
                     {
-                        c = Activator.CreateInstance(t);
+                        C = Activator.CreateInstance(t);
                     }
                 }
-            }
-            catch (Exception e)
+            } catch (Exception e)
             {
                 Console.WriteLine("Error load dll", e);
             }
@@ -278,7 +298,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("Elevator");
             }
         }
-
+        
         private string timePassed;
         public string TimePassed
         {
@@ -311,13 +331,17 @@ namespace AD_FlightGear
 
             }
         }
-
+        private int corrIndex;
+        public int CorrIndex
+        {
+            get { return dBflight.MapDb[chooseIndex].CorrIndex; }
+        }
         public void notifyAllByChooseIndex()
         {
-            GraphCorrIn = PointList(ListTime(), dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
+            GraphCorrIn = PointList(ListTime(), dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             GraphChooseIn = PointList(ListTime(), dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.Length);
-            pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[dBflightReg.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflightReg.Length);
-            pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
+            pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[CorrIndex]._vectorFloat, dBflightReg.Length);
+            pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion" + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
             //c.updateChoose(PointsRun, PointsReg, Time);
@@ -522,8 +546,8 @@ namespace AD_FlightGear
         }
         public void start(int length)
         {
-            Time = 0;
             ChooseIndex = 0;
+            Time = 0;
             new Thread(delegate ()
             {
                 while (!stop)
@@ -566,6 +590,18 @@ namespace AD_FlightGear
             }
             return points;
         }
+
+        public void copyCorrFromDBRegToDBRun()
+        {
+            if ((pathCsvReg != null) && (pathCsv != null)) {
+                int size = dBflightReg.MapDb.Count();
+                for(int i = 0; i < size; i++)
+                {
+                    dBflight.MapDb[i].CorrIndex = DBflightReg.MapDb[i].CorrIndex;
+                    DBflight.MapDb[i].CorrResult = dBflightReg.MapDb[i].CorrResult;
+                }
+            }
+        }
         public void initGraphs()
         {
             GraphCorrIn = PointList(ListTime(), dBflight.MapDb[dBflight.MapDb[chooseIndex].CorrIndex]._vectorFloat, dBflight.Length);
@@ -576,6 +612,8 @@ namespace AD_FlightGear
             //string pathCsv = @"C:\Users\Amit\source\repos\FG_2\FG_2\reg_flight.csv";
             dBflightReg._PathCsvReg = pathCsvReg;
             dBflightReg.InitializeDBreg();
+            IsRegLoaded = true;
+            copyCorrFromDBRegToDBRun();
         }
 
         public void InitializeDbRun()
@@ -585,11 +623,11 @@ namespace AD_FlightGear
             dBflight._PathCsv = pathCsv;
             dBflight._PathXml = @"playback_small.xml";
             dBflight.InitializeDBrun();
+            copyCorrFromDBRegToDBRun();
             initGraphs();
             this.defaultClock();
             this.SpeedHZ = 1;
+            IsRunLoaded = true;
         }
     }
 }
-
-
