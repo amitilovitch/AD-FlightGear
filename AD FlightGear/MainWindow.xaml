@@ -11,7 +11,7 @@
             <RowDefinition Height="237*"/>
             <RowDefinition Height="334*"/>
         </Grid.RowDefinitions>
-        <Controls:dataGraph  x:Name="dataGraph_V" Grid.RowSpan="2" Loaded="dataGraphV_Loaded"/>
+        <Controls:dataGraph  x:Name="dataGraph_V" Grid.RowSpan="2" Loaded="dataGraphV_Loaded" Background="White"/>
 
         <Controls:FlightData x:Name="FlightData" Margin="522,0,0.333,11.667"/>
         <Controls:OpenFilesV x:Name="OpenFilesV" Margin="25,175,637,89" Grid.Row="1"/>
