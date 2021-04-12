@@ -27,10 +27,10 @@ namespace AD_FlightGear
         private float radius;
         public float Radius { get; set; }
 
+        private MinCircle minCircle;
 
 
 
-        private minCircle minCircle;
 
 
         //lists point from app
@@ -59,15 +59,17 @@ namespace AD_FlightGear
             this.RedPoints = new List<DataPoint>();
 
             this.listPointCircle = new List<DataPoint>();
+            this.minCircle = new MinCircle();
 
             this.RegPoints = new List<DataPoint>();
             this.RunPoints = new List<DataPoint>();
+            oldTime = 0;
         }
 
         public void initMinCircle()
         {
-            radius = this.minCircle.MinC.Radius;
-            ListPointCircle[0] = minCircle.MinC.Center;
+            radius = this.minCircle.C.Radius;
+            ListPointCircle[0] = minCircle.C.Center;
         }
 
 
@@ -78,7 +80,7 @@ namespace AD_FlightGear
         //true is detect anomaly
         public bool detect(DataPoint p)
         {
-            float dist = distance(minCircle.MinC.Center, p);
+            float dist = distance(minCircle.C.Center, p);
             if (dist > treshold)
             {
                 return true;
@@ -88,42 +90,49 @@ namespace AD_FlightGear
 
         public void updateChooseAd(List<DataPoint> regPoints, List<DataPoint> runPoints, int time)
         {
-            this.minCircle = new minCircle(regPoints, regPoints.Count());
+            clearList();
+            this.RegPoints = regPoints;
+            this.RunPoints = runPoints;
+            this.time = time;
+            this.minCircle.C = minCircle.findMinCircle(regPoints, regPoints.Count());
 
-            treshold = minCircle.MinC.Radius * 1.1;
+            treshold = minCircle.C.Radius * 1.1;
 
             this.regPoints = regPoints;
             this.runPoints = runPoints;
 
-            OldTime = Time;
             addPoints(0);
+
+            oldTime = time;
         }
 
         //added to time one, added one point.
         public void nextTime()
         {
-            DataPoint p = RunPoints[Time];
+            DataPoint p = RunPoints[time];
             if (detect(p))
             {
                 RedPoints.Add(p);
             }
-
-            DataPoint oldP = BluePoints[0];
-            BluePoints.Add(p);
-            if (Time > 30)
+            else
             {
-                BluePoints.RemoveAt(0);
-                GreyPoints.Add(oldP);
+                if (BluePoints.Count >= 30)
+                {
+                    DataPoint oldP = BluePoints[0];
+                    BluePoints.RemoveAt(0);
+                    GreyPoints.Add(oldP);
+                }
+                BluePoints.Add(p);
             }
         }
 
         //add points to lists from start until time
         public void addPoints(int start)
         {
-            for (int i = start; i < Time; i++)
+            for (int i = start; i < time; i++)
             {
                 DataPoint p = RunPoints[i];
-                int diff = Time - 30;
+                int diff = time - 30;
 
                 if (detect(p))
                 {
@@ -145,7 +154,7 @@ namespace AD_FlightGear
         }
         public void jumpForward()
         {
-            addPoints(OldTime + 1);
+            addPoints(oldTime + 1);
         }
 
         public void clearList()
@@ -158,7 +167,11 @@ namespace AD_FlightGear
         {
 
             this.time = time;
-            int diffTime = Time - OldTime;
+            int diffTime = time - oldTime;
+            if (diffTime == 0)
+            {
+                return;
+            }
             if (diffTime == 1)
             {
                 nextTime();
@@ -167,10 +180,11 @@ namespace AD_FlightGear
             {
                 jumpForward();
             }
-            else if (diffTime < 1)
+            else if (diffTime < 0)
             {
                 addPoints(0);
             }
+            oldTime = time;
         }
     }
 }
