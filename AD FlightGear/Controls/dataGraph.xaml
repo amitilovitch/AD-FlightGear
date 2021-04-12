@@ -7,7 +7,7 @@
              xmlns:FG ="clr-namespace:AD_FlightGear"
              xmlns:oxy="http://oxyplot.org/wpf" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="500">
 
     <Grid Margin="0,0,10,10">
         <Grid.RowDefinitions>
@@ -28,13 +28,14 @@
             <!--מעגל לבדיקות-->
 
         </oxy:Plot>
-        <oxy:Plot x:Name="below_graph" Title="{Binding}" Margin="194,153,294,26" RenderTransformOrigin="0.759,0.177" Grid.RowSpan="6" Background="#FFAAD1E0">
+        <!--
+        <oxy:Plot x:Name="below_graph" Title="{Binding}" Margin="178,152,310,7" RenderTransformOrigin="0.759,0.177" Grid.RowSpan="5">
             <oxy:LineSeries ItemsSource="{Binding VM_ListPointCircle}" LineStyle="None" MarkerStroke="Black"  MarkerType="Circle" MarkerStrokeThickness="1" MarkerSize="{Binding Radius}" MarkerFill="Transparent"/>
             <oxy:LineSeries ItemsSource="{Binding VM_GreyPoints}" LineStyle="None" MarkerStroke="Gray"  MarkerType="Circle"  MarkerSize="2" MarkerFill="Gray"/>
             <oxy:LineSeries ItemsSource="{Binding VM_BluePoints}" LineStyle="None" MarkerStroke="Blue"  MarkerType="Circle"  MarkerSize="2" MarkerFill="Blue"/>
             <oxy:LineSeries ItemsSource="{Binding VM_RedPoints}" LineStyle="None" MarkerStroke="Red"  MarkerType="Circle"  MarkerSize="2" MarkerFill="Red"/>
         </oxy:Plot>
-
+-->
         <!-- חדש-->
 
         <TextBlock HorizontalAlignment="Left" Margin="33,40,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="4" FontFamily="Sitka Text"/>

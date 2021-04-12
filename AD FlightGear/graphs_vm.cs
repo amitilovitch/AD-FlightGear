@@ -34,7 +34,7 @@ namespace AD_FlightGear
         public graphs_vm(ModelFG modelFG)
         {
             this.modelFG = modelFG;
-            modelFG.PropertyChanged +=
+            this.modelFG.PropertyChanged +=
                 delegate (Object sender, PropertyChangedEventArgs e)
                 {
                     notifyPropertyChanged("VM_" + e.PropertyName);
@@ -61,6 +61,7 @@ namespace AD_FlightGear
             {
                 return modelFG.Time;
             }
+            //set { VM_C.updateTime(VM_TimeInt); }
         }
         public int VM_TimeInt
         {
@@ -85,7 +86,7 @@ namespace AD_FlightGear
             }
         }
 
-        public List<DataPoint> VM_GreyPoints
+/*        public List<DataPoint> VM_GreyPoints
         {
             get
             {
@@ -114,7 +115,7 @@ namespace AD_FlightGear
             {
                 return modelFG.Ad.ListPointLine;
             }
-        }
+        }*/
 
         /*
         public IList<DataPoint> VM_GraphPearson

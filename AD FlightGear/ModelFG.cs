@@ -27,10 +27,13 @@ namespace AD_FlightGear
             }
         }
 
-        private List<DataPoint> greyPoints;
-        public List<DataPoint> GreyPoints {
+/*        private List<DataPoint> greyPoints;
+        public List<DataPoint> GreyPoints
+        {
             get { return ad.GreyPoints; }
-            set { Ad.GreyPoints = value;
+            set
+            {
+                Ad.GreyPoints = value;
                 notifyPropertyChanged("GreyPoints");
             }
         }
@@ -38,25 +41,33 @@ namespace AD_FlightGear
         private List<DataPoint> bluePoints;
         public List<DataPoint> BluePoints
         {
-            get { return Ad.BluePoints; }
-            set { this.BluePoints = value;
+            get { return bluePoints; }
+            set
+            {
+                this.bluePoints = value;
                 notifyPropertyChanged("BluePoints");
             }
         }
 
         private List<DataPoint> redPoints;
-        public List<DataPoint> RedPoints { 
+        public List<DataPoint> RedPoints
+        {
             get { return ad.RedPoints; }
-            set { Ad.RedPoints = value;
-                  notifyPropertyChanged("RedPoints");
+            set
+            {
+                Ad.RedPoints = value;
+                notifyPropertyChanged("RedPoints");
             }
-        }
+        }*/
 
 
         private int length;
-        public int Length {
+        public int Length
+        {
             get { return dBflight.Length; }
-            set { dBflight.Length = value;
+            set
+            {
+                dBflight.Length = value;
                 notifyPropertyChanged("Length");
             }
         }
@@ -66,8 +77,8 @@ namespace AD_FlightGear
         {
             get { return isRegLoaded; }
             set { isRegLoaded = value; }
-        }        
-        
+        }
+
         private bool isRunLoaded = false;
         public bool IsRunLoaded
         {
@@ -90,12 +101,12 @@ namespace AD_FlightGear
             set { dBflightReg = value; }
         }
 
-        private AnomalyDetect ad;
+/*        private AnomalyDetect ad;
         public AnomalyDetect Ad
         {
             get { return ad; }
             set { ad = value; }
-        }
+        }*/
         public ModelFG()
         {
             dBflight = new DBflightGear();
@@ -109,8 +120,10 @@ namespace AD_FlightGear
 
             //to check circle
             //to checkdll
-            ad = ad = new AnomalyDetect();
-            
+/*            ad = ad = new AnomalyDetect();
+            this.BluePoints = ad.BluePoints;
+            this.GreyPoints = ad.GreyPoints;
+            this.RedPoints = ad.RedPoints;*/
             /////////////
             /////////
         }
@@ -159,25 +172,25 @@ namespace AD_FlightGear
             }
         }
 
-/*        public void initializeDll ()
-        {
-            try
-            {
-                Assembly dll = Assembly.LoadFile(PathDll);
-                Type[] type = dll.GetExportedTypes();
-
-                foreach (Type t in type)
+        /*        public void initializeDll ()
                 {
-                    if (t.Name == "Graph_I")
+                    try
                     {
-                        C = Activator.CreateInstance(t);
+                        Assembly dll = Assembly.LoadFile(PathDll);
+                        Type[] type = dll.GetExportedTypes();
+
+                        foreach (Type t in type)
+                        {
+                            if (t.Name == "Graph_I")
+                            {
+                                C = Activator.CreateInstance(t);
+                            }
+                        }
+                    } catch (Exception e)
+                    {
+                        Console.WriteLine("Error load dll", e);
                     }
-                }
-            } catch (Exception e)
-            {
-                Console.WriteLine("Error load dll", e);
-            }
-        }*/
+                }*/
 
 
 
@@ -341,7 +354,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("Elevator");
             }
         }
-        
+
         private string timePassed;
         public string TimePassed
         {
@@ -381,7 +394,7 @@ namespace AD_FlightGear
         }
         public void notifyAllByChooseIndex()
         {
-            
+
             GraphCorrIn = PointList(ListTime(), dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             GraphChooseIn = PointList(ListTime(), dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.Length);
             pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[CorrIndex]._vectorFloat, dBflightReg.Length);
@@ -391,8 +404,8 @@ namespace AD_FlightGear
             
             ////////
             ///////////////////////////////
-            int time = Convert.ToInt32(Time);
-            ad.updateChooseAd(PointsRun, PointsReg, time);
+            //int time = Convert.ToInt32(Time);
+            //ad.updateChooseAd(PointsRun, PointsReg, time);
             ////////////////////////////////////
         }
 
@@ -534,7 +547,7 @@ namespace AD_FlightGear
             Time = 0;
 
             // after recieving CSV file, notifying length update:
-            notifyPropertyChanged("Length"); 
+            notifyPropertyChanged("Length");
 
 
             TimeSpan t_passed = TimeSpan.FromSeconds(sec);
@@ -579,8 +592,8 @@ namespace AD_FlightGear
                 Rudder = Convert.ToDouble(dBflight.MapDb[DBflight.RudderIndex]._vectorFloat[time]);
                 Alieron = Convert.ToDouble(dBflight.MapDb[DBflight.AlieronIndex]._vectorFloat[time]);
                 Elevator = Convert.ToDouble(dBflight.MapDb[DBflight.ElevatorIndex]._vectorFloat[time]);
-                StickX = Alieron * 35 ;
-                StickY = Elevator * 35 ;
+                StickX = Alieron * 35;
+                StickY = Elevator * 35;
 
                 //to graph 
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
@@ -590,24 +603,25 @@ namespace AD_FlightGear
                 //to plugin
 
                 //c.update_color(Brushes.Red);
-                ad.updateTimeAd(time);
+                //ad.updateTimeAd(time);
                 //c.updatTime(time);
             }
         }
         public void start(int length)
         {
-         //   var client = new TcpClient("localhost", 5400);
-         //   var stream = client.GetStream();
+            
             ChooseIndex = 0;
             //Time = 0;
             new Thread(delegate ()
             {
+/*                var client = new TcpClient("localhost", 5400);
+                var stream = client.GetStream();*/
                 while (!stop)
                 {
                     if (!pause)
                     {
-                 //       byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time*10]);
-                //        stream.Write(sendbuf, 0, sendbuf.Length);
+                       // byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
+                       // stream.Write(sendbuf, 0, sendbuf.Length);
                         Time++;
                         Thread.Sleep(Convert.ToInt32(1000 / SpeedHZ));
                     }
@@ -618,9 +632,10 @@ namespace AD_FlightGear
                     //if pause is true, time is constant
                     else { continue; }
                 }
+              //  stream.Close();
+               // client.Close();
             }).Start();
-         //   stream.Close();
-        //    client.Close();
+ 
         }
 
 
@@ -649,9 +664,10 @@ namespace AD_FlightGear
 
         public void copyCorrFromDBRegToDBRun()
         {
-            if ((pathCsvReg != null) && (pathCsv != null)) {
+            if ((pathCsvReg != null) && (pathCsv != null))
+            {
                 int size = dBflightReg.MapDb.Count();
-                for(int i = 0; i < size; i++)
+                for (int i = 0; i < size; i++)
                 {
                     dBflight.MapDb[i].CorrIndex = DBflightReg.MapDb[i].CorrIndex;
                     DBflight.MapDb[i].CorrResult = dBflightReg.MapDb[i].CorrResult;
@@ -686,7 +702,7 @@ namespace AD_FlightGear
             this.defaultClock();
             this.SpeedHZ = 1;
             IsRunLoaded = true;
-            
+
         }
     }
 }

@@ -137,7 +137,7 @@
     <Compile Include="FG_client.cs" />
     <Compile Include="graphs_vm.cs" />
     <Compile Include="joystickVM.cs" />
-    <Compile Include="minCircle.cs" />
+    <Compile Include="MinCircle.cs" />
     <Compile Include="playStopButtonsVM.cs" />
     <Compile Include="timeSliderViewModel.cs" />
     <Compile Include="twoSlidersVM.cs" />
@@ -240,12 +240,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="playback_small.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Controls\play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Controls\stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
