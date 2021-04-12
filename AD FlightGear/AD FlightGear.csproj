@@ -101,7 +101,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AnomalyDetect.cs" />
     <Compile Include="Button.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="ClockVM.cs" />

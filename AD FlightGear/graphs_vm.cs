@@ -113,7 +113,7 @@ namespace AD_FlightGear
         {
             get
             {
-                return modelFG.Ad.ListPointCircle;
+                return modelFG.Ad.ListPointLine;
             }
         }*/
 

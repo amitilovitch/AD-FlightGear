@@ -100,7 +100,7 @@ namespace AD_FlightGear.Controls
             {
                 Assembly dll = Assembly.LoadFile(graphs_VM.VM_PathDll);
                 Type[] type = dll.GetExportedTypes();
-
+                
                 foreach (Type t in type)
                 {
                     if (t.Name == "Graph_I")
@@ -113,7 +113,7 @@ namespace AD_FlightGear.Controls
             catch (Exception e)
             {
                 Console.WriteLine("Error load dll", e);
-            }
+            } 
         }
         private void Button_dll(object sender, RoutedEventArgs e)
         {

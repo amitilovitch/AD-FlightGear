@@ -401,7 +401,7 @@ namespace AD_FlightGear
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
-
+            
             ////////
             ///////////////////////////////
             //int time = Convert.ToInt32(Time);
