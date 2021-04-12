@@ -7,7 +7,7 @@
              xmlns:FG ="clr-namespace:AD_FlightGear"
              xmlns:oxy="http://oxyplot.org/wpf" 
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="500">
 
     <Grid Margin="0,0,10,10">
         <Grid.RowDefinitions>
@@ -19,22 +19,23 @@
             <RowDefinition Height="64*"/>
         </Grid.RowDefinitions>
 
-        <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="177,10,460,41" RenderTransformOrigin="0.759,0.177">
+        <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="121,10,189,41" RenderTransformOrigin="0.759,0.177">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphChoose}"/>
         </oxy:Plot>
-        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="335,10,310,41" RenderTransformOrigin="0.759,0.177">
+        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="306,10,0,41" RenderTransformOrigin="0.759,0.177">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"/>
 
             <!--מעגל לבדיקות-->
 
         </oxy:Plot>
+        <!--
         <oxy:Plot x:Name="below_graph" Title="{Binding}" Margin="178,152,310,7" RenderTransformOrigin="0.759,0.177" Grid.RowSpan="5">
             <oxy:LineSeries ItemsSource="{Binding VM_ListPointCircle}" LineStyle="None" MarkerStroke="Black"  MarkerType="Circle" MarkerStrokeThickness="1" MarkerSize="{Binding Radius}" MarkerFill="Transparent"/>
             <oxy:LineSeries ItemsSource="{Binding VM_GreyPoints}" LineStyle="None" MarkerStroke="Gray"  MarkerType="Circle"  MarkerSize="2" MarkerFill="Gray"/>
             <oxy:LineSeries ItemsSource="{Binding VM_BluePoints}" LineStyle="None" MarkerStroke="Blue"  MarkerType="Circle"  MarkerSize="2" MarkerFill="Blue"/>
             <oxy:LineSeries ItemsSource="{Binding VM_RedPoints}" LineStyle="None" MarkerStroke="Red"  MarkerType="Circle"  MarkerSize="2" MarkerFill="Red"/>
         </oxy:Plot>
-
+-->
         <!-- חדש-->
 
         <TextBlock HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="4"/>
@@ -43,10 +44,10 @@
         <Button Content="..." HorizontalAlignment="Left" Margin="92,8,0,0" VerticalAlignment="Top" Width="24" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="4"/>
         <TextBlock HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="5"><Run Text="Open dll"/></TextBlock>
         <Button Content="..." HorizontalAlignment="Left" Margin="92,12,0,0" VerticalAlignment="Top" Width="24" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="5"/>
-        <DockPanel x:Name="DLLgraph" Margin="177,149,310,10"  Width="300" Height="200"/>
+        <DockPanel x:Name="DLLgraph" Margin="116,149,10,10" Grid.RowSpan="6" Background="Black"/>
 
 
-        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,618,10" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4">
+        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,374,10" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4">
 
             <ListBox.ItemTemplate>
 

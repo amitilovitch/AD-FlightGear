@@ -241,11 +241,5 @@
   <ItemGroup>
     <Resource Include="playback_small.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Controls\play.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Controls\stop.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

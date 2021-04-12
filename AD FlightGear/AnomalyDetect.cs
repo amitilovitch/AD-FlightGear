@@ -54,22 +54,22 @@ namespace AD_FlightGear
         public double Treshold { get; set; }
         public AnomalyDetect()
         {
-            this.GreyPoints = new List<DataPoint>();
-            this.BluePoints = new List<DataPoint>();
-            this.RedPoints = new List<DataPoint>();
+            this.greyPoints = new List<DataPoint>();
+            this.bluePoints = new List<DataPoint>();
+            this.redPoints = new List<DataPoint>();
 
             this.listPointCircle = new List<DataPoint>();
             this.minCircle = new MinCircle();
 
-            this.RegPoints = new List<DataPoint>();
-            this.RunPoints = new List<DataPoint>();
+            this.regPoints = new List<DataPoint>();
+            this.runPoints = new List<DataPoint>();
             oldTime = 0;
         }
 
         public void initMinCircle()
         {
             radius = this.minCircle.C.Radius;
-            ListPointCircle[0] = minCircle.C.Center;
+            listPointCircle[0] = minCircle.C.Center;
         }
 
 
@@ -91,8 +91,8 @@ namespace AD_FlightGear
         public void updateChooseAd(List<DataPoint> regPoints, List<DataPoint> runPoints, int time)
         {
             clearList();
-            this.RegPoints = regPoints;
-            this.RunPoints = runPoints;
+            this.regPoints = regPoints;
+            this.runPoints = runPoints;
             this.time = time;
             this.minCircle.C = minCircle.findMinCircle(regPoints, regPoints.Count());
 
@@ -109,20 +109,20 @@ namespace AD_FlightGear
         //added to time one, added one point.
         public void nextTime()
         {
-            DataPoint p = RunPoints[time];
+            DataPoint p = runPoints[time];
             if (detect(p))
             {
-                RedPoints.Add(p);
-            }
-            else
+                redPoints.Add(p);
+            } else
             {
-                if (BluePoints.Count >= 30)
-                {
-                    DataPoint oldP = BluePoints[0];
-                    BluePoints.RemoveAt(0);
-                    GreyPoints.Add(oldP);
-                }
-                BluePoints.Add(p);
+                bluePoints.Add(p);
+            }
+
+            if (bluePoints.Count >= 30)
+            {
+                DataPoint oldP = bluePoints[0];
+                bluePoints.RemoveAt(0);
+                greyPoints.Add(oldP);
             }
         }
 
@@ -131,23 +131,23 @@ namespace AD_FlightGear
         {
             for (int i = start; i < time; i++)
             {
-                DataPoint p = RunPoints[i];
+                DataPoint p = runPoints[i];
                 int diff = time - 30;
 
                 if (detect(p))
                 {
-                    RedPoints.Add(p);
+                    redPoints.Add(p);
                 }
                 else
                 {
 
                     if (i < diff)
                     {
-                        GreyPoints.Add(p);
+                        greyPoints.Add(p);
                     }
                     else
                     {
-                        BluePoints.Add(p);
+                        bluePoints.Add(p);
                     }
                 }
             }
@@ -159,9 +159,9 @@ namespace AD_FlightGear
 
         public void clearList()
         {
-            RedPoints.Clear();
-            BluePoints.Clear();
-            GreyPoints.Clear();
+            redPoints.Clear();
+            bluePoints.Clear();
+            greyPoints.Clear();
         }
         public void updateTimeAd(int time)
         {
@@ -182,6 +182,7 @@ namespace AD_FlightGear
             }
             else if (diffTime < 0)
             {
+                clearList();
                 addPoints(0);
             }
             oldTime = time;

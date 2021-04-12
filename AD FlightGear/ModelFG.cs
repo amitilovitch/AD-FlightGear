@@ -27,7 +27,7 @@ namespace AD_FlightGear
             }
         }
 
-        private List<DataPoint> greyPoints;
+/*        private List<DataPoint> greyPoints;
         public List<DataPoint> GreyPoints
         {
             get { return ad.GreyPoints; }
@@ -41,10 +41,10 @@ namespace AD_FlightGear
         private List<DataPoint> bluePoints;
         public List<DataPoint> BluePoints
         {
-            get { return Ad.BluePoints; }
+            get { return bluePoints; }
             set
             {
-                this.BluePoints = value;
+                this.bluePoints = value;
                 notifyPropertyChanged("BluePoints");
             }
         }
@@ -58,7 +58,7 @@ namespace AD_FlightGear
                 Ad.RedPoints = value;
                 notifyPropertyChanged("RedPoints");
             }
-        }
+        }*/
 
 
         private int length;
@@ -101,12 +101,12 @@ namespace AD_FlightGear
             set { dBflightReg = value; }
         }
 
-        private AnomalyDetect ad;
+/*        private AnomalyDetect ad;
         public AnomalyDetect Ad
         {
             get { return ad; }
             set { ad = value; }
-        }
+        }*/
         public ModelFG()
         {
             dBflight = new DBflightGear();
@@ -120,8 +120,10 @@ namespace AD_FlightGear
 
             //to check circle
             //to checkdll
-            ad = ad = new AnomalyDetect();
-
+/*            ad = ad = new AnomalyDetect();
+            this.BluePoints = ad.BluePoints;
+            this.GreyPoints = ad.GreyPoints;
+            this.RedPoints = ad.RedPoints;*/
             /////////////
             /////////
         }
@@ -402,8 +404,8 @@ namespace AD_FlightGear
 
             ////////
             ///////////////////////////////
-            int time = Convert.ToInt32(Time);
-            ad.updateChooseAd(PointsRun, PointsReg, time);
+            //int time = Convert.ToInt32(Time);
+            //ad.updateChooseAd(PointsRun, PointsReg, time);
             ////////////////////////////////////
         }
 
@@ -601,7 +603,7 @@ namespace AD_FlightGear
                 //to plugin
 
                 //c.update_color(Brushes.Red);
-                ad.updateTimeAd(time);
+                //ad.updateTimeAd(time);
                 //c.updatTime(time);
             }
         }
@@ -612,14 +614,14 @@ namespace AD_FlightGear
             //Time = 0;
             new Thread(delegate ()
             {
-                var client = new TcpClient("localhost", 5400);
-                var stream = client.GetStream();
+/*                var client = new TcpClient("localhost", 5400);
+                var stream = client.GetStream();*/
                 while (!stop)
                 {
                     if (!pause)
                     {
-                        byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
-                        stream.Write(sendbuf, 0, sendbuf.Length);
+                       // byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
+                       // stream.Write(sendbuf, 0, sendbuf.Length);
                         Time++;
                         Thread.Sleep(Convert.ToInt32(1000 / SpeedHZ));
                     }
@@ -630,8 +632,8 @@ namespace AD_FlightGear
                     //if pause is true, time is constant
                     else { continue; }
                 }
-                stream.Close();
-                client.Close();
+              //  stream.Close();
+               // client.Close();
             }).Start();
  
         }

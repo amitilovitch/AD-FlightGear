@@ -86,7 +86,7 @@ namespace AD_FlightGear
             }
         }
 
-        public List<DataPoint> VM_GreyPoints
+/*        public List<DataPoint> VM_GreyPoints
         {
             get
             {
@@ -115,7 +115,7 @@ namespace AD_FlightGear
             {
                 return modelFG.Ad.ListPointCircle;
             }
-        }
+        }*/
 
         /*
         public IList<DataPoint> VM_GraphPearson

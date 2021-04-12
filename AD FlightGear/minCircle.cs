@@ -17,7 +17,7 @@ namespace AD_FlightGear
 
 		public MinCircle()
 		{
-			this.C = new Circle();
+			this.c = new Circle();
 		}
 		// calculate the distance between two points
 		public float my_distance(DataPoint p1, DataPoint p2)
@@ -100,8 +100,8 @@ namespace AD_FlightGear
 			//base recusion
 			if (size == 0 || points_circle.Count() == 3)
 			{
-				C = basicCircle(points_circle);
-				return C;
+				c = basicCircle(points_circle);
+				return c;
 			}
 
 			DataPoint p = points[size-1];
@@ -110,8 +110,8 @@ namespace AD_FlightGear
 			//if the last point is inside the circle - we dont need to change the borders.
 			if (pointIsInCircle(p, rec_circle))
 			{
-				C = rec_circle;
-				return C;
+				c = rec_circle;
+				return c;
 			}
 			//if the last point is not inside the circle - the point should be border point
 			points_circle.Add(p);
@@ -124,8 +124,8 @@ namespace AD_FlightGear
 		public Circle findMinCircle(List<DataPoint> points, int size)
 		{
 			List<DataPoint> points_circle = new List<DataPoint>();
-			 this.C = min_circle_helper(points, points_circle, size);
-			return C;
+			 this.c = min_circle_helper(points, points_circle, size);
+			return c;
 		}
 	}
 }
