@@ -113,7 +113,7 @@ namespace AD_FlightGear.Controls
             catch (Exception e)
             {
                 Console.WriteLine("Error load dll", e);
-            }
+            } 
         }
         private void Button_dll(object sender, RoutedEventArgs e)
         {
