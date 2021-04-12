@@ -604,7 +604,14 @@ namespace AD_FlightGear
 
                 //c.update_color(Brushes.Red);
                 //ad.updateTimeAd(time);
-                //c.updatTime(time);
+                try
+                {
+                    c.updateTime(time);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error load dll", e);
+                }
             }
         }
         public void start(int length)

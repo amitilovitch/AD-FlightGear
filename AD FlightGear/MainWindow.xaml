@@ -8,9 +8,9 @@
         Title="MainWindow" Height="600" Width="800" Background="#FFAAD1E0">
     <Grid Margin="0,0,3.333,-19.333">
         <Grid.RowDefinitions>
-            <RowDefinition Height="245*"/>
-            <RowDefinition Height="235*"/>
-            <RowDefinition Height="111*"/>
+            <RowDefinition Height="122*"/>
+            <RowDefinition Height="117*"/>
+            <RowDefinition Height="110"/>
         </Grid.RowDefinitions>
         <Border BorderBrush="#FFB8CBE2" BorderThickness="1" HorizontalAlignment="Left" Height="176" Margin="509,27,0,0" VerticalAlignment="Top" Width="65">
             <Border.Background>
@@ -48,13 +48,13 @@
 
         <Controls:FlightData x:Name="FlightData" Margin="519,0,2.667,12"/>
 
-        <Controls:twoSliders x:Name="sliders2" Margin="515,226,0.667,3.5" Grid.RowSpan="2" Loaded="sliders2_Loaded"/>
-        <Controls:speed x:Name="speed" Margin="138,229,594.667,42" RenderTransformOrigin="0.471,-0.865" Grid.Row="1" Grid.RowSpan="2"/>
-        <Controls:joystick x:Name="joystick" Margin="584,6,49.667,4" Grid.Row="1"/>
-        <Controls:playStopButtons x:Name="playStopButtons" Margin="34,233,671.667,56" RenderTransformOrigin="0.397,-3.019" Grid.Row="1" Foreground="#FF9E5E5E" Grid.RowSpan="2"/>
-        <Controls:timeSlider x:Name="timeSliders" Margin="34,54.5,10.667,22" Grid.Row="2"/>
-        <Controls:Clock x:Name="clock" Margin="548,15.5,43.667,61" Grid.Row="2" Loaded="clock_Loaded"/>
-        <Label Content="✈️" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="323,181,0,0" Grid.Row="1" FontSize="75" RenderTransformOrigin="0.5,0.5" Height="109" Width="133" Grid.RowSpan="2">
+        <Controls:twoSliders x:Name="sliders2" Margin="515,210,-1.333,18" Grid.RowSpan="2" Loaded="sliders2_Loaded"/>
+        <Controls:speed x:Name="speed" Margin="138,29,592.667,7" RenderTransformOrigin="0.471,-0.865" Grid.Row="2"/>
+        <Controls:joystick x:Name="joystick" Margin="576,228,57.667,26" Grid.RowSpan="2"/>
+        <Controls:playStopButtons x:Name="playStopButtons" Margin="23,35,682.667,20" RenderTransformOrigin="0.397,-3.019" Grid.Row="2" Foreground="#FF9E5E5E"/>
+        <Controls:timeSlider x:Name="timeSliders" Margin="10,15,33.667,61" Grid.Row="2"/>
+        <Controls:Clock x:Name="clock" Margin="558,42,33.667,34" Grid.Row="2" Loaded="clock_Loaded"/>
+        <Label Content="✈️" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="662,51,-6.333,0" Grid.Row="1" FontSize="75" RenderTransformOrigin="0.5,0.5" Height="109" Width="133">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
