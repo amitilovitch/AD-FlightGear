@@ -112,6 +112,7 @@ namespace AD_FlightGear
             }
             else if (boundary.Count() == 1)
             {
+                
                 Circle c = new Circle(boundary[0], 0);
                 //Circle c(boundary[0], 0);
                 return c;
