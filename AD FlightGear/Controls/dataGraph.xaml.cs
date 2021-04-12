@@ -151,7 +151,7 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
-            graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\circle\circle\bin\Debug\circle.dll";
+            graphs_VM.VM_PathDll = @"C:\Users\Amit\source\repos\circle\circle\bin\Debug\circle.dll";
             initializeDll();
 
             graphs_VM.initDBrun();
