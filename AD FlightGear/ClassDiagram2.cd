@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AD_FlightGear.MapVector" Collapsed="true">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAABAAAAAQAAAEAAAAAQAAAAFEAAAAREAAAEBAAA=</HashCode>
+      <FileName>MapVector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.Button" Collapsed="true">
+    <Position X="0.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAgAAAAIAAAA=</HashCode>
+      <FileName>Button.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.ClockVM" Collapsed="true">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ClockVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.speedVM" Collapsed="true">
+    <Position X="16" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAQAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\speedVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.DBflightGear" Collapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIIABEQICAACAMVAEKSlUBaABBAAAAAwVQAgEBOA=</HashCode>
+      <FileName>DBflightGear.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.FG_client" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FG_client.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.graphs_vm" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAEAQOEAQAUggAIAAAAgZgAMAAIAAAEAAEAAAgAA=</HashCode>
+      <FileName>graphs_vm.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.joystickVM" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAABAAABAAAAAAAAAI=</HashCode>
+      <FileName>joystickVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="8" Width="1.5" />
+    <Members>
+      <Method Name="MainWindow" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAARAAAACAAAAAAAAAAAAAAAAiAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.ModelFG" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AIAlQCDAAbAgRFk6JORAIhTh5SIhTeXCMYREwBGAraA=</HashCode>
+      <FileName>ModelFG.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.playStopButtonsVM" Collapsed="true">
+    <Position X="4.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAAAAAAACAAAAQAAAQAAACAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>playStopButtonsVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.timeSliderViewModel" Collapsed="true">
+    <Position X="7" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAIAACAAAAAAAQAAAAA=</HashCode>
+      <FileName>timeSliderViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.twoSlidersVM" Collapsed="true">
+    <Position X="11.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAIAAIAACA=</HashCode>
+      <FileName>twoSlidersVM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AD_FlightGear.ViewModel">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIgAA=</HashCode>
+      <FileName>ViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AD_FlightGear.VM_FlightData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAECAAAAAIIAAAAAAAAAAgQAAAgAAAAAAAAAKAAA=</HashCode>
+      <FileName>VM_FlightData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.Clock" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\Clock.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.dataGraph" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAABIkAAAAAAgQDCAABAAAAABAAQAAA=</HashCode>
+      <FileName>Controls\dataGraph.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="graphs_VM" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.FlightData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Controls\FlightData.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vM_FlightData" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.joystick" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAICAAAAIAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Controls\joystick.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.playStopButtons" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAgAAAAAAEAAAACAIAAAEABAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\playStopButtons.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.speed" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="16" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAGAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\speed.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.stick" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\stick.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.timeSlider" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAIAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Controls\timeSlider.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="AD_FlightGear.Controls.twoSliders" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAACAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\twoSliders.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="vm" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
