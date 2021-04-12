@@ -24,7 +24,7 @@ namespace AD_FlightGear.Controls
         public speed()
         {
             InitializeComponent();
-            this.input.Text = "01.00";
+            this.input.Text = "1";
         }
 
         private speedVM vm;
@@ -34,7 +34,7 @@ namespace AD_FlightGear.Controls
             set { this.vm = value; }
         }
 
-        public void setVM(speedVM newvm) /// לבדוק אם הוא יכול גם ללכת לסטר של התכונה
+        public void setVM(speedVM newvm) 
         {
             this.vm = newvm;
             DataContext = vm;
@@ -46,21 +46,15 @@ namespace AD_FlightGear.Controls
 
         }
 
-        /*        private void Button_Click(object sender, RoutedEventArgs e)
-                {
-        *//*            this.textCheck.Text = input.Text;
-                    vm.VM_Speed = input.Text;*//*
-                }*/
 
         private void KeyDownHandler(object sender, KeyEventArgs e)
         {
-            //string tmp = String.Copy(e.);
             if (e.Key == Key.Enter)
             {
                 if (!vm.IsRegLoaded || !vm.IsRunLoaded)
                 {
-                    this.input.Text = "01.00";
-                    vm.VM_Speed = "01.00";
+                    this.input.Text = "1";
+                    vm.VM_Speed = "1";
                 }
                 else
                 {
@@ -71,8 +65,8 @@ namespace AD_FlightGear.Controls
                     }
                     catch (Exception ex)
                     {
-                        this.input.Text = "01.00";
-                        vm.VM_Speed = "01.00";
+                        this.input.Text = "1";
+                        vm.VM_Speed = "1";
                     }
                 }
             }

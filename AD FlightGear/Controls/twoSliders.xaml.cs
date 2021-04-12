@@ -33,7 +33,7 @@ namespace AD_FlightGear.Controls
             set { this.vm = value; }
         }
 
-        public void setVM(twoSlidersVM newvm) /// לבדוק אם הוא יכול גם ללכת לסטר של התכונה
+        public void setVM(twoSlidersVM newvm) 
         {
             this.vm = newvm;
             DataContext = vm;

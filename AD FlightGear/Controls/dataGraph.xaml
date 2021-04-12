@@ -19,16 +19,16 @@
             <RowDefinition Height="64*"/>
         </Grid.RowDefinitions>
 
-        <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="177,10,460,41" RenderTransformOrigin="0.759,0.177">
-            <oxy:LineSeries ItemsSource="{Binding VM_GraphChoose}"/>
+        <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="193,10,450,32.333" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0">
+            <oxy:LineSeries ItemsSource="{Binding VM_GraphChoose}" Height="140" Width="140" Color="#FF0B2F67"/>
         </oxy:Plot>
-        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="335,10,310,41" RenderTransformOrigin="0.759,0.177">
-            <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"/>
+        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="343,10,294,35.333" RenderTransformOrigin="0.759,0.177" Height="140" Background="#FFAAD1E0">
+            <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"  Color="#FF0B2F67"/>
 
             <!--מעגל לבדיקות-->
 
         </oxy:Plot>
-        <oxy:Plot x:Name="below_graph" Title="{Binding}" Margin="178,152,310,7" RenderTransformOrigin="0.759,0.177" Grid.RowSpan="5">
+        <oxy:Plot x:Name="below_graph" Title="{Binding}" Margin="194,153,294,26" RenderTransformOrigin="0.759,0.177" Grid.RowSpan="6" Background="#FFAAD1E0">
             <oxy:LineSeries ItemsSource="{Binding VM_ListPointCircle}" LineStyle="None" MarkerStroke="Black"  MarkerType="Circle" MarkerStrokeThickness="1" MarkerSize="{Binding Radius}" MarkerFill="Transparent"/>
             <oxy:LineSeries ItemsSource="{Binding VM_GreyPoints}" LineStyle="None" MarkerStroke="Gray"  MarkerType="Circle"  MarkerSize="2" MarkerFill="Gray"/>
             <oxy:LineSeries ItemsSource="{Binding VM_BluePoints}" LineStyle="None" MarkerStroke="Blue"  MarkerType="Circle"  MarkerSize="2" MarkerFill="Blue"/>
@@ -37,16 +37,16 @@
 
         <!-- חדש-->
 
-        <TextBlock HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="4"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="92,40,0,0" VerticalAlignment="Top" Width="24" Click="openCsvRun" Grid.Row="4"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,41,0,0" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78" Grid.Row="4"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="92,8,0,0" VerticalAlignment="Top" Width="24" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="4"/>
-        <TextBlock HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="5"><Run Text="Open dll"/></TextBlock>
-        <Button Content="..." HorizontalAlignment="Left" Margin="92,12,0,0" VerticalAlignment="Top" Width="24" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="33,40,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="4" FontFamily="Sitka Text"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="115,0,0,46" VerticalAlignment="Bottom" Width="24" Height="17" Click="openCsvRun" Grid.Row="5" Background="#FFB8CBE2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="33,3,0,0" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78" Grid.Row="5" FontFamily="Sitka Text"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="115,40,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="4" Background="#FFB8CBE2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="33,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="5" FontFamily="Sitka Text"><Run Text="Open dll"/></TextBlock>
+        <Button Content="..." HorizontalAlignment="Left" Margin="115,31,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="5" Background="#FFB8CBE2"/>
         <DockPanel x:Name="DLLgraph" Margin="177,149,310,10"  Width="300" Height="200"/>
 
 
-        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,618,10" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4">
+        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,604,10.333" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Sitka Text">
 
             <ListBox.ItemTemplate>
 

@@ -4,36 +4,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AD_FlightGear.Controls"
-mc:Ignorable="d" Width="275" Height="225">
-    <Grid Margin="0,10,23,0" Background="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}">
+mc:Ignorable="d" Width="275" Height="250">
+    <Grid Margin="0,0,10,10" Background="#FFAEB4B9">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="221*"/>
             <ColumnDefinition Width="10*"/>
         </Grid.ColumnDefinitions>
-        <Slider x:Name ="throttleSlider"  HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top" Height="158" Width="20" Orientation="Vertical" Maximum="1" Minimum="0" IsEnabled="False" Value="{Binding VM_Throttle0}">
-            <Slider.Background>
-                <RadialGradientBrush>
-                    <GradientStop Color="White"/>
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="#FF161616"/>
-                </RadialGradientBrush>
-            </Slider.Background>
-        </Slider>
-        <Slider x:Name ="rudderSlider"  HorizontalAlignment="Left" Margin="39,176,0,0" VerticalAlignment="Top" Height="20" Width="195" Orientation="Horizontal" IsEnabled="False" Grid.Row="0" Maximum="1" Minimum="-1" Value="{Binding VM_Rudder}" RenderTransformOrigin="0.405,1.675">
-            <Slider.Background>
-                <RadialGradientBrush>
-                    <GradientStop Color="Black" Offset="1"/>
-                    <GradientStop Color="White"/>
-                    <GradientStop Color="#FF343434"/>
-                </RadialGradientBrush>
-            </Slider.Background>
-        </Slider>
-        <Label Content="0" HorizontalAlignment="Left" Margin="0,154,0,0" VerticalAlignment="Top" Width="36" FontSize="8" FontFamily="Tw Cen MT Condensed Extra Bold"/>
-        <Label Content="1" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Width="36" FontSize="8" FontFamily="Tw Cen MT Condensed Extra Bold"/>
-        <Label Content="-1" HorizontalAlignment="Left" Margin="34,191,0,-7" VerticalAlignment="Top" Width="36" FontSize="8" FontFamily="Tw Cen MT Condensed Extra Bold"/>
-        <Label Content="1" HorizontalAlignment="Left" Margin="223,191,0,-7" VerticalAlignment="Top" Width="22" FontSize="8" Grid.ColumnSpan="2" FontFamily="Tw Cen MT Condensed Extra Bold"/>
-        <TextBlock HorizontalAlignment="Left" Height="11" Margin="127,198,0,0" TextWrapping="Wrap" Text="Rudder" VerticalAlignment="Top" Width="33" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="8" RenderTransformOrigin="-0.374,-1.758"/>
-        <TextBlock HorizontalAlignment="Left" Height="11" Margin="-7,81,0,0" TextWrapping="Wrap" Text="Throttle" VerticalAlignment="Top" Width="33" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="8" RenderTransformOrigin="0.5,0.5">
+        <Slider x:Name ="throttleSlider"  HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top" Height="182" Width="20" Orientation="Vertical" Maximum="1" Minimum="0" IsEnabled="False" Value="{Binding VM_Throttle0}" Background="#FF238ABD"/>
+        <Slider x:Name ="rudderSlider"  HorizontalAlignment="Left" Margin="35,197,0,0" VerticalAlignment="Top" Height="20" Width="219" Orientation="Horizontal" IsEnabled="False" Grid.Row="0" Maximum="1" Minimum="-1" Value="{Binding VM_Rudder}" RenderTransformOrigin="0.405,1.675" Background="#FF238ABD"/>
+        <Label Content="0" HorizontalAlignment="Left" Margin="5,178,0,0" VerticalAlignment="Top" Width="36" FontSize="8" FontFamily="Tw Cen MT Condensed Extra Bold"/>
+        <Label Content="1" HorizontalAlignment="Left" Margin="5,6,0,0" VerticalAlignment="Top" Width="36" FontSize="8" FontFamily="Tw Cen MT Condensed Extra Bold"/>
+        <Label Content="-1" HorizontalAlignment="Left" Margin="32,212,0,0" VerticalAlignment="Top" Width="36" FontSize="8" FontFamily="Tw Cen MT Condensed Extra Bold"/>
+        <Label Content="1" HorizontalAlignment="Left" Margin="243,212,0,0" VerticalAlignment="Top" Width="22" FontSize="8" FontFamily="Tw Cen MT Condensed Extra Bold" Grid.ColumnSpan="2"/>
+        <TextBlock HorizontalAlignment="Left" Height="11" Margin="134,218,0,0" TextWrapping="Wrap" Text="Rudder" VerticalAlignment="Top" Width="33" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="8" RenderTransformOrigin="-0.374,-1.758"/>
+        <TextBlock HorizontalAlignment="Left" Height="11" Margin="-8,98,0,0" TextWrapping="Wrap" Text="Throttle" VerticalAlignment="Top" Width="33" FontFamily="Tw Cen MT Condensed Extra Bold" FontSize="8" RenderTransformOrigin="0.5,0.5">
             <TextBlock.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

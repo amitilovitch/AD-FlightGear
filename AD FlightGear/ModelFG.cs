@@ -27,6 +27,32 @@ namespace AD_FlightGear
             }
         }
 
+        private List<DataPoint> greyPoints;
+        public List<DataPoint> GreyPoints {
+            get { return ad.GreyPoints; }
+            set { Ad.GreyPoints = value;
+                notifyPropertyChanged("GreyPoints");
+            }
+        }
+
+        private List<DataPoint> bluePoints;
+        public List<DataPoint> BluePoints
+        {
+            get { return Ad.BluePoints; }
+            set { this.BluePoints = value;
+                notifyPropertyChanged("BluePoints");
+            }
+        }
+
+        private List<DataPoint> redPoints;
+        public List<DataPoint> RedPoints { 
+            get { return ad.RedPoints; }
+            set { Ad.RedPoints = value;
+                  notifyPropertyChanged("RedPoints");
+            }
+        }
+
+
         private int length;
         public int Length {
             get { return dBflight.Length; }
@@ -362,11 +388,11 @@ namespace AD_FlightGear
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
-
+            
             ////////
             ///////////////////////////////
             int time = Convert.ToInt32(Time);
-            Ad.updateChooseAd(PointsRun, PointsReg, time);
+            ad.updateChooseAd(PointsRun, PointsReg, time);
             ////////////////////////////////////
         }
 
@@ -573,7 +599,7 @@ namespace AD_FlightGear
          //   var client = new TcpClient("localhost", 5400);
          //   var stream = client.GetStream();
             ChooseIndex = 0;
-            Time = 0;
+            //Time = 0;
             new Thread(delegate ()
             {
                 while (!stop)

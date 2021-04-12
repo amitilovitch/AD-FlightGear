@@ -33,39 +33,39 @@
                         </Grid.RowDefinitions>
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="75"/>
-                            <ColumnDefinition Width="50"/>
+                            <ColumnDefinition Width="85"/>
+                            <ColumnDefinition Width="106"/>
+                            <ColumnDefinition Width="84"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Text="HDG" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"  />
-                        <Label x:Name="HDG_val"  Content="{Binding VM_Hdg}" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" />
-                        <TextBlock Text="deg" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" />
+                        <TextBlock Text="HDG" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" FontFamily="Sitka Text" Width="26"  />
+                        <Label x:Name="HDG_val"  Content="{Binding VM_Hdg}" Grid.Row="0" HorizontalAlignment="Right" Width="129" FontFamily="Sitka Text" Grid.ColumnSpan="2" />
+                        <TextBlock Text="deg" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" FontFamily="Sitka Text" Width="20" />
 
-                        <TextBlock Text="Alt" Grid.Row="1" Grid.Column="0" />
-                        <Label x:Name="Alt_val" Content="{Binding VM_Alt}" Grid.Row="1" Grid.Column="1" />
-                        <TextBlock Text="ft" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" />
+                        <TextBlock Text="Alt" Grid.Row="1" Grid.Column="0" FontFamily="Sitka Text" />
+                        <Label x:Name="Alt_val" Content="{Binding VM_Alt}" Grid.Row="1" Grid.Column="1" FontFamily="Sitka Text" />
+                        <TextBlock Text="ft" Grid.Row="1" Grid.Column="2" FontFamily="Sitka Text" />
 
-                        <TextBlock Text="Speed" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" />
-                        <Label x:Name="Speed_val" Content="{Binding VM_Speed}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" />
-                        <TextBlock Text="kt" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" />
+                        <TextBlock Text="Speed" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Sitka Text" />
+                        <Label x:Name="Speed_val" Content="{Binding VM_Speed}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" FontFamily="Sitka Text" />
+                        <TextBlock Grid.Row="2" Grid.Column="2" ><Run FontFamily="Sitka Text" Text="kt"/></TextBlock>
 
-                        <TextBlock Text="Pitch" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" />
-                        <Label x:Name="Pitch_val" Content="{Binding VM_Pitch}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" />
-                        <TextBlock Text="deg" Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="2" />
+                        <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" ><Run FontFamily="Sitka Text" Text="Pitch"/></TextBlock>
+                        <Label x:Name="Pitch_val" Content="{Binding VM_Pitch}" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="1" FontFamily="Sitka Text" />
+                        <TextBlock Text="deg" Grid.Row="3" Grid.Column="2" FontFamily="Sitka Text" />
 
-                        <TextBlock Text="Roll" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" />
-                        <Label x:Name="Roll_val" Content="{Binding VM_Roll}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" />
-                        <TextBlock Text="deg" Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="2" />
+                        <TextBlock Text="Roll" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Sitka Text" />
+                        <Label x:Name="Roll_val" Content="{Binding VM_Roll}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="1" FontFamily="Sitka Text" />
+                        <TextBlock Text="deg" Grid.Row="4" Grid.Column="2" FontFamily="Sitka Text" />
 
-                        <TextBlock Text="Yaw" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" />
-                        <Label x:Name="Yaw_val" Content="{Binding VM_Yaw}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" />
-                        <TextBlock Text="deg" Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="2" />
+                        <TextBlock Text="Yaw" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" FontFamily="Sitka Text" />
+                        <Label x:Name="Yaw_val" Content="{Binding VM_Yaw}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" FontFamily="Sitka Text" />
+                        <TextBlock Text="deg" Grid.Row="5" Grid.Column="2" FontFamily="Sitka Text" />
 
                     </Grid>
                 </Grid>
             </Viewbox>
         </StackPanel>
-        <TextBlock Text="         Own Data" HorizontalAlignment="Center" VerticalAlignment="Top" Width="275" Margin="10,0,1,0" FontFamily="Segoe UI Light" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Text="         Own Data" HorizontalAlignment="Center" VerticalAlignment="Top" Width="275" Margin="10,0,1,0" FontFamily="Sitka Text" FontSize="20" FontWeight="Bold"/>
 
     </Grid>
 </UserControl>

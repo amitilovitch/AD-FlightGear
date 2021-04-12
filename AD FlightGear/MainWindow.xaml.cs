@@ -46,6 +46,7 @@ namespace AD_FlightGear
             this.timeSliders.setVM(vm_timeSlider);
             modelFG.Time = 0;
             modelFG.Length = 100;
+            modelFG.Correlation = "Correaltion - ";
 
             playStopButtonsVM vm_buttons = new playStopButtonsVM(modelFG);
             this.playStopButtons.setVM(vm_buttons);
@@ -76,6 +77,11 @@ namespace AD_FlightGear
         }
 
         private void dataGraphV_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void clock_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

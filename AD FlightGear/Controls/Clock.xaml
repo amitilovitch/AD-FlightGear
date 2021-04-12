@@ -6,17 +6,17 @@
              xmlns:local="clr-namespace:AD_FlightGear.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="60" d:DesignWidth="200">
-    <Canvas>
+    <Canvas Margin="0,0,-2,0">
         <TextBlock x:Name="timePass" HorizontalAlignment="Left" 
                    TextWrapping="Wrap" Text="{Binding VM_TimePassed}" 
                    VerticalAlignment="Center" Height="30" Width="100" 
                    RenderTransformOrigin="0.5,0.5"
-                   TextAlignment="Center" FontSize="16" Background="#FF887D9E">
+                   TextAlignment="Center" FontSize="16" Background="#FFA0A5AE">
         </TextBlock>
         <TextBlock x:Name="timeLeft" HorizontalAlignment="Right" 
                    TextWrapping="Wrap" Text="{Binding VM_TimeLeft}" 
                    VerticalAlignment="Center" Height="30" Width="100" 
                    RenderTransformOrigin="0.5,0.5"
-                   TextAlignment="Center" FontSize="16" Background="#FF887D9E" Canvas.Left="101"/>
+                   TextAlignment="Center" FontSize="16" Background="#FFA0A5AE" Canvas.Left="101"/>
     </Canvas>
 </UserControl>
