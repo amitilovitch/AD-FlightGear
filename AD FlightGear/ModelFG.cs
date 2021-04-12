@@ -615,7 +615,9 @@ namespace AD_FlightGear
                 //ad.updateTimeAd(time);
                 try
                 {
-                    c.updateTime(time);
+                    c.updateChoose(pointsRun, pointsReg, Convert.ToInt32(time));
+
+                    //c.updateTime(time);
                 }
                 catch (Exception e)
                 {
