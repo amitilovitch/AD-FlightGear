@@ -28,7 +28,7 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Border BorderBrush="#FFB8CBE2" BorderThickness="1" HorizontalAlignment="Left" Height="176" Margin="609,27,0,0" VerticalAlignment="Top" Width="72">
+        <Border BorderBrush="#FFB8CBE2" BorderThickness="1" HorizontalAlignment="Left" Height="176" Margin="600,27,0,0" VerticalAlignment="Top" Width="81">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -44,17 +44,17 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="509,173,0,0" VerticalAlignment="Top" Width="263" Background="#FFAEB4B9"/>
 
 
-        <Controls:dataGraph  x:Name="dataGraph_V"  Grid.RowSpan="2" Loaded="dataGraphV_Loaded" Margin="0,0,-0.333,16.5"/>
+        <Controls:dataGraph  x:Name="dataGraph_V"  Grid.RowSpan="2" Loaded="dataGraphV_Loaded" Margin="0,0,274.667,38"/>
 
         <Controls:FlightData x:Name="FlightData" Margin="519,0,2.667,12"/>
 
         <Controls:twoSliders x:Name="sliders2" Margin="515,226,0.667,3.5" Grid.RowSpan="2" Loaded="sliders2_Loaded"/>
         <Controls:speed x:Name="speed" Margin="138,229,594.667,42" RenderTransformOrigin="0.471,-0.865" Grid.Row="1" Grid.RowSpan="2"/>
-        <Controls:joystick x:Name="joystick" Margin="600,6,35.667,3.5" Grid.Row="1"/>
+        <Controls:joystick x:Name="joystick" Margin="584,6,49.667,4" Grid.Row="1"/>
         <Controls:playStopButtons x:Name="playStopButtons" Margin="34,233,671.667,56" RenderTransformOrigin="0.397,-3.019" Grid.Row="1" Foreground="#FF9E5E5E" Grid.RowSpan="2"/>
         <Controls:timeSlider x:Name="timeSliders" Margin="34,54.5,10.667,22" Grid.Row="2"/>
         <Controls:Clock x:Name="clock" Margin="548,15.5,43.667,61" Grid.Row="2" Loaded="clock_Loaded"/>
-        <Label Content="✈️" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="309,188.602,0,0" Grid.Row="1" FontSize="75" RenderTransformOrigin="0.5,0.5" Height="126" Width="167" Grid.RowSpan="2">
+        <Label Content="✈️" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="323,181,0,0" Grid.Row="1" FontSize="75" RenderTransformOrigin="0.5,0.5" Height="109" Width="133" Grid.RowSpan="2">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>

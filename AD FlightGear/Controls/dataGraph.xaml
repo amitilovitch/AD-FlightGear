@@ -19,10 +19,10 @@
             <RowDefinition Height="64*"/>
         </Grid.RowDefinitions>
 
-        <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="193,10,450,32.333" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0">
+        <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="154,10,178,41" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphChoose}" Height="140" Width="140" Color="#FF0B2F67"/>
         </oxy:Plot>
-        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="343,10,294,35.333" RenderTransformOrigin="0.759,0.177" Height="140" Background="#FFAAD1E0">
+        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="317,10,10,41" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"  Color="#FF0B2F67"/>
 
             <!--מעגל לבדיקות-->
@@ -44,15 +44,15 @@
         <Button Content="..." HorizontalAlignment="Left" Margin="115,40,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="4" Background="#FFB8CBE2"/>
         <TextBlock HorizontalAlignment="Left" Margin="33,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="5" FontFamily="Sitka Text"><Run Text="Open dll"/></TextBlock>
         <Button Content="..." HorizontalAlignment="Left" Margin="115,31,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="5" Background="#FFB8CBE2"/>
-        <DockPanel x:Name="DLLgraph" Margin="177,149,310,10"  Width="300" Height="200"/>
+        <DockPanel x:Name="DLLgraph" Margin="163,149,20,10" Background="Black" Grid.RowSpan="6"/>
 
 
-        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,604,10.333" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Sitka Text">
+        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,341,10" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Sitka Text">
 
             <ListBox.ItemTemplate>
 
                 <DataTemplate>
-                    <Button Content="{Binding ButtonContent}" Margin="0,0,5,5" />
+                    <Button Content="{Binding ButtonContent}" Margin="0,0,5,5" FontFamily="Sitka Text" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
