@@ -52,7 +52,7 @@
             <ListBox.ItemTemplate>
 
                 <DataTemplate>
-                    <Button Content="{Binding ButtonContent}" Margin="0,0,5,5" />
+                    <Button Content="{Binding ButtonContent}" Margin="0,0,5,5" FontFamily="Sitka Text" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
