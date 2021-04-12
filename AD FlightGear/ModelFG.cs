@@ -375,6 +375,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("TimeLeft");
             }
         }
+
         private int chooseIndex;
         public int ChooseIndex
         {
@@ -401,7 +402,15 @@ namespace AD_FlightGear
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
-            
+
+            try
+            {
+                c.updateChoose(pointsRun, pointsReg, Convert.ToInt32(time));
+            }
+            catch (Exception e)
+            {
+            }
+
             ////////
             ///////////////////////////////
             //int time = Convert.ToInt32(Time);

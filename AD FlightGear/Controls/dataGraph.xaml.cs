@@ -76,7 +76,7 @@ namespace AD_FlightGear.Controls
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
 
 
-                graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
+                //graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
             }
         }
 
