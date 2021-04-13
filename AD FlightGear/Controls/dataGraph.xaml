@@ -6,24 +6,24 @@
              xmlns:local="clr-namespace:AD_FlightGear.Controls" xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:FG ="clr-namespace:AD_FlightGear"
              xmlns:oxy="http://oxyplot.org/wpf" 
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="500">
+             mc:Ignorable="d" Height="500" Width="586">
 
-    <Grid Margin="0,0,10,10">
+    <Grid Margin="0,0,0,-78">
         <Grid.RowDefinitions>
-            <RowDefinition Height="185*"/>
-            <RowDefinition Height="49*"/>
+            <RowDefinition Height="256*"/>
+            <RowDefinition Height="51*"/>
             <RowDefinition Height="0*"/>
-            <RowDefinition Height="75*"/>
-            <RowDefinition Height="67*"/>
-            <RowDefinition Height="64*"/>
+            <RowDefinition Height="271*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
         </Grid.RowDefinitions>
 
-        <oxy:Plot x:Name="graph_upLeft" Title="{Binding Title}" Margin="154,10,178,41" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0">
+        <oxy:Plot x:Name="graph_upLeft"  Margin="227,146,10,0" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphChoose}" Height="140" Width="140" Color="#FF0B2F67"/>
         </oxy:Plot>
-        <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="317,10,10,41" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0">
+        <oxy:Plot x:Name="graph_upRight" Margin="227,19,10,0" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0" Height="103" VerticalAlignment="Top">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"  Color="#FF0B2F67"/>
+
 
             <!--מעגל לבדיקות-->
 
@@ -37,22 +37,27 @@
         </oxy:Plot>
 -->
         <!-- חדש-->
+        <TextBlock HorizontalAlignment="Left" Margin="15,122,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="3" FontFamily="Caliari Text" Height="14"/>
+        <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="234,0,0,0" TextWrapping="Wrap" Text="Chosen sensor" VerticalAlignment="Top" Width="98" FontFamily="Caliari Text" Height="19"/>
+        <Label HorizontalAlignment="Center" FontWeight="Bold" Margin="227,122,0,0" Content="{Binding VM_NameCorrelation}" VerticalAlignment="Top" Width="344" FontFamily="Caliari Text" Height="24"/>
 
-        <TextBlock HorizontalAlignment="Left" Margin="33,40,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="4" FontFamily="Sitka Text"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="115,0,0,46" VerticalAlignment="Bottom" Width="24" Height="17" Click="openCsvRun" Grid.Row="5" Background="#FFB8CBE2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="33,3,0,0" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78" Grid.Row="5" FontFamily="Sitka Text"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="115,40,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="4" Background="#FFB8CBE2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="33,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="5" FontFamily="Sitka Text"><Run Text="Open dll"/></TextBlock>
-        <Button Content="..." HorizontalAlignment="Left" Margin="115,31,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="5" Background="#FFB8CBE2"/>
-        <DockPanel x:Name="DLLgraph" Margin="163,149,20,10" Background="Black" Grid.RowSpan="6"/>
+        <Label HorizontalAlignment="Center" FontWeight="Bold" Margin="234,0,220,0" Content="{Binding VM_Correlation}" Width="132" FontFamily="Caliari Text" Height="24" VerticalAlignment="Top" Grid.Row="1"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,0,0,113" VerticalAlignment="Bottom" Width="24" Height="17" Click="openCsvRun" Grid.Row="3" Background="#FFB8CBE2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="15,144,0,0" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78" Grid.Row="3" FontFamily="Caliari Text" Height="14"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,118,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="3" Background="#FFB8CBE2"/>
+        <TextBlock HorizontalAlignment="Left" Margin="15,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="3" FontFamily="Caliari Text" Height="14"><Run Text="Open dll"/></TextBlock>
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,161,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="3" Background="#FFB8CBE2"/>
+        <DockPanel x:Name="DLLgraph" Margin="158,10,-16,-13"  Grid.RowSpan="5" Grid.Row="1" />
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,163,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="3" Background="#FFB8CBE2"/>
 
+        <DockPanel x:Name="AnomalyPoint" Margin="167,184,0,52" Grid.Row="3" Background="red" />
 
-        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="0,0,341,10" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Sitka Text">
+        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="4,0,398,171" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Caliari Text">
 
             <ListBox.ItemTemplate>
 
                 <DataTemplate>
-                    <Button Content="{Binding ButtonContent}" Margin="0,0,5,5" FontFamily="Sitka Text" />
+                    <TextBlock Text="{Binding ButtonContent}"   Margin="0,0,5,5" FontFamily="Sitka Text" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

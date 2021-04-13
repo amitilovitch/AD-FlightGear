@@ -39,5 +39,14 @@ namespace AD_FlightGear.Controls
             DataContext = vm;
         }
 
+        private void rudderSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
+
+        private void throttleSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+
+        }
     }
 }

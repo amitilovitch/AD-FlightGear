@@ -57,6 +57,7 @@ namespace AD_FlightGear
             graphs_vm graphs = new graphs_vm(modelFG);
             dataGraph_V.set_graphs_VM(graphs);
            // dataGraph_V.addButtons();
+          // dataGraph_V.DLLgraph.
 
 
         } 
@@ -82,6 +83,26 @@ namespace AD_FlightGear
         }
 
         private void clock_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FlightData_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void joystick_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void timeSliders_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void speed_Loaded(object sender, RoutedEventArgs e)
         {
 
         }

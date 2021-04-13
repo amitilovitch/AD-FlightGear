@@ -59,10 +59,10 @@ namespace AD_FlightGear
         {
             get
             {
-                VM_C.updateTime(VM_TimeInt);
+                //VM_C.updateTime(VM_TimeInt);
                 return modelFG.Time;
             }
-            //set { VM_C.updateTime(VM_TimeInt); }
+            set { VM_C.updateTime(VM_TimeInt); }
         }
         public int VM_TimeInt
         {
@@ -204,6 +204,17 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_C");
             }
         }
+        /*
+        public dynamic VM_View_graph
+        {
+            get { return modelFG.View_graph; }
+            set
+            {
+                modelFG.View_graph = value;
+                notifyPropertyChanged("VM_View_graph");
+            }
+        }
+        */
         public string VM_Correlation
         {
             get { return modelFG.Correlation; }
