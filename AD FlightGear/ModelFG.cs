@@ -410,7 +410,7 @@ namespace AD_FlightGear
             pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[CorrIndex]._vectorFloat, dBflightReg.Length);
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
-            NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
+            NameCorrelation = "Corrlation sensor: " + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
 
             try
             {
