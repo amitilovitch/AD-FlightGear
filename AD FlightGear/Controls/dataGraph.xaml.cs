@@ -155,6 +155,7 @@ namespace AD_FlightGear.Controls
 
         private void openCsvReg(object sender, RoutedEventArgs e)
         {
+            
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             openFileDialog.Multiselect = false;
             openFileDialog.Filter = "csv files (*.csv)|*.csv";
@@ -163,7 +164,11 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathCsvReg = openFileDialog.FileNames[0];
             }
-            graphs_VM.initDBreg();
+            try
+            {
+                graphs_VM.initDBreg();
+            }catch
+            { }
         }
 
         private void openCsvRun(object sender, RoutedEventArgs e)
@@ -178,8 +183,11 @@ namespace AD_FlightGear.Controls
             }
             graphs_VM.VM_PathDll = @"C:\Users\Amit\source\repos\circle\circle\bin\Debug\circle.dll";
             initializeDll();
-
-            graphs_VM.initDBrun();
+            try
+            {
+                graphs_VM.initDBrun();
+            } catch
+            { }
             length = graphs_VM.VM_DBflight.MapDb.Count;
             for (int i = 0; i < graphs_VM.VM_DBflight.MapDb.Count; i++)
             {
