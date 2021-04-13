@@ -50,8 +50,6 @@
         <DockPanel x:Name="DLLgraph" Margin="158,10,-16,-13"  Grid.RowSpan="5" Grid.Row="1" />
         <Button Content="..." HorizontalAlignment="Left" Margin="97,163,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="3" Background="#FFB8CBE2"/>
 
-        <DockPanel x:Name="AnomalyPoint" Margin="167,184,0,52" Grid.Row="3" Background="red" />
-
         <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="4,0,398,171" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Caliari Text">
 
             <ListBox.ItemTemplate>
