@@ -141,8 +141,7 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
-            //graphs_VM.VM_PathDll = @"C:\Users\97255\source\repos\circle\circle\bin\Debug\circle.dll";
-            graphs_VM.VM_PathDll = @"C:\Users\97255\source\repos\regression\regression\bin\Debug\regression.dll";
+            graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\regression\regression\bin\Debug\regression.dll";
             initializeDll();
             try
             {
