@@ -171,7 +171,16 @@ namespace AD_FlightGear
                 notifyPropertyChanged("C");
             }
         }
-
+        private dynamic view_graph;
+        public dynamic View_graph
+        {
+            get { return view_graph; }
+            set
+            {
+                view_graph = value;
+                notifyPropertyChanged("View_graph");
+            }
+        }
         /*        public void initializeDll ()
                 {
                     try

@@ -53,9 +53,9 @@
         <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="4,0,398,157" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Caliari Text">
 
             <ListBox.ItemTemplate>
-
+                
                 <DataTemplate>
-                    <Button Content="{Binding ButtonContent}" Margin="0,0,5,5" FontFamily="Sitka Text" />
+                    <TextBlock Text="{Binding ButtonContent}"   Margin="0,0,5,5" FontFamily="Sitka Text" />
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

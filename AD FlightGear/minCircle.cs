@@ -11,6 +11,7 @@ namespace AD_FlightGear
 	class MinCircle
 	{
 
+		
 		private Circle c;
 
 		public Circle C { get; set; }
@@ -93,10 +94,7 @@ namespace AD_FlightGear
 		// the function caluculate recursivly the minimum circle
 		public Circle min_circle_helper(List<DataPoint> points, List<DataPoint> points_circle, int size)
 		{
-			if (points_circle.Count > 3)
-            {
-				return C;
-            }
+
 			//base recusion
 			if (size == 0 || points_circle.Count() == 3)
 			{
@@ -127,5 +125,6 @@ namespace AD_FlightGear
 			 this.c = min_circle_helper(points, points_circle, size);
 			return c;
 		}
+		
 	}
 }
