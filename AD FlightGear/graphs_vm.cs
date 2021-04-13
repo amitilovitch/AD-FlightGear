@@ -68,6 +68,7 @@ namespace AD_FlightGear
         {
             get
             {
+
                 return (Convert.ToInt32(modelFG.Time));
             }
         }
@@ -112,6 +113,7 @@ namespace AD_FlightGear
         {
             get
             {
+                //VM_C.updateTime(VM_TimeInt);
                 return modelFG.GraphChoose;
             }
         }
@@ -199,5 +201,10 @@ namespace AD_FlightGear
             }
             VM_Points = return_list;
         }
+
+/*        public int VM_DllHelper {
+            get { 
+                return modelFG.DllHelper; }
+        }*/
     }
 }

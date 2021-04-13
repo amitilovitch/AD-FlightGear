@@ -13,7 +13,6 @@ namespace AD_FlightGear
             this.model = m;
         }
 
-        //private float speed;
         public string VM_Speed
         {
             get {
@@ -22,8 +21,7 @@ namespace AD_FlightGear
                 return s; }
             set
             {
-                //speed = value;
-                if (float.Parse(value) <= 0||float.Parse(value)>99.99)
+                if (float.Parse(value) <= 0||float.Parse(value)>6)
                     throw new Exception();
                 model.SpeedHZ = float.Parse(value);
             }

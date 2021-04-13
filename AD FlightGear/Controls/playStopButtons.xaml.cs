@@ -50,8 +50,6 @@ namespace AD_FlightGear.Controls
                     pauseFlag = false;
                     stopFlag = false;
                     vm.StartVideo(false, false);
-                    /*               Uri uri = new Uri("C:\\Users\\97255\\Desktop\\pause.png");
-                                   playImage.ImageSource = new BitmapImage(uri);*/
                     this.playButton.Content = "⏸";
                 }
                 else if (firstP == false && pauseFlag == false && stopFlag == false)
@@ -59,8 +57,6 @@ namespace AD_FlightGear.Controls
                     // pressed paused after loop started - needs to stop loop for the time being
                     pauseFlag = true;
                     vm.SetPause(true);
-                    /*                  Uri uri = new Uri("C:\\Users\\97255\\Desktop\\play.png");
-                                    playImage.ImageSource = new BitmapImage(uri);*/
                     this.playButton.Content = "▶️";
                 }
                 else if (firstP == false && pauseFlag == true && stopFlag == false)
@@ -68,8 +64,6 @@ namespace AD_FlightGear.Controls
                     // pressed play after the loop started - continue the loop
                     pauseFlag = false;
                     vm.SetPause(false);
-                    /*               Uri uri = new Uri("C:\\Users\\97255\\Desktop\\pause.png");
-                                   playImage.ImageSource = new BitmapImage(uri);*/
                     this.playButton.Content = "⏸";
 
                 }
@@ -83,8 +77,6 @@ namespace AD_FlightGear.Controls
                 pauseFlag = true;
                 firstP = true;
                 vm.SetStop(true);
-                /*                Uri uri = new Uri("C:\\Users\\97255\\Desktop\\play.png");
-                                playImage.ImageSource = new BitmapImage(uri);*/
                 this.playButton.Content = "▶️";
             }
         }
