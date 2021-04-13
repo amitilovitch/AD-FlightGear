@@ -201,6 +201,17 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_C");
             }
         }
+        /*
+        public dynamic VM_View_graph
+        {
+            get { return modelFG.View_graph; }
+            set
+            {
+                modelFG.View_graph = value;
+                notifyPropertyChanged("VM_View_graph");
+            }
+        }
+        */
         public string VM_Correlation
         {
             get { return modelFG.Correlation; }

@@ -171,7 +171,16 @@ namespace AD_FlightGear
                 notifyPropertyChanged("C");
             }
         }
-
+        private dynamic view_graph;
+        public dynamic View_graph
+        {
+            get { return view_graph; }
+            set
+            {
+                view_graph = value;
+                notifyPropertyChanged("View_graph");
+            }
+        }
         /*        public void initializeDll ()
                 {
                     try
@@ -604,7 +613,11 @@ namespace AD_FlightGear
 
                 //c.update_color(Brushes.Red);
                 //ad.updateTimeAd(time);
-                //c.updatTime(time);
+                try
+                {
+                    c.updateTime(time);
+                } catch
+                { }
             }
         }
         public void start(int length)

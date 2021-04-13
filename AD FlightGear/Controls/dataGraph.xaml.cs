@@ -68,6 +68,7 @@ namespace AD_FlightGear.Controls
         */
         public void data_list_MouseDoubleClick(Object sender, MouseButtonEventArgs e)
         {
+            /*
             if (data_list.SelectedItem != null)
             {
                 object selectedItem_object = data_list.SelectedItem;
@@ -75,9 +76,14 @@ namespace AD_FlightGear.Controls
                 graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
 
-
+                try { 
                 graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
+                } catch
+                {
+
+                }
             }
+            */
         }
 
 
@@ -85,10 +91,28 @@ namespace AD_FlightGear.Controls
         {
 
         }
-
-        private void data_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button__click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void data_list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (data_list.SelectedItem != null)
+            {
+                object selectedItem_object = data_list.SelectedItem;
+                selectedItem = (Button)selectedItem_object;
+                graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
+                graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
+
+             //   try
+             //   {
+                    graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
+             //   }
+            //    catch
+            //    {
+
+            //    }
+            }
         }
 
 
@@ -162,6 +186,11 @@ namespace AD_FlightGear.Controls
 
             }
             data_list.ItemsSource = buttons;
+        }
+
+        private void data_list_MouseEnter(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
