@@ -24,7 +24,7 @@ This app is great for military use, for flight investigators and for pilots look
 
 ## *Demos:*
 A link to the video of a demonstration:
-[demo](http://a.com)
+[demo](https://drive.google.com/drive/folders/1nEP4WTSDDoQ6AYTlj1NRHfE4ubdrfn3Y?usp=sharing)
 
 A link to the UML of the project:
 [UML](https://github.com/azranohad/AD-FlightGear/blob/e77eb1d23a48e8548286baaa257acfc46f1c0859/AD%20FlightGear/ClassDiagram2.cd)
