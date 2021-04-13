@@ -9,7 +9,6 @@ VERSION:
 This app can give a way for flight investigators (such as pilots and for military use) to ivestigate the anomalies of a specific 
 flight, by given the app 2 files - one with details of a trained flight (with no anomalies), and one with the suspected anomalied 
 flight. At the same time you can also see a flight simulation in another screen of the app.
-
 Features in the app:
 You can play the flight from the beginning and pause at each second you want. You can also skip to a different part of the flight
 (by sliding our time slider). You can speed parts of the flight that are with no change to any speed you'd like.
@@ -19,7 +18,6 @@ You can see the changes of the throttle and rudder at the sliders, and see the c
 feature on the app.
 You can upload a dll file of a new anomaly detection algorithm or use one of our given algorithms to check and present the 
 anomalies.
-
 This app is great for military use, for flight investigators and for pilots looking to check the anomalies in their flight.
 
 
@@ -31,7 +29,10 @@ A link to the video of a demonstration:
 A link to the UML of the project:
 [UML](https://github.com/azranohad/AD-FlightGear/blob/e77eb1d23a48e8548286baaa257acfc46f1c0859/AD%20FlightGear/ClassDiagram2.cd)
 
-(in order to watch the UML in full you need to download the CLASS DESIGNER plugin to visual studio). 
+(in order to watch the UML in full you need to download the CLASS DESIGNER plugin to visual studio).
+
+A link to the UML in picture format (is also inside the repository)
+[picture UML] (https://github.com/azranohad/AD-FlightGear/blob/180aa087da888585de0063c0708cf5aef3cce53d/UML%20picture.PNG)
 
 
 ## *Technologies we used:*
