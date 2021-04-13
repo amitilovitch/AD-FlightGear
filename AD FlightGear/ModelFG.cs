@@ -413,12 +413,12 @@ namespace AD_FlightGear
             GraphChooseIn = PointList(ListTime(), dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.Length);
             pointsReg = PointList(dBflightReg.MapDb[chooseIndex]._vectorFloat, dBflightReg.MapDb[CorrIndex]._vectorFloat, dBflightReg.Length);
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
-            Correlation = "Correaltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
-            NameCorrelation = "Corrlation sensor: " + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
+            Correlation = "Correltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
+            NameCorrelation = "Corrlation sensor: " + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].CorrIndex].Name;
 
             try
             {
-                c.updateChoose(pointsRun, pointsReg, Convert.ToInt32(time));
+                c.updateChoose(ref pointsRun, ref pointsReg, Convert.ToInt32(time));
             }
             catch (Exception e)
             {
@@ -629,7 +629,7 @@ namespace AD_FlightGear
                 //ad.updateTimeAd(time);
                 try
                 {
-                    c.updateChoose(pointsRun, pointsReg, Convert.ToInt32(time));
+                    c.updateChoose(ref pointsRun, ref pointsReg, Convert.ToInt32(time));
 
                     //c.updateTime(time);
                 }

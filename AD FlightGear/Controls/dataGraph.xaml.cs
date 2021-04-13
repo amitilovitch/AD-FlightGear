@@ -82,7 +82,7 @@ namespace AD_FlightGear.Controls
         public void initializeDll()
         {
             try
-            {
+                {
                 Assembly dll = Assembly.LoadFile(graphs_VM.VM_PathDll);
                 Type[] type = dll.GetExportedTypes();
 

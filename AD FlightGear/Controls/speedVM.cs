@@ -23,7 +23,7 @@ namespace AD_FlightGear
             set
             {
                 //speed = value;
-                if (float.Parse(value) <= 0||float.Parse(value)>99.99)
+                if (float.Parse(value) <= 0||float.Parse(value)>6)
                     throw new Exception();
                 model.SpeedHZ = float.Parse(value);
             }
