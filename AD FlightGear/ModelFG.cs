@@ -641,14 +641,14 @@ namespace AD_FlightGear
             //Time = 0;
             new Thread(delegate ()
             {
-/*                var client = new TcpClient("localhost", 5400);
-                var stream = client.GetStream();*/
+                var client = new TcpClient("localhost", 5400);
+                var stream = client.GetStream();
                 while (!stop)
                 {
                     if (!pause)
                     {
-                       // byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
-                       // stream.Write(sendbuf, 0, sendbuf.Length);
+                        byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
+                        stream.Write(sendbuf, 0, sendbuf.Length);
                         Time++;
                         Thread.Sleep(Convert.ToInt32(1000 / SpeedHZ));
                     }
@@ -659,8 +659,8 @@ namespace AD_FlightGear
                     //if pause is true, time is constant
                     else { continue; }
                 }
-              //  stream.Close();
-               // client.Close();
+                stream.Close();
+                client.Close();
             }).Start();
  
         }

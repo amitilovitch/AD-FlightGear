@@ -46,7 +46,7 @@ namespace AD_FlightGear
 
             };
         }
-        //public event PropertyChangedEventHandler PropChanged;
+        
         public event PropertyChangedEventHandler PropertyChanged;
         public void notifyPropertyChanged(string propName)
         {
@@ -59,7 +59,7 @@ namespace AD_FlightGear
         {
             get
             {
-                //VM_C.updateTime(VM_TimeInt);
+                
                 return modelFG.Time;
             }
             set { VM_C.updateTime(VM_TimeInt); }
@@ -87,46 +87,7 @@ namespace AD_FlightGear
             }
         }
 
-/*        public List<DataPoint> VM_GreyPoints
-        {
-            get
-            {
-                return modelFG.Ad.GreyPoints;
-            }
-        }
-        public List<DataPoint> VM_BluePoints
-        {
-            get
-            {
-                return modelFG.Ad.BluePoints;
-            }
-        }
 
-        public List<DataPoint> VM_RedPoints
-        {
-            get
-            {
-                return modelFG.Ad.RedPoints;
-            }
-        }
-
-        public List<DataPoint> VM_ListPointCircle
-        {
-            get
-            {
-                return modelFG.Ad.ListPointLine;
-            }
-        }*/
-
-        /*
-        public IList<DataPoint> VM_GraphPearson
-        {
-            get
-            {
-                return modelFG.GraphPearson;
-            }
-        }
-        */
         public int VM_ChooseIndex
         {
             get
@@ -170,7 +131,7 @@ namespace AD_FlightGear
                 return modelFG.PointsRun;
             }
         }
-        //חדש
+        
         public string VM_PathDll
         {
             get { return modelFG.PathDll; }
@@ -202,17 +163,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_C");
             }
         }
-        /*
-        public dynamic VM_View_graph
-        {
-            get { return modelFG.View_graph; }
-            set
-            {
-                modelFG.View_graph = value;
-                notifyPropertyChanged("VM_View_graph");
-            }
-        }
-        */
+
         public string VM_Correlation
         {
             get { return modelFG.Correlation; }
