@@ -86,5 +86,15 @@ namespace AD_FlightGear
         {
 
         }
+
+        private void FlightData_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void joystick_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

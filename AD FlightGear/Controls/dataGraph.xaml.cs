@@ -76,14 +76,9 @@ namespace AD_FlightGear.Controls
                 graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
 
-                try { 
-                graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
-                } catch
-                {
 
-                }
+                //graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
             }
-            */
         }
 
 

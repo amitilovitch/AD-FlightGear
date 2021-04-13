@@ -59,6 +59,7 @@ namespace AD_FlightGear
         {
             get
             {
+                //VM_C.updateTime(VM_TimeInt);
                 return modelFG.Time;
             }
             set { VM_C.updateTime(VM_TimeInt); }
