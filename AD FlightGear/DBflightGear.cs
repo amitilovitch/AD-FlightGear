@@ -304,7 +304,7 @@ namespace AD_FlightGear
             createListDataFeature();
             createVectors();
             findIndexFeatures();
-            //findCorrFeatures();
+
             //createListButtons();
         }
     }

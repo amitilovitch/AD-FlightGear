@@ -44,46 +44,14 @@ namespace AD_FlightGear.Controls
         {
             InitializeComponent();
             buttons = new List<Button>();
-            //  buttons = graphs_VM.VM_DBflight._ListFeature;
-            // data_list.ItemsSource = graphs_VM.VM_DBflight._ListFeature; 
-        }
-        /*
-        public void addButtons()
-        {
-            length = graphs_VM.VM_DBflight.MapDb.Count;
-            for (int i = 0; i < graphs_VM.VM_DBflight.MapDb.Count; i++)
-            {
-                buttons.Add(new Button { ButtonContent = graphs_VM.VM_DBflight.MapDb[i].Name, ButtonID = (i).ToString() });
 
-            }
-            data_list.ItemsSource = buttons;
         }
-        */
-        /*
-        public class Button
-        {
-            public string ButtonContent { get; set; }
-            public string ButtonID { get; set; }
-        }
-        */
+
         public void data_list_MouseDoubleClick(Object sender, MouseButtonEventArgs e)
         {
 
         }
-            /*
-            if (data_list.SelectedItem != null)
-            {
-            */
-            /*
-                object selectedItem_object = data_list.SelectedItem;
-        selectedItem = (Button) selectedItem_object;
-        graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
-        graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
 
-
-                //graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
-            */
-            
             
 
 
@@ -105,14 +73,6 @@ namespace AD_FlightGear.Controls
                 graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
                 graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
 
-                //   try
-                //   {
-               // graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
-                //   }
-                //    catch
-                //    {
-
-                //    }
             }
         }
 
@@ -181,7 +141,7 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
-            graphs_VM.VM_PathDll = @"C:\Users\Amit\source\repos\circle\circle\bin\Debug\circle.dll";
+            graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\regression\regression\bin\Debug\regression.dll";
             initializeDll();
             try
             {
