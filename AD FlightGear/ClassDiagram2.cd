@@ -62,11 +62,8 @@
   </Class>
   <Class Name="AD_FlightGear.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="10.5" Y="8" Width="1.5" />
-    <Members>
-      <Method Name="MainWindow" Hidden="true" />
-    </Members>
     <TypeIdentifier>
-      <HashCode>AAAAAAAARAAAACAAAAAAAAAAAAAAAAiAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAARAAAACAAAAAEAAAAAAAAAAiAAAAAQAAAAgA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -78,7 +75,7 @@
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>AIAlQCDAAbAgRFk6JORAIhTh5SIhTeXCMYREwBGAraA=</HashCode>
+      <HashCode>AIAlQCDAAbAgRFk6JORAIhTh5SIhTeXCMYVEwBGBraA=</HashCode>
       <FileName>ModelFG.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -137,7 +134,7 @@
   <Class Name="AD_FlightGear.Controls.dataGraph" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AgAAAAAAAAAAAAABIkAAAAAAgQDCAABAAAAABAAQAAA=</HashCode>
+      <HashCode>AgAAAAAAAAAAAAABIkAAAAABgQDCAABAAAAABAAQAAA=</HashCode>
       <FileName>Controls\dataGraph.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -211,7 +208,7 @@
   <Class Name="AD_FlightGear.Controls.twoSliders" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="11.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAACAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgQAAAAAAACAAAAIAAAAAAQAAAAAAAAAA=</HashCode>
       <FileName>Controls\twoSliders.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

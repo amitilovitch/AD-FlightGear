@@ -60,6 +60,8 @@ namespace AD_FlightGear
             return tempCov / sqrtt;
             //return cov(x, y, size) / (System.Math.Sqrt(var(x, size)) * System.Math.Sqrt(var(y, size)));
         }
+
+        //number of row in csv file
         private int length;
         public int Length
         {
@@ -93,37 +95,16 @@ namespace AD_FlightGear
             set {_pathXml = value;}
         }
 
-        private int hdgIndex;
         public int HdgIndex { get; set; }
-
-        private int altIndex;
         public int AltIndex { get; set; }
-
-        private int speedIndex;
         public int SpeedIndex { get; set; }
-
-        private int pitchIndex;
         public int PitchIndex { get; set; }
-
-        private int rollIndex;
         public int RollIndex { get; set; }
-
-        private int yawIndex;
         public int YawIndex { get; set; }
-
-        private int throttle0Index;
         public int Throttle0Index { get; set; }
-
-        private int throttle1Index;
         public int Throttle1Index { get; set; }
-
-        private int rudderIndex;
         public int RudderIndex { get; set; }
-
-        private int alieronIndex;
         public int AlieronIndex { get; set; }
-
-        private int elevatorIndex;
         public int ElevatorIndex { get; set; }
 
         private List<string> _listFeature;
@@ -142,12 +123,13 @@ namespace AD_FlightGear
         {
             get { return mapDb; }
         }
+
+        //constructor
         public DBflightGear()
         {
             _listFeature = new List<string>();
              mapDb = new List<MapVector>();
         }
-
         public void createListLines(string path)
         {
             _ListLine = File.ReadAllLines(path);
@@ -260,9 +242,7 @@ namespace AD_FlightGear
 
             List<float> checkedList1;
             List<float> checkedList2;
-            double pearsonReasult = 0;
             float tempPearsonReasult, tempThreshold;
-
 
             for (int i = 0; i < mapDb.Count; i++)
             {
@@ -275,16 +255,8 @@ namespace AD_FlightGear
                     {
                         mapDb[i].CorrIndex = j;
                         mapDb[i].CorrResult = tempPearsonReasult;
-                        
 
                     }
-                    /*
-                    if(tempPearsonReasult > mapDb[j].CorrResult)
-                    {
-                        mapDb[j].CorrIndex = i;
-                        mapDb[j].CorrResult = tempPearsonReasult;
-                    }
-                    */
                     tempPearsonReasult = 0;
                 }
             }
@@ -304,8 +276,6 @@ namespace AD_FlightGear
             createListDataFeature();
             createVectors();
             findIndexFeatures();
-
-            //createListButtons();
         }
     }
 }

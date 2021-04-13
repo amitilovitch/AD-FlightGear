@@ -102,7 +102,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Button.cs" />
-    <Compile Include="Circle.cs" />
     <Compile Include="ClockVM.cs" />
     <Compile Include="Controls\Clock.xaml.cs">
       <DependentUpon>Clock.xaml</DependentUpon>
@@ -130,10 +129,8 @@
     <Compile Include="Controls\twoSliders.xaml.cs">
       <DependentUpon>twoSliders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FG_client.cs" />
     <Compile Include="graphs_vm.cs" />
     <Compile Include="joystickVM.cs" />
-    <Compile Include="MinCircle.cs" />
     <Compile Include="playStopButtonsVM.cs" />
     <Compile Include="timeSliderViewModel.cs" />
     <Compile Include="twoSlidersVM.cs" />
