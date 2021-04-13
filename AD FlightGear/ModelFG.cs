@@ -7,7 +7,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Windows;
-
 using OxyPlot;
 using System.Reflection;
 using System.Net.Sockets;
@@ -67,12 +66,6 @@ namespace AD_FlightGear
             set { dBflightReg = value; }
         }
 
-/*        private AnomalyDetect ad;
-        public AnomalyDetect Ad
-        {
-            get { return ad; }
-            set { ad = value; }
-        }*/
         public ModelFG()
         {
             dBflight = new DBflightGear();
@@ -83,15 +76,6 @@ namespace AD_FlightGear
             GraphCorrIn = new List<DataPoint>();
             pointsRun = new List<DataPoint>();
             pointsReg = new List<DataPoint>();
-
-            //to check circle
-            //to checkdll
-/*            ad = ad = new AnomalyDetect();
-            this.BluePoints = ad.BluePoints;
-            this.GreyPoints = ad.GreyPoints;
-            this.RedPoints = ad.RedPoints;*/
-            /////////////
-            /////////
         }
         private string pathCsv;
         public string PathCsv
@@ -114,7 +98,6 @@ namespace AD_FlightGear
                 notifyPropertyChanged("PathCsvReg");
             }
         }
-
         private string pathDll;
         public string PathDll
         {
@@ -123,8 +106,6 @@ namespace AD_FlightGear
             {
                 pathDll = value;
                 notifyPropertyChanged("PathDll");
-                //initializeDll();
-                //c.updateChoose(PointsRun, PointsReg, Time);
             }
         }
         private dynamic c;
@@ -147,28 +128,6 @@ namespace AD_FlightGear
                 notifyPropertyChanged("View_graph");
             }
         }
-        /*        public void initializeDll ()
-                {
-                    try
-                    {
-                        Assembly dll = Assembly.LoadFile(PathDll);
-                        Type[] type = dll.GetExportedTypes();
-
-                        foreach (Type t in type)
-                        {
-                            if (t.Name == "Graph_I")
-                            {
-                                C = Activator.CreateInstance(t);
-                            }
-                        }
-                    } catch (Exception e)
-                    {
-                        Console.WriteLine("Error load dll", e);
-                    }
-                }*/
-
-
-
         private string hdg;
         public string Hdg
         {
@@ -180,9 +139,6 @@ namespace AD_FlightGear
             }
         }
 
-/*        public int DllHelper {
-            set  { notifyPropertyChanged("DllHelper"); }
-        } */
 
         private string speed;
         public string Speed
@@ -290,7 +246,6 @@ namespace AD_FlightGear
             }
         }
 
-
         private double stickX;
         public double StickX
         {
@@ -390,11 +345,6 @@ namespace AD_FlightGear
             {
             }
 
-            ////////
-            ///////////////////////////////
-            //int time = Convert.ToInt32(Time);
-            //ad.updateChooseAd(PointsRun, PointsReg, time);
-            ////////////////////////////////////
         }
 
         private List<DataPoint> graphChoose;
@@ -537,7 +487,6 @@ namespace AD_FlightGear
             // after recieving CSV file, notifying length update:
             notifyPropertyChanged("Length");
 
-
             TimeSpan t_passed = TimeSpan.FromSeconds(sec);
             TimePassed = t_passed.ToString(@"hh\:mm\:ss");
 
@@ -561,7 +510,6 @@ namespace AD_FlightGear
         {
             //to clock
             secToClock();
-
 
             int time = Convert.ToInt32(t);
             if (time < DBflight.Length)
@@ -596,21 +544,17 @@ namespace AD_FlightGear
                 {
                     c.updateChoose(ref pointsRun,ref pointsReg, Convert.ToInt32(time));
 
-                    //c.updateTime(time);
                 }
-                catch (Exception e)
-                {
-                    Console.WriteLine("Error load dll", e);
-                }
+                catch (Exception e) {}
             }
         }
         public void start(int length)
         {
-            
             ChooseIndex = 0;
             //Time = 0;
             new Thread(delegate ()
             {
+                try {
                 var client = new TcpClient("localhost", 5400);
                 var stream = client.GetStream();
 
@@ -632,12 +576,14 @@ namespace AD_FlightGear
                 }
                 stream.Close();
                 client.Close();
+                }
+                catch (Exception e)
+                { 
+                Console.WriteLine("Error to connect FlightGear server", e);
+                }
             }).Start();
  
         }
-
-
-
         public List<float> ListTime()
         {
             List<float> listTime = new List<float>();
@@ -647,7 +593,6 @@ namespace AD_FlightGear
             }
             return listTime;
         }
-
 
         public List<DataPoint> PointList(List<float> x, List<float> y, int size)
         {
@@ -659,7 +604,6 @@ namespace AD_FlightGear
             }
             return points;
         }
-
         public void copyCorrFromDBRegToDBRun()
         {
             if ((pathCsvReg != null) && (pathCsv != null))

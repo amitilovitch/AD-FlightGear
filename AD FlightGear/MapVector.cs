@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace AD_FlightGear
 {
+    /*
+     * Object for element in Data Base
+     * 
+     */
     public class MapVector
     {
         private string name;
@@ -61,7 +65,6 @@ namespace AD_FlightGear
                 corrResult = value;
             }
         }
-
 
         public MapVector(string nameFeature, string type, string node, int i)
         {

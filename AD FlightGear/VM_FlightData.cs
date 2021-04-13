@@ -10,7 +10,6 @@ namespace AD_FlightGear
     // change
     public class VM_FlightData : INotifyPropertyChanged
     {
-
         private ModelFG model;
         public VM_FlightData(ModelFG modelFG)
         {
@@ -21,7 +20,6 @@ namespace AD_FlightGear
                     NotifyPropertyChanged("VM_" + e.PropertyName);
                 };
         }
-
         public string VM_Hdg
         {
             get { return model.Hdg; }
