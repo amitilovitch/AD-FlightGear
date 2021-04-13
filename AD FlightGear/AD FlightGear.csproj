@@ -129,7 +129,6 @@
     <Compile Include="Controls\twoSliders.xaml.cs">
       <DependentUpon>twoSliders.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FG_client.cs" />
     <Compile Include="graphs_vm.cs" />
     <Compile Include="joystickVM.cs" />
     <Compile Include="playStopButtonsVM.cs" />

@@ -47,19 +47,6 @@ namespace AD_FlightGear.Controls
 
         }
 
-        public void data_list_MouseDoubleClick(Object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-            
-
-
-
-    private void ic_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
         private void Button__click(object sender, RoutedEventArgs e)
         {
 
@@ -77,7 +64,7 @@ namespace AD_FlightGear.Controls
         }
 
 
-        //חדש
+       
 
         public void initializeDll()
         {
