@@ -5,6 +5,12 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AD FlightGear", "AD FlightGear\AD FlightGear.csproj", "{3EF54FBC-D796-4BE5-B0E2-85F3430D6AF1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "plugins", "plugins", "{BF19D567-AED9-454D-AE5E-EB5314AB0FBE}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\קבצים לפרוייקט\circle.dll = ..\..\..\Desktop\קבצים לפרוייקט\circle.dll
+		..\..\..\Desktop\קבצים לפרוייקט\regression.dll = ..\..\..\Desktop\קבצים לפרוייקט\regression.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
