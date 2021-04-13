@@ -70,25 +70,25 @@ namespace AD_FlightGear.Controls
         {
 
         }
-        /*
-        if (data_list.SelectedItem != null)
-        {
-        */
-        /*
-            object selectedItem_object = data_list.SelectedItem;
-    selectedItem = (Button) selectedItem_object;
-    graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
-    graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
+            /*
+            if (data_list.SelectedItem != null)
+            {
+            */
+            /*
+                object selectedItem_object = data_list.SelectedItem;
+        selectedItem = (Button) selectedItem_object;
+        graphs_VM.VM_ChooseIndex = int.Parse(selectedItem.ButtonID);
+        graphs_VM.DataPoints_6(int.Parse(selectedItem.ButtonID));
 
 
-            //graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
-        */
+                //graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
+            */
+            
+            
 
 
 
-
-
-        private void ic_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+    private void ic_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
         }
@@ -107,7 +107,7 @@ namespace AD_FlightGear.Controls
 
                 //   try
                 //   {
-                // graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
+               // graphs_VM.VM_C.updateChoose(graphs_VM.VM_PointsRun, graphs_VM.VM_PointsReg, graphs_VM.VM_TimeInt);
                 //   }
                 //    catch
                 //    {
@@ -125,6 +125,7 @@ namespace AD_FlightGear.Controls
             {
                 Assembly dll = Assembly.LoadFile(graphs_VM.VM_PathDll);
                 Type[] type = dll.GetExportedTypes();
+
                 foreach (Type t in type)
                 {
                     if (t.Name == "Graph_I")
@@ -154,6 +155,7 @@ namespace AD_FlightGear.Controls
 
         private void openCsvReg(object sender, RoutedEventArgs e)
         {
+            
             Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
             openFileDialog.Multiselect = false;
             openFileDialog.Filter = "csv files (*.csv)|*.csv";
@@ -162,7 +164,11 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathCsvReg = openFileDialog.FileNames[0];
             }
-            graphs_VM.initDBreg();
+            try
+            {
+                graphs_VM.initDBreg();
+            }catch
+            { }
         }
 
         private void openCsvRun(object sender, RoutedEventArgs e)
@@ -177,8 +183,11 @@ namespace AD_FlightGear.Controls
             }
             graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\circle\circle\bin\Debug\circle.dll";
             initializeDll();
-
-            graphs_VM.initDBrun();
+            try
+            {
+                graphs_VM.initDBrun();
+            } catch
+            { }
             length = graphs_VM.VM_DBflight.MapDb.Count;
             for (int i = 0; i < graphs_VM.VM_DBflight.MapDb.Count; i++)
             {
@@ -196,3 +205,4 @@ namespace AD_FlightGear.Controls
         }
     }
 }
+
