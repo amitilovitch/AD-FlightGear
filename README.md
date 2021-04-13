@@ -27,8 +27,10 @@ This app is great for military use, for flight investigators and for pilots look
 ## *Demos:*
 A link to the video of a demonstration:
 [demo](http://a.com)
-And a link to the UML of the project:
+
+A link to the UML of the project:
 [UML](https://github.com/azranohad/AD-FlightGear/blob/e77eb1d23a48e8548286baaa257acfc46f1c0859/AD%20FlightGear/ClassDiagram2.cd)
+
 (in order to watch the UML in full you need to download the CLASS DESIGNER plugin to visual studio). 
 
 
