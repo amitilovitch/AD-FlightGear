@@ -261,7 +261,7 @@ namespace AD_FlightGear
             List<float> checkedList1;
             List<float> checkedList2;
             double pearsonReasult = 0;
-            double tempPearsonReasult, tempThreshold;
+            float tempPearsonReasult, tempThreshold;
 
 
             for (int i = 0; i < mapDb.Count; i++)
@@ -275,10 +275,16 @@ namespace AD_FlightGear
                     {
                         mapDb[i].CorrIndex = j;
                         mapDb[i].CorrResult = tempPearsonReasult;
-                        mapDb[j].CorrIndex = i;
-                        mapDb[j].CorrResult = tempPearsonReasult;
+                        
 
                     }
+                    /*
+                    if(tempPearsonReasult > mapDb[j].CorrResult)
+                    {
+                        mapDb[j].CorrIndex = i;
+                        mapDb[j].CorrResult = tempPearsonReasult;
+                    }
+                    */
                     tempPearsonReasult = 0;
                 }
             }
