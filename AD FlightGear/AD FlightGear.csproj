@@ -117,9 +117,6 @@
     <Compile Include="Controls\playStopButtons.xaml.cs">
       <DependentUpon>playStopButtons.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Controls\slider.xaml.cs">
-      <DependentUpon>slider.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\speed.xaml.cs">
       <DependentUpon>speed.xaml</DependentUpon>
     </Compile>
@@ -159,10 +156,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\playStopButtons.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Controls\slider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

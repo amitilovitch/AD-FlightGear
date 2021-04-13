@@ -29,7 +29,6 @@ namespace AD_FlightGear
             InitializeComponent();
             ModelFG modelFG = new ModelFG();
 
-            //modelFG.Initialize();
             VM_FlightData vM_FlightData = new VM_FlightData(modelFG);
             FlightData.setVm_flightData(vM_FlightData);
 
@@ -56,8 +55,6 @@ namespace AD_FlightGear
 
             graphs_vm graphs = new graphs_vm(modelFG);
             dataGraph_V.set_graphs_VM(graphs);
-           // dataGraph_V.addButtons();
-          // dataGraph_V.DLLgraph.
 
 
         } 

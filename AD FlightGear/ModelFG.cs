@@ -27,40 +27,6 @@ namespace AD_FlightGear
             }
         }
 
-/*        private List<DataPoint> greyPoints;
-        public List<DataPoint> GreyPoints
-        {
-            get { return ad.GreyPoints; }
-            set
-            {
-                Ad.GreyPoints = value;
-                notifyPropertyChanged("GreyPoints");
-            }
-        }
-
-        private List<DataPoint> bluePoints;
-        public List<DataPoint> BluePoints
-        {
-            get { return bluePoints; }
-            set
-            {
-                this.bluePoints = value;
-                notifyPropertyChanged("BluePoints");
-            }
-        }
-
-        private List<DataPoint> redPoints;
-        public List<DataPoint> RedPoints
-        {
-            get { return ad.RedPoints; }
-            set
-            {
-                Ad.RedPoints = value;
-                notifyPropertyChanged("RedPoints");
-            }
-        }*/
-
-
         private int length;
         public int Length
         {
@@ -418,7 +384,7 @@ namespace AD_FlightGear
 
             try
             {
-                c.updateChoose(ref pointsRun,ref pointsReg, Convert.ToInt32(time));
+                    c.updateChoose(ref pointsRun,ref pointsReg, Convert.ToInt32(time));
             }
             catch (Exception e)
             {
@@ -621,7 +587,6 @@ namespace AD_FlightGear
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
                 GraphChoose = GraphChooseIn.GetRange(0, Convert.ToInt32(time));
 
-                //DllHelper = 0;///////////////////////////////////////////////////
 
                 //to plugin
 
@@ -646,15 +611,15 @@ namespace AD_FlightGear
             //Time = 0;
             new Thread(delegate ()
             {
-/*                var client = new TcpClient("localhost", 5400);
-                var stream = client.GetStream();*/
-            
+                var client = new TcpClient("localhost", 5400);
+                var stream = client.GetStream();
+
                 while (!stop)
                 {
                     if (!pause)
                     {
-                       // byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
-                       // stream.Write(sendbuf, 0, sendbuf.Length);
+                       byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
+                       stream.Write(sendbuf, 0, sendbuf.Length);
                         Time++;
                         Thread.Sleep(Convert.ToInt32(1000 / SpeedHZ));
                     }
@@ -665,8 +630,8 @@ namespace AD_FlightGear
                     //if pause is true, time is constant
                     else { continue; }
                 }
-              //  stream.Close();
-               // client.Close();
+                stream.Close();
+                client.Close();
             }).Start();
  
         }

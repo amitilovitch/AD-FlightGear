@@ -8,11 +8,8 @@
     mc:Ignorable="d" 
              d:DesignHeight="50" d:DesignWidth="100" Foreground="#FFFF4040">
     <Grid>
-        <Button x:Name="playButton" Content="▶️" HorizontalAlignment="Left" VerticalAlignment="Center" Width="35" Height="35"  Click="playButtonClick" Background="#FFA0A5AE" Foreground="#FF37A2EC" FontSize="20"/>
-        <Button x:Name="stopButton1" Content="⏹" HorizontalAlignment="Right" VerticalAlignment="Center" Width="35" Height="35" Click="stopButtonClick" Background="#FFA0A5AE" Foreground="#FF37A2EC" FontSize="18">
-            <!--<Button.Background>
-                <ImageBrush ImageSource="stop.png"/>
-            </Button.Background>-->
+        <Button x:Name="playButton" Content="▶️" HorizontalAlignment="Left" VerticalAlignment="Center" Width="35" Height="35"  Click="playButtonClick" Background="#FFA0A5AE" Foreground="#FF289CED" FontSize="20"/>
+        <Button x:Name="stopButton1" Content="⏹" HorizontalAlignment="Right" VerticalAlignment="Center" Width="35" Height="35" Click="stopButtonClick" Background="#FFA0A5AE" Foreground="#FF289CED" FontSize="18">
         </Button>
 
     </Grid>

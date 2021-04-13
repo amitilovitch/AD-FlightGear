@@ -18,7 +18,7 @@ namespace AD_FlightGear
                 notifyPropertyChanged("VM_" + e.PropertyName);
             };
         }
-        public twoSlidersVM() ///// לא בטוח שצריך אותו
+        public twoSlidersVM() 
         {
             model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
@@ -26,18 +26,16 @@ namespace AD_FlightGear
             };
         }
 
-        ////////////////////////////////private double VM_throttle;  XXXXXXXXXX
         public double VM_Throttle0
         {
             get { return model.Throttle0; }
-            set { model.Throttle0 = value; }////??????????????? 
+            set { model.Throttle0 = value; }
         }
 
-        ////////////////////////////////private double VM_rudder;   XXXXXXXXXX
         public double VM_Rudder
         {
             get { return model.Rudder; }
-            set { model.Rudder = value; }/////????????????????? 
+            set { model.Rudder = value; }
         }
 
         public void VMsetModel(ModelFG newModel)

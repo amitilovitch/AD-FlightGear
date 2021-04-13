@@ -156,12 +156,6 @@ namespace AD_FlightGear.Controls
             }
             data_list.ItemsSource = buttons;
 
-            /*
-            public void data_list_MouseEnter(object sender, MouseEventArgs e)
-            {
-
-            }
-            */
         }
     }
 }
