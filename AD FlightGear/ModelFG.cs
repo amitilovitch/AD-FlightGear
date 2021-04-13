@@ -205,6 +205,10 @@ namespace AD_FlightGear
             }
         }
 
+/*        public int DllHelper {
+            set  { notifyPropertyChanged("DllHelper"); }
+        } */
+
         private string speed;
         public string Speed
         {
@@ -401,6 +405,7 @@ namespace AD_FlightGear
             pointsRun = PointList(dBflight.MapDb[chooseIndex]._vectorFloat, dBflight.MapDb[CorrIndex]._vectorFloat, dBflight.Length);
             Correlation = "Correaltion - " + dBflightReg.MapDb[chooseIndex].CorrResult.ToString("0.0");
             NameCorrelation = "Corrlation sensor:" + dBflightReg.MapDb[DBflightReg.MapDb[chooseIndex].Index].Name;
+            //C.updateChoose(pointsReg, pointsRun, Time);
             
             ////////
             ///////////////////////////////
@@ -599,12 +604,18 @@ namespace AD_FlightGear
                 GraphCorr = GraphCorrIn.GetRange(0, Convert.ToInt32(time));
                 GraphChoose = GraphChooseIn.GetRange(0, Convert.ToInt32(time));
 
+                //DllHelper = 0;///////////////////////////////////////////////////
 
                 //to plugin
 
                 //c.update_color(Brushes.Red);
                 //ad.updateTimeAd(time);
-                //c.updatTime(time);
+                try
+                {
+                    //c.updateTime(time);
+                    c.updateChoose(pointsReg, pointsRun, time);
+                }
+                catch { }
             }
         }
         public void start(int length)
@@ -616,6 +627,7 @@ namespace AD_FlightGear
             {
 /*                var client = new TcpClient("localhost", 5400);
                 var stream = client.GetStream();*/
+            
                 while (!stop)
                 {
                     if (!pause)
