@@ -4,12 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:AD_FlightGear.Controls"
-             mc:Ignorable="d" Height="34" Width="745.47">
-    <Canvas Margin="-19,0,0,0">
+             mc:Ignorable="d" Height="34" Width="423.032">
+    <Canvas Margin="0,0,0,0">
 
         <Slider x:Name="tSlider" HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                Height="24" Width="720" Value="{Binding VM_Time}"
+                Height="24" Width="409" Value="{Binding VM_Time}"
                 Maximum="{Binding VM_Length}" ValueChanged="changeValue" Minimum="0"
-                Background="#FFA0A5AE" Foreground="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2" Canvas.Left="26"/>
+                Background="#FFA0A5AE" Foreground="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2" Canvas.Left="4"/>
     </Canvas>
 </UserControl>

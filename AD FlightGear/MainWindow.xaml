@@ -44,17 +44,17 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="576,173,0,0" VerticalAlignment="Top" Width="190" Background="#FFAEB4B9"/>
 
 
-        <Controls:dataGraph  x:Name="dataGraph_V"  Grid.RowSpan="2" Loaded="dataGraphV_Loaded" Margin="0,0,200.667,0"/>
+        <Controls:dataGraph  x:Name="dataGraph_V"  Grid.RowSpan="3" Loaded="dataGraphV_Loaded" Margin="1,0,201.667,75"/>
 
         <Controls:FlightData x:Name="FlightData" Margin="540,0,2.667,12" Loaded="FlightData_Loaded_1"/>
 
         <Controls:twoSliders x:Name="sliders2" Margin="570,210,-34.333,18" Grid.RowSpan="2" Loaded="sliders2_Loaded"/>
-        <Controls:speed x:Name="speed" Margin="138,29,592.667,7" RenderTransformOrigin="0.471,-0.865" Grid.Row="2"/>
+        <Controls:speed x:Name="speed" Margin="95,31,635.667,5" RenderTransformOrigin="0.471,-0.865" Grid.Row="2" Loaded="speed_Loaded"/>
         <Controls:joystick x:Name="joystick" Margin="611,228,2.667,82" Grid.RowSpan="2" Loaded="joystick_Loaded_1"/>
-        <Controls:playStopButtons x:Name="playStopButtons" Margin="23,35,682.667,20" RenderTransformOrigin="0.397,-3.019" Grid.Row="2" Foreground="#FF9E5E5E"/>
-        <Controls:timeSlider x:Name="timeSliders" Margin="10,15,33.667,61" Grid.Row="2"/>
-        <Controls:Clock x:Name="clock" Margin="558,42,33.667,34" Grid.Row="2" Loaded="clock_Loaded"/>
-        <Label Content="✈️" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="145,57,0,0" Grid.Row="1" FontSize="75" RenderTransformOrigin="0.5,0.5" Height="124" Width="124">
+        <Controls:playStopButtons x:Name="playStopButtons" Margin="7,35,698.667,20" RenderTransformOrigin="0.397,-3.019" Grid.Row="2" Foreground="#FF9E5E5E"/>
+        <Controls:timeSlider x:Name="timeSliders" Margin="153,49,189.667,27" Grid.Row="2" Loaded="timeSliders_Loaded"/>
+        <Controls:Clock x:Name="clock" Margin="586,49,4.667,27" Grid.Row="2" Loaded="clock_Loaded"/>
+        <Label Content="✈️" VerticalAlignment="Top" Margin="184,62,491.667,0" Grid.Row="1" FontSize="75" RenderTransformOrigin="0.5,0.5" Height="121">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black" Offset="0"/>
@@ -64,9 +64,9 @@
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="42.72"/>
-                    <TranslateTransform/>
+                    <SkewTransform AngleX="-0.68"/>
+                    <RotateTransform Angle="45.307"/>
+                    <TranslateTransform X="-0.532" Y="-0.491"/>
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>

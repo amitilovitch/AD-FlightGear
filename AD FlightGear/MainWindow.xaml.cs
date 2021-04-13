@@ -95,5 +95,15 @@ namespace AD_FlightGear
         {
 
         }
+
+        private void timeSliders_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void speed_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
