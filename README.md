@@ -29,10 +29,9 @@ A link to the video of a demonstration:
 A link to the UML of the project:
 [UML](https://github.com/azranohad/AD-FlightGear/blob/e77eb1d23a48e8548286baaa257acfc46f1c0859/AD%20FlightGear/ClassDiagram2.cd)
 
-(in order to watch the UML in full you need to download the CLASS DESIGNER plugin to visual studio).
-
+(in order to watch the UML in full you need to download the CLASS DESIGNER plugin to visual studio). 
 A link to the UML in picture format (is also inside the repository)
-[picture UML] (https://github.com/azranohad/AD-FlightGear/blob/180aa087da888585de0063c0708cf5aef3cce53d/UML%20picture.PNG)
+[picture UML](https://github.com/azranohad/AD-FlightGear/blob/180aa087da888585de0063c0708cf5aef3cce53d/UML%20picture.PNG)
 
 
 ## *Technologies we used:*
