@@ -23,7 +23,7 @@
         </oxy:Plot>
         <oxy:Plot x:Name="graph_upRight" Title="{Binding VM_Correlation}" Margin="227,10,10,0" RenderTransformOrigin="0.759,0.177" Background="#FFAAD1E0" Height="109" VerticalAlignment="Top">
             <oxy:LineSeries ItemsSource="{Binding VM_GraphCorr}"  Color="#FF0B2F67"/>
-        
+
 
             <!--מעגל לבדיקות-->
 
@@ -41,19 +41,17 @@
         <TextBlock HorizontalAlignment="Left" Margin="15,122,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="3" FontFamily="Caliari Text" Height="14"/>
 
         <TextBlock HorizontalAlignment="Left" Margin="15,122,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="3" FontFamily="Caliari Text" Height="14"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="97,0,0,135" VerticalAlignment="Bottom" Width="24" Height="17" Click="openCsvRun" Grid.Row="3" Background="#FFB8CBE2"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,0,0,114" VerticalAlignment="Bottom" Width="24" Height="17" Click="openCsvRun" Grid.Row="3" Background="#FFB8CBE2"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,144,0,0" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78" Grid.Row="3" FontFamily="Caliari Text" Height="14"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="97,141,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="3" Background="#FFB8CBE2"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,119,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="3" Background="#FFB8CBE2"/>
         <TextBlock HorizontalAlignment="Left" Margin="15,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="3" FontFamily="Caliari Text" Height="14"><Run Text="Open dll"/></TextBlock>
-        <Button Content="..." HorizontalAlignment="Left" Margin="97,163,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="3" Background="#FFB8CBE2"/>
-        <DockPanel x:Name="DLLgraph" Margin="310,10,10,95"  Grid.RowSpan="3" Grid.Row="1" Background="Black" />
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,161,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="3" Background="#FFB8CBE2"/>
+        <DockPanel x:Name="DLLgraph" Margin="158,10,-16,-13"  Grid.RowSpan="5" Grid.Row="1" />
 
-        <DockPanel x:Name="AnomalyPoint" Margin="167,184,0,52" Grid.Row="3" Background="red" />
-
-        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="4,0,398,157" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Caliari Text">
+        <ListBox x:Name="data_list" MouseDoubleClick="data_list_MouseDoubleClick" Margin="4,0,398,171" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Caliari Text">
 
             <ListBox.ItemTemplate>
-                
+
                 <DataTemplate>
                     <TextBlock Text="{Binding ButtonContent}"   Margin="0,0,5,5" FontFamily="Sitka Text" />
                 </DataTemplate>

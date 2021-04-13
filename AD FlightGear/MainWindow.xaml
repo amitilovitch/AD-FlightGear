@@ -44,7 +44,7 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="20" Margin="576,173,0,0" VerticalAlignment="Top" Width="190" Background="#FFAEB4B9"/>
 
 
-        <Controls:dataGraph  x:Name="dataGraph_V"  Grid.RowSpan="3" Loaded="dataGraphV_Loaded" Margin="1,0,201.667,75"/>
+        <Controls:dataGraph  x:Name="dataGraph_V"  Grid.RowSpan="3" Loaded="dataGraphV_Loaded" Margin="1,6,201.667,66"/>
 
         <Controls:FlightData x:Name="FlightData" Margin="540,0,2.667,12" Loaded="FlightData_Loaded_1"/>
 
