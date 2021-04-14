@@ -17,6 +17,7 @@ using System.Reflection;
 namespace AD_FlightGear.Controls
 {
     using System.Collections.Generic;
+    using System.IO;
     using System.Windows;
     using OxyPlot;
     /// <summary>
@@ -128,7 +129,9 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
-            graphs_VM.VM_PathDll = @"C:\Users\azran\source\repos\regression\regression\bin\Debug\regression.dll";
+            string s = Directory.GetCurrentDirectory();
+            s = s + "\\regression.dll";
+            graphs_VM.VM_PathDll = s;
             initializeDll();
             try
             {
@@ -143,6 +146,18 @@ namespace AD_FlightGear.Controls
             }
             data_list.ItemsSource = buttons;
 
+        }
+
+        private void Open_Xml(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.Multiselect = false;
+            openFileDialog.Filter = "xml files (*.xml)|*.xml";
+            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            if (openFileDialog.ShowDialog() == true)
+            {
+                graphs_VM.VM_PathXml = openFileDialog.FileNames[0];
+            }
         }
     }
 }

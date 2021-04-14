@@ -650,7 +650,7 @@ namespace AD_FlightGear
 
 
             dBflight._PathCsv = pathCsv;
-            dBflight._PathXml = @"playback_small.xml";
+            //dBflight._PathXml = @"playback_small.xml";
             dBflight.InitializeDBrun();
             copyCorrFromDBRegToDBRun();
             initGraphs();

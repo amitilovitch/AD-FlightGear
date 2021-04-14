@@ -26,18 +26,18 @@
 
 
         </oxy:Plot>
-       
-        <TextBlock HorizontalAlignment="Left" Margin="15,122,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="3" FontFamily="Caliari Text" Height="14"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="15,133,0,0" TextWrapping="Wrap" Text="Open csvReg" VerticalAlignment="Top" Width="72" Grid.Row="3" FontFamily="Caliari Text" Height="14"/>
         <TextBlock HorizontalAlignment="Left" FontWeight="Bold" Margin="234,0,0,0" TextWrapping="Wrap" Text="Chosen sensor" VerticalAlignment="Top" Width="98" FontFamily="Caliari Text" Height="19"/>
         <Label HorizontalAlignment="Center" FontWeight="Bold" Margin="227,122,0,0" Content="{Binding VM_NameCorrelation}" VerticalAlignment="Top" Width="344" FontFamily="Caliari Text" Height="24"/>
 
         <Label HorizontalAlignment="Center" FontWeight="Bold" Margin="234,0,220,0" Content="{Binding VM_Correlation}" Width="132" FontFamily="Caliari Text" Height="24" VerticalAlignment="Top" Grid.Row="1"/>
-        <Button Content="..." HorizontalAlignment="Left" Margin="97,0,0,113" VerticalAlignment="Bottom" Width="24" Height="17" Click="openCsvRun" Grid.Row="3" Background="#FFA0A5AE" />
-        <TextBlock HorizontalAlignment="Left" Margin="15,144,0,0" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78" Grid.Row="3" FontFamily="Caliari Text" Height="14" />
-        <Button Content="..." HorizontalAlignment="Left" Margin="97,118,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="3" Background="#FFA0A5AE"/>
-        <TextBlock HorizontalAlignment="Left" Margin="15,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="3" FontFamily="Caliari Text" Height="14"><Run Text="Open dll"/></TextBlock>
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,0,0,102" VerticalAlignment="Bottom" Width="24" Height="17" Click="openCsvRun" Grid.Row="3" Background="#FFA0A5AE" />
+        <TextBlock HorizontalAlignment="Left" Margin="15,155,0,0" TextWrapping="Wrap" Text="Open csvRun" VerticalAlignment="Top" Width="78" Grid.Row="3" FontFamily="Caliari Text" Height="14" />
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,129,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="openCsvReg" RenderTransformOrigin="0.409,12.7" Grid.Row="3" Background="#FFA0A5AE"/>
+        <TextBlock HorizontalAlignment="Left" Margin="15,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="57" RenderTransformOrigin="0.298,0.438" Grid.Row="3" FontFamily="Caliari Text" Height="14"><Run Text="Open dll"/></TextBlock>
         <DockPanel x:Name="DLLgraph" Margin="158,10,-16,-13"  Grid.RowSpan="5" Grid.Row="1" />
-        <Button Content="..." HorizontalAlignment="Left" Margin="97,163,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="3" Background="#FFA0A5AE"/>
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,174,0,0" VerticalAlignment="Top" Width="24" Height="17" Click="Button_dll" RenderTransformOrigin="-0.125,0.5" Grid.Row="3" Background="#FFA0A5AE"/>
 
         <ListBox x:Name="data_list" Margin="4,0,379,171" SelectionChanged="data_list_SelectionChanged" Grid.RowSpan="4" Background="#FFA0A5AE" BorderBrush="#FF849DCF" Foreground="Black" FontFamily="Caliari Text">
 
@@ -48,6 +48,8 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button Content="..." HorizontalAlignment="Left" Margin="97,104,0,0" Grid.Row="3" VerticalAlignment="Top" Width="24" RenderTransformOrigin="4.625,0.1" Click="Open_Xml" Background="#FFA0A5AE"/>
+        <TextBlock HorizontalAlignment="Left" Margin="15,104,0,0" Grid.Row="3" TextWrapping="Wrap" Text="Open XML" VerticalAlignment="Top"/>
 
 
     </Grid>

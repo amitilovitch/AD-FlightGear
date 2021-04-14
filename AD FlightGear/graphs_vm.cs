@@ -144,6 +144,16 @@ namespace AD_FlightGear
             }
         }
 
+        public string VM_PathXml
+        {
+            get { return modelFG.DBflight._PathXml; }
+            set
+            {
+                modelFG.DBflight._PathXml = value;
+                notifyPropertyChanged("VM_PathXml");
+            }
+        }
+
         public string VM_PathCsv
         {
             get { return modelFG.PathCsv; }
