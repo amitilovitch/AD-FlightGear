@@ -98,6 +98,15 @@ namespace AD_FlightGear
                 notifyPropertyChanged("PathCsvReg");
             }
         }
+        private string pathXml;
+        public string PathXml
+        {
+            get { return pathXml; }
+            set {
+                pathXml = value;
+                notifyPropertyChanged("PathXml");
+            }
+        }
         private string pathDll;
         public string PathDll
         {
@@ -568,15 +577,15 @@ namespace AD_FlightGear
             new Thread(delegate ()
             {
                 try {
-                var client = new TcpClient("localhost", 5400);
-                var stream = client.GetStream();
+/*                var client = new TcpClient("localhost", 5400);
+                var stream = client.GetStream();*/
 
                 while (!stop)
                 {
                     if (!pause)
                     {
-                       byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
-                       stream.Write(sendbuf, 0, sendbuf.Length);
+/*                       byte[] sendbuf = Encoding.ASCII.GetBytes(dBflight._ListLine[(int)Time]);
+                       stream.Write(sendbuf, 0, sendbuf.Length);*/
                         Time++;
                         Thread.Sleep(Convert.ToInt32(1000 / SpeedHZ));
                     }
@@ -587,8 +596,8 @@ namespace AD_FlightGear
                     //if pause is true, time is constant
                     else { continue; }
                 }
-                stream.Close();
-                client.Close();
+/*                stream.Close();
+                client.Close();*/
                 }
                 catch (Exception e)
                 { 
@@ -636,6 +645,8 @@ namespace AD_FlightGear
         }
         public void InitializeDbReg()
         {
+            dBflightReg._PathXml = PathXml;
+
             //string pathCsvReg = @"C:\Users\azran\source\repos\AD FlightGear\AD FlightGear\reg_flight.csv";
             dBflightReg._PathCsvReg = pathCsvReg;
             dBflightReg.InitializeDBreg();
@@ -648,7 +659,7 @@ namespace AD_FlightGear
             //string pathCsv = @"C:\Users\azran\source\repos\AD FlightGear\AD FlightGear\reg_flight.csv";
             speedHZ = 1;
 
-
+            dBflight._PathXml = PathXml;
             dBflight._PathCsv = pathCsv;
             //dBflight._PathXml = @"playback_small.xml";
             dBflight.InitializeDBrun();

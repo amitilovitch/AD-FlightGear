@@ -149,7 +149,7 @@ namespace AD_FlightGear
             get { return modelFG.DBflight._PathXml; }
             set
             {
-                modelFG.DBflight._PathXml = value;
+                modelFG.PathXml = value;
                 notifyPropertyChanged("VM_PathXml");
             }
         }
