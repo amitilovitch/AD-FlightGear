@@ -56,9 +56,11 @@ Required:
 	```
 5. Click "fly" and wait until it's done loading.
 6. Put the playback_small.xml file in C:\Users\yourUserName\Source\Repos\azranohad\AD-FlightGear\AD FlightGear\bin\Debug. 
-   
+      
    you can reach it from right click on the project name and "open in file explorer", and there in the bin\Debug folder put
    the playback_small.xml file.
+   
+      You can also use the button on the main window of the app to load the xml file instead.
    
 7. Launch the app, upload 2 csv files of the flight data (the files should be different for the anomalies to be detected). 
    
