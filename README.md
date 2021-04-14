@@ -24,7 +24,7 @@ This app is great for military use, for flight investigators and for pilots look
 
 ## *Demos:*
 A link to the video of a demonstration:
-[demo](http://a.com)
+[demo](https://drive.google.com/drive/folders/1nEP4WTSDDoQ6AYTlj1NRHfE4ubdrfn3Y?usp=sharing)
 
 A link to the UML of the project:
 [UML](https://github.com/azranohad/AD-FlightGear/blob/e77eb1d23a48e8548286baaa257acfc46f1c0859/AD%20FlightGear/ClassDiagram2.cd)
@@ -37,6 +37,7 @@ A link to the UML in picture format (is also inside the repository)
 
 ## *Technologies we used:*
 Oxyplot - an open source plot generation library that used to create charts and more.
+
 Flight-Gear - usage of filght simulator 
 
 Main code was written in C#, with target framework of .NET 4.7.2.
@@ -55,9 +56,11 @@ Required:
 	```
 5. Click "fly" and wait until it's done loading.
 6. Put the playback_small.xml file in C:\Users\yourUserName\Source\Repos\azranohad\AD-FlightGear\AD FlightGear\bin\Debug. 
+   
    you can reach it from right click on the project name and "open in file explorer", and there in the bin\Debug folder put
    the playback_small.xml file.
 7. Launch the app, upload 2 csv files of the flight data (the files should be different for the anomalies to be detected). 
+   
    It is optional to choose the anomaly detection algorithm (from what's given or by uploading yourself), and if not picked 
    there will be a default algorithm chosen.
 

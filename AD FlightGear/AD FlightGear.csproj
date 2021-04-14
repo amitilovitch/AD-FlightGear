@@ -231,5 +231,10 @@
   <ItemGroup>
     <Resource Include="playback_small.xml" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="plugins\circle.dll" />
+    <Content Include="plugins\regression.dll" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
