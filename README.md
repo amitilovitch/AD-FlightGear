@@ -65,11 +65,11 @@ Required:
    It is optional to choose the anomaly detection algorithm (from what's given or by uploading yourself), and if not picked 
    there will be a default algorithm chosen. 
    
- **If one of the dll files are not loaded, follow the instructions below:**
-   - Right-click on your file.
-   - Select Properties.
-   - Make sure that you are on General tab.
-   - In the Security option, you may see the message This file came from another computer and might be blocked to help protect this computer. Click on Unblock button.
+  **If one of the dll files are not loaded, follow the instructions below:**
+    - Right-click on your file.
+    - Select Properties.
+    - Make sure that you are on General tab.
+    - In the Security option, you may see the message This file came from another computer and might be blocked to help protect this computer. Click on Unblock button.
 
 
 ## *How to contribute:*
