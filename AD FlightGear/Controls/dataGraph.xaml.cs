@@ -129,9 +129,13 @@ namespace AD_FlightGear.Controls
             {
                 graphs_VM.VM_PathCsv = openFileDialog.FileNames[0];
             }
-            string s = Directory.GetCurrentDirectory();
-            s = s + "\\regression.dll";
-            graphs_VM.VM_PathDll = s;
+
+            if (graphs_VM.VM_PathDll == null)
+            {
+                string s = Directory.GetCurrentDirectory();
+                s = s + "\\regression.dll";
+                graphs_VM.VM_PathDll = s;
+            }
             initializeDll();
             try
             {
