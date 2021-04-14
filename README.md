@@ -46,7 +46,8 @@ Main code was written in C#, with target framework of .NET 4.7.2.
 ## *Installation:*
 Required:
 1. Install OxyPlot on your workspace (i.e visual studio 2019). (right click on the project name -> manage NuGet packages -> 
-   writing oxplot and downloading it.
+   writing oxplot and downloading it. 
+   
 2. Download Flight-Gear flight simulator from https://www.flightgear.org/ 
 3. Put the playback_small.xml file in FlightGear\data\Protocol folder.
 4. Go to Flight-Gear settings, and insert the following line in additional settings :
@@ -55,14 +56,10 @@ Required:
     --fdm=null
 	```
 5. Click "fly" and wait until it's done loading.
-6. Put the playback_small.xml file in C:\Users\yourUserName\Source\Repos\azranohad\AD-FlightGear\AD FlightGear\bin\Debug. 
-      
-   you can reach it from right click on the project name and "open in file explorer", and there in the bin\Debug folder put
-   the playback_small.xml file.
+
+6. If Oxyplot is already downloaded, there could be a problem that the program won't recognize it. So you sould uninstall and reinstall the Oxyplot for the app to work.
    
-      You can also use the button on the main window of the app to load the xml file instead.
-   
-7. Launch the app, upload 2 csv files of the flight data (the files should be different for the anomalies to be detected). 
+7. Launch the app,upload the playback_small.xml file, and upload 2 csv files of the flight data (the files should be different for the anomalies to be detected). 
    
    It is optional to choose the anomaly detection algorithm (from what's given or by uploading yourself), and if not picked 
    there will be a default algorithm chosen. 
