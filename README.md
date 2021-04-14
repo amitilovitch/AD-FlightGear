@@ -59,11 +59,17 @@ Required:
    
    you can reach it from right click on the project name and "open in file explorer", and there in the bin\Debug folder put
    the playback_small.xml file.
+   
 7. Launch the app, upload 2 csv files of the flight data (the files should be different for the anomalies to be detected). 
    
    It is optional to choose the anomaly detection algorithm (from what's given or by uploading yourself), and if not picked 
-   there will be a default algorithm chosen.
-
+   there will be a default algorithm chosen. 
+   
+   **If one of the .dll files are not loaded, follow the instructions below:**
+    - Right-click on your file.
+    - Select Properties.
+    - Make sure that you are on General tab.
+    - In the Security option, you may see the message This file came from another computer and might be blocked to help protect this computer. Click on Unblock button.
 
 
 ## *How to contribute:*
