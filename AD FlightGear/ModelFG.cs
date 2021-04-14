@@ -318,8 +318,14 @@ namespace AD_FlightGear
             {
                 chooseIndex = value;
                 notifyPropertyChanged("ChooseIndex");
-                notifyAllByChooseIndex();
-
+                try
+                {
+                    notifyAllByChooseIndex();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("", e);
+                }
             }
         }
         private int corrIndex;
@@ -452,7 +458,14 @@ namespace AD_FlightGear
             {
                 time = value;
                 notifyPropertyChanged("Time");
-                notifyAllByTime(time);
+                try
+                {
+                    notifyAllByTime(time);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("", e);
+                }
             }
         }
 
