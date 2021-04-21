@@ -108,5 +108,7 @@ interface given above. The view needs to be according to the algorithm you're gi
 ## *Contributors:*
 Amit Ilovitch, Hila Levi, Ohad Azran, Lior Levi
 
-
+![Image of Yaktocat](https://github.com/azranohad/AD-FlightGear/blob/master/AD%20FlightGear/screen%20shot%202.PNG)
+![Image of Yaktocat](https://github.com/azranohad/AD-FlightGear/blob/master/AD%20FlightGear/screen%20shot%203.PNG)
+![Image of Yaktocat](https://github.com/azranohad/AD-FlightGear/blob/master/AD%20FlightGear/data%20screen%201.PNG)
 
