@@ -45,7 +45,7 @@ Main code was written in C#, with target framework of .NET 4.7.2.
 
 ## *Installation:*
 Required:
-1. Install OxyPlot on your workspace (i.e visual studio 2019). (right click on the project name -> manage NuGet packages -> 
+1. Install OxyPlot on your workspace (i.e visual studio 2019). right click on the project name -> manage NuGet packages -> 
    writing oxplot and downloading it. 
    
 2. Download Flight-Gear flight simulator from https://www.flightgear.org/ 
